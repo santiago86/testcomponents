@@ -10,7 +10,11 @@ const theme = createMuiTheme({
     MuiButtonBase: {
       disableRipple: true,
     },
+    MuiButton: {
+      disableElevation: true,
+    },
   },
+  spacing: 8,
   palette,
   typography: {
     htmlFontSize: 16,
@@ -179,7 +183,5 @@ theme.typography.button = {
   lineHeight: 1.5,
   fontWeight: 500,
 }
-
-console.log(theme)
 
 export default theme

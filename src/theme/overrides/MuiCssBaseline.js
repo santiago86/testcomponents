@@ -2,6 +2,7 @@ import SuisseIntlLight from "../../assets/fonts/SuisseIntl-Light-WebS.woff2"
 import SuisseIntlRegular from "../../assets/fonts/SuisseIntl-Regular-WebS.woff2"
 import SuisseIntlMedium from "../../assets/fonts/SuisseIntl-Medium-WebS.woff2"
 import SuisseIntlSemibold from "../../assets/fonts/SuisseIntl-SemiBold-WebS.woff2"
+import palette from "../palette"
 
 const suisseLight = {
   fontFamily: "SuisseIntl",
@@ -54,5 +55,8 @@ const suisseSemibold = {
 export default {
   "@global": {
     "@font-face": [suisseLight, suisseRegular, suisseMedium, suisseSemibold],
+    body: {
+      backgroundColor: palette.background.paper,
+    },
   },
 }
