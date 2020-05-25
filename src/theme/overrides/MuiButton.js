@@ -39,6 +39,10 @@ const outlinedPrimary = {
     color: palette.common.white,
     backgroundColor: palette.primary.main,
   },
+  "&:active": {
+    color: palette.common.white,
+    backgroundColor: palette.primary.main,
+  },
   "&:disabled": {
     bordercolor: palette.grey[400],
     backgroundColor: palette.grey[100],
@@ -73,7 +77,7 @@ export default {
     },
     "&:disabled": {
       color: palette.common.white,
-      backgroundColor: palette.text.disabled,
+      backgroundColor: palette.grey[200],
     },
   },
   outlined: {
@@ -89,20 +93,9 @@ export default {
       color: palette.common.white,
       backgroundColor: palette.secondary.dark,
     },
-    "&:disabled": {
-      bordercolor: palette.grey[400],
-      backgroundColor: palette.grey[100],
-      color: palette.grey[400],
-    },
-  },
-  outlineGray: {
-    borderColor: palette.grey[500],
-    border: 1,
-    borderStyle: "solid",
-    color: palette.grey[500],
-    "&:hover": {
+    "&:active": {
       color: palette.common.white,
-      backgroundColor: palette.grey[500],
+      backgroundColor: palette.secondary.dark,
     },
     "&:disabled": {
       bordercolor: palette.grey[400],
@@ -110,21 +103,10 @@ export default {
       color: palette.grey[400],
     },
   },
-  outlineInvert: {
-    borderColor: palette.common.white,
-    border: 1,
-    borderStyle: "solid",
-    color: palette.common.white,
-    "&:hover": {
-      color: palette.primary.main,
-      backgroundColor: palette.common.white,
-    },
-    "&:disabled": {
-      bordercolor: palette.transparent.bg,
-      color: palette.transparent.text,
-    },
+  startIcon: {
+    marginRight: 4,
   },
-  shadow: {
-    boxShadow: `0 2px 4px  ${palette.transparent.shadow}`,
+  endIcon: {
+    marginLeft: 4,
   },
 }

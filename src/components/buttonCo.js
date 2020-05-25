@@ -1,11 +1,20 @@
-import React from "react"
+import React, { useMemo } from "react"
 import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
+import PropTypes from "prop-types"
+import clsx from "clsx"
 
-import Left from "@material-ui/icons/ChevronLeft"
-import Right from "@material-ui/icons/ChevronRight"
-import Add from "@material-ui/icons/Add"
 import CircularProgress from "@material-ui/core/CircularProgress"
+import palette from "../theme/palette"
+
+const VARIANTS_COLORS_MAP = {
+  // Colors
+  grey: "primary",
+  inverted: "primary",
+  confirm: "primary",
+  // Variants
+  shadow: "contained",
+}
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -13,250 +22,177 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: theme.spacing(3),
     paddingLeft: theme.spacing(3),
   },
+  startIcon: {
+    marginRight: 4,
+  },
+  endIcon: {
+    marginLeft: 4,
+  },
   buttonSmall: {
     margin: theme.spacing(1),
     paddingRight: theme.spacing(1.3),
     paddingLeft: theme.spacing(1.3),
     fontSize: 12,
   },
-  icon: {
-    margin: theme.spacing(0),
-    fontSize: 24,
-  },
-  loading: {
-    width: 25,
-    height: 25,
-    paddingRight: theme.spacing(3),
-    paddingLeft: theme.spacing(3),
+  loadingLarge: {
+    width: 20,
+    height: 20,
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingRight: 32,
+    paddingLeft: 32,
   },
   loadingMedium: {
     width: 20,
     height: 20,
-    paddingTop: theme.spacing(0.3),
-    paddingBottom: theme.spacing(0.3),
-    paddingRight: theme.spacing(3),
-    paddingLeft: theme.spacing(3),
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingRight: 32,
+    paddingLeft: 32,
   },
   loadingSmall: {
-    width: 13,
-    height: 13,
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5),
-    paddingRight: theme.spacing(3),
-    paddingLeft: theme.spacing(3),
+    width: 14,
+    height: 14,
+    paddingTop: 4,
+    paddingBottom: 4,
+    paddingRight: theme.spacing(4.2),
+    paddingLeft: theme.spacing(4.2),
   },
 }))
 
-function ButtonCo() {
-  const classes = useStyles()
+const useClasses = makeStyles(() => ({
+  outlinedGrey: {
+    borderColor: palette.grey[500],
+    border: 1,
+    borderStyle: "solid",
+    color: palette.grey[500],
+    "&:hover": {
+      color: palette.common.white,
+      backgroundColor: palette.grey[500],
+      borderColor: palette.grey[500],
+    },
+    "&:disabled": {
+      bordercolor: palette.grey[400],
+      backgroundColor: palette.grey[100],
+      color: palette.grey[400],
+    },
+  },
+  outlinedInverted: {
+    borderColor: palette.common.white,
+    border: 1,
+    borderStyle: "solid",
+    color: palette.common.white,
+    "&:hover": {
+      color: palette.primary.main,
+      background: palette.common.white,
+    },
+    "&:disabled": {
+      bordercolor: "palette.transparent.bg",
+      border: 1,
+      borderStyle: "solid",
+      color: palette.transparent.text,
+      background: "transparent",
+    },
+  },
+  shadowPrimary: {
+    boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
+    "&:hover": {
+      boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
+    },
+    "&:disabled": {
+      backgroundColor: "transparent",
+      bordercolor: palette.transparent.bg,
+      border: 1,
+      color: palette.transparent.bg,
+      borderStyle: "solid",
+      boxShadow: "none",
+    },
+  },
+  containedConfirm: {
+    background: palette.success.main,
+    color: palette.common.white,
+    "&:hover": {
+      background: palette.success.main,
+      color: palette.common.white,
+    },
+    "&:active": {
+      background: palette.success.main,
+      color: palette.common.white,
+    },
+    "&:disabled": {
+      background: palette.grey[200],
+      color: palette.common.white,
+    },
+  },
+}))
+
+const LOADING_SIZES = {
+  small: "loadingSmall",
+  medium: "loadingMedium",
+  large: "loadingLarge",
+}
+
+function ButtonCo({
+  color = "primary",
+  variant = "contained",
+  start: StartIcon,
+  end: EndIcon,
+  children,
+  loading,
+  ...props
+}) {
+  const { size } = props
+  const styles = useStyles()
+  const classes = useClasses()
+  const classNameVariant = useMemo(() => {
+    return variant + color[0].toUpperCase() + color.substr(1)
+  }, [color, variant])
+  const className = classes[classNameVariant] || null
+  const defaultColor = VARIANTS_COLORS_MAP[color] || color
+  const defaultVariant = VARIANTS_COLORS_MAP[variant] || variant
+  const loadingSize = LOADING_SIZES[size] || LOADING_SIZES.medium
 
   return (
-    <div>
-      <Button variant="contained" size="large">
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        size="large"
-        color="secondary"
-        className={classes.button}
-        startIcon={<Add className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        className={classes.button}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        className={classes.button}
-        startIcon={<Left className={classes.icon} />}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        className={classes.button}
-      >
+    <Button
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+      className={clsx(styles.button, className)}
+      color={defaultColor}
+      variant={defaultVariant}
+      startIcon={!loading && StartIcon ? <StartIcon /> : null}
+      endIcon={!loading && EndIcon ? <EndIcon /> : null}
+    >
+      {loading ? (
         <CircularProgress
           variant="indeterminate"
           color="white"
           size="25"
-          className={classes.loading}
+          className={styles[loadingSize]}
         />
-      </Button>
-      <br />
-      <br />
-      <Button variant="contained" size="medium" color="secondary">
-        Label
-      </Button>{" "}
-      <Button
-        variant="contained"
-        size="medium"
-        color="secondary"
-        className={classes.button}
-        startIcon={<Add className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="medium"
-        className={classes.button}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="medium"
-        className={classes.button}
-        startIcon={<Left className={classes.icon} />}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="medium"
-        className={classes.button}
-      >
-        <CircularProgress
-          variant="indeterminate"
-          color="white"
-          size="20"
-          className={classes.loadingMedium}
-        />
-      </Button>
-      <br />
-      <br />
-      <Button variant="contained" size="small" color="secondary">
-        Label
-      </Button>{" "}
-      <Button
-        variant="contained"
-        size="small"
-        color="secondary"
-        className={classes.buttonSmall}
-        startIcon={<Add className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="small"
-        className={classes.buttonSmall}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="small"
-        className={classes.buttonSmall}
-        startIcon={<Left className={classes.icon} />}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="contained"
-        color="secondary"
-        size="small"
-        className={classes.buttonSmall}
-      >
-        <CircularProgress
-          variant="indeterminate"
-          color="white"
-          size="15"
-          className={classes.loadingSmall}
-        />
-      </Button>
-      <br />
-      <br />
-      <Button variant="outlined" size="large">
-        Label
-      </Button>
-      <Button
-        variant="outlined"
-        size="large"
-        color="secondary"
-        className={classes.button}
-        startIcon={<Add className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="outlined"
-        size="large"
-        className={classes.button}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label
-      </Button>
-      <Button
-        variant="outlined"
-        color="secondary"
-        size="large"
-        className={classes.shadow}
-        startIcon={<Left className={classes.icon} />}
-        endIcon={<Right className={classes.icon} />}
-      >
-        Label sombra
-      </Button>
-      <Button
-        variant="outlined"
-        color="secondary"
-        size="large"
-        className={classes.button}
-      >
-        <CircularProgress
-          variant="indeterminate"
-          color="white"
-          size="25"
-          className={classes.loading}
-        />
-      </Button>
-      <br />
-      <br />
-      <Button variant="contained" color="secondary" disabled>
-        secondary
-      </Button>{" "}
-      <Button variant="contained">defaul</Button> <br />
-      <Button variant="outlined" color="secondary">
-        Hello
-      </Button>
-      <Button variant="outlined" color="primary">
-        Hello
-      </Button>{" "}
-      <Button color="secondary" variant="outlined" disabled>
-        Hello
-      </Button>{" "}
-      <br />
-      <Button>defaul</Button>
-      <Button color="secondary">Hello</Button>
-      <Button color="primary">Hello</Button>{" "}
-      <Button color="secondary" disabled>
-        Hello
-      </Button>
-    </div>
+      ) : (
+        children
+      )}
+    </Button>
   )
 }
 
+ButtonCo.propTypes = {
+  color: PropTypes.string,
+  variant: PropTypes.string,
+  start: PropTypes.elementType,
+  end: PropTypes.elementType,
+  children: PropTypes.node,
+  loading: PropTypes.bool,
+  size: PropTypes.string,
+}
+
+ButtonCo.defaultProps = {
+  color: "primary",
+  variant: "contained",
+  size: "medium",
+  start: null,
+  end: null,
+  children: null,
+  loading: false,
+}
 export default ButtonCo
