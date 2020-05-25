@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   column: {
-    width: '30%',
+    width: '40%',
+    marginLeft: '5%',
   },
   fixMargin: {
     marginTop: '30px',
@@ -50,7 +51,7 @@ const Form = () => {
     four: '',
     five: '',
     six: '',
-    seven: '',
+    seven: 'Panamá',
   })
   const [country, setCountry] = useState({
     name: '',
@@ -61,7 +62,7 @@ const Form = () => {
   const countries = [
     { code: 'CO', label: 'Colombia', phone: '57' },
     { code: 'US', label: 'Estados Unidos', phone: '1' },
-    { code: 'PA', label: 'Panama', phone: '507' },
+    { code: 'PA', label: 'Panamá', phone: '507' },
     { code: 'PE', label: 'Peru', phone: '51' },
   ]
 
@@ -147,6 +148,8 @@ const Form = () => {
             }}
           />
         </div>
+      </div>
+      <div className={classes.container}>
         <div className={classes.column}>
           <Typography className={classes.inputWithoutLabel}>
             sin label
@@ -178,6 +181,26 @@ const Form = () => {
             }}
           />
         </div>
+        <div className={classes.column}>
+          <Typography className={classes.inputTitle}>Inhabilitado</Typography>
+          <InputCo
+            id="third-input"
+            placeholder="Texto de Ejemplo"
+            label="País"
+            value={values.seven}
+            setValue={handleChange('seven')}
+            disabled
+          />
+          <Typography className={classes.inputTitle}>Solo Lectura</Typography>
+          <InputCo
+            id="fourth-input"
+            placeholder="Ingrese el Pais"
+            label="País"
+            defaultValue={values.eight}
+            setValue={handleChange('eight')}
+            disabled
+          />
+        </div>
       </div>
       <div className={classes.container}>
         <div className={classes.column}>
@@ -192,20 +215,13 @@ const Form = () => {
               country.validCountry && {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <CheckIcon />
+                    <CheckIcon style={{ color: 'green' }} />
                   </InputAdornment>
                 ),
               }
             }
             hasErrors={!country.validCountry}
             helperText={!country.validCountry && country.error}
-            helperIcon={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <CheckIcon />
-                </InputAdornment>
-              ),
-            }}
           />
         </div>
       </div>

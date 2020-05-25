@@ -8,13 +8,21 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: '90%',
     },
+    '& .Mui-disabled': {
+      backgroundColor: '#EFEFEE',
+      color: '#333333',
+    },
+    '& .MuiOutlinedInput-input': {
+      fontSize: '1rem',
+    },
   },
   label: {
-    fontSize: '14px',
+    fontSize: '0.875rem',
   },
   helperText: {
+    fontSize: '0.75rem',
     marginTop: '0px',
-    fontSize: '12px',
+    marginLeft: '10px',
   },
 }))
 
@@ -28,6 +36,8 @@ const InputCo = (props) => {
     helperText,
     InputProps,
     hasErrors,
+    disabled,
+    defaultValue,
   } = props
 
   const classes = useStyles()
@@ -70,6 +80,8 @@ const InputCo = (props) => {
         onBlur={handelBlur}
         onChange={setValue}
         error={errors !== ''}
+        disabled={disabled}
+        defaultValue={defaultValue}
       />
       {helperText && (
         <FormHelperText className={classes.helperText} error={hasErrors}>
@@ -78,17 +90,6 @@ const InputCo = (props) => {
       )}
     </form>
   )
-}
-
-InputCo.propTypes = {
-  id: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  value: PropTypes.string.isRequired,
-  setValue: PropTypes.func.isRequired,
-  helperText: PropTypes.string,
-  InputProps: PropTypes.any,
-  hasErrors: PropTypes.boolean,
 }
 
 export default InputCo
