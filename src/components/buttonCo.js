@@ -89,9 +89,6 @@ const useClasses = makeStyles(() => ({
   },
   shadowPrimary: {
     boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
-    // border: 1,
-    // bordercolor: "transparent",
-    // borderStyle: "solid",
     "&:hover": {
       boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
     },
