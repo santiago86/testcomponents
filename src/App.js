@@ -1,12 +1,12 @@
-import React from 'react'
-import Box from '@material-ui/core/Box'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import Container from '@material-ui/core/Container'
+import React from "react"
+import Box from "@material-ui/core/Box"
+import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography"
+import Container from "@material-ui/core/Container"
 
-import Form from './components/TextField/Form'
-import ButtonCo from './components/buttonCo'
-import SelectCo from './components/selectCo'
+import Form from "./components/TextField/Form"
+import ButtonCo from "./components/buttonCo"
+import SelectCo from "./components/selectCo"
 
 function App() {
   return (
@@ -31,26 +31,26 @@ function App() {
           <br />
           <Button variant="contained" size="small" color="primary">
             Primary Small
-          </Button>{' '}
+          </Button>{" "}
           <Button variant="contained" color="secondary">
             Secondary Medium
-          </Button>{' '}
+          </Button>{" "}
           <Button variant="contained" size="large" color="secondary">
             Secondary Large
-          </Button>{' '}
+          </Button>{" "}
           <Button variant="contained" size="large" color="secondary" disabled>
             Disabled Large
-          </Button>{' '}
+          </Button>{" "}
           <Button variant="contained">Default</Button> <br />
           <Button variant="outlined" color="primary">
             Outlined Primary
-          </Button>{' '}
+          </Button>{" "}
           <Button color="secondary" variant="outlined">
             Outlined Secondary
-          </Button>{' '}
+          </Button>{" "}
           <Button variant="outlined" color="primary" disabled>
             Outlined Primary
-          </Button>{' '}
+          </Button>{" "}
           <Box
             display="flex"
             justifyContent="space-between"
@@ -63,12 +63,12 @@ function App() {
             </Button>
             <Button variant="outlined" disabled>
               Outlined Invert Disabled
-            </Button>{' '}
+            </Button>{" "}
           </Box>
           <br />
           <Button>defaul</Button>
           <Button color="secondary">Hello</Button>
-          <Button color="primary">Hello</Button>{' '}
+          <Button color="primary">Hello</Button>{" "}
           <Button color="secondary" disabled>
             Hello
           </Button>

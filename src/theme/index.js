@@ -1,9 +1,9 @@
-import { createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from "@material-ui/core/styles"
 
-import palette from './palette'
-import overrides from './overrides'
+import palette from "./palette"
+import overrides from "./overrides"
 
-const suisseFontFamily = 'SuisseIntl, Helvetica, Arial, sans-serif'
+const suisseFontFamily = "SuisseIntl, Helvetica, Arial, sans-serif"
 
 const theme = createMuiTheme({
   props: {
@@ -29,52 +29,52 @@ const theme = createMuiTheme({
 
 theme.typography.h1 = {
   fontFamily: suisseFontFamily,
-  fontSize: '2rem',
+  fontSize: "2rem",
   lineHeight: 1.1,
   fontWeight: 400,
-  letterSpacing: '-0.042em',
-  [theme.breakpoints.up('sm')]: {
-    fontSize: '2.75rem',
+  letterSpacing: "-0.042em",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "2.75rem",
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '3.25rem',
+  [theme.breakpoints.up("md")]: {
+    fontSize: "3.25rem",
   },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '3.75rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "3.75rem",
   },
 }
 
 theme.typography.h2 = {
   fontFamily: suisseFontFamily,
-  fontSize: '1.25rem',
+  fontSize: "1.25rem",
   lineHeight: 1.25,
   fontWeight: 500,
-  letterSpacing: '-0.0315em',
-  [theme.breakpoints.up('sm')]: {
-    fontSize: '2.75rem',
+  letterSpacing: "-0.0315em",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "2.75rem",
     lineHeight: 1.1,
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '3.25rem',
+  [theme.breakpoints.up("md")]: {
+    fontSize: "3.25rem",
   },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '3.75rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "3.75rem",
   },
 }
 
 theme.typography.h3 = {
   fontFamily: suisseFontFamily,
-  fontSize: '1.125rem',
+  fontSize: "1.125rem",
   lineHeight: 1.33,
   fontWeight: 500,
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '1.25rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "1.25rem",
   },
 }
 
 theme.typography.h4 = {
   fontFamily: suisseFontFamily,
-  fontSize: '1rem',
+  fontSize: "1rem",
   lineHeight: 1.5,
   fontWeight: 500,
 }
@@ -82,19 +82,19 @@ theme.typography.h4 = {
 theme.typography.h5 = {
   // DisplayLarge
   fontFamily: suisseFontFamily,
-  fontSize: '1.875rem',
+  fontSize: "1.875rem",
   lineHeight: 1.1,
   fontWeight: 400,
-  letterSpacing: '-0.042em',
-  [theme.breakpoints.up('sm')]: {
-    fontSize: '2.25rem',
+  letterSpacing: "-0.042em",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "2.25rem",
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.5rem',
+  [theme.breakpoints.up("md")]: {
+    fontSize: "2.5rem",
     lineHeight: 1.2,
   },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '3rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "3rem",
     lineHeight: 1.33,
   },
 }
@@ -102,19 +102,19 @@ theme.typography.h5 = {
 theme.typography.h6 = {
   // DisplayNormal
   fontFamily: suisseFontFamily,
-  fontSize: '1.5rem',
+  fontSize: "1.5rem",
   lineHeight: 1.33,
   fontWeight: 300,
-  letterSpacing: '-0.032em',
-  [theme.breakpoints.up('sm')]: {
-    fontSize: '1.875rem',
+  letterSpacing: "-0.032em",
+  [theme.breakpoints.up("sm")]: {
+    fontSize: "1.875rem",
   },
-  [theme.breakpoints.up('md')]: {
-    fontSize: '2.25rem',
+  [theme.breakpoints.up("md")]: {
+    fontSize: "2.25rem",
     lineHeight: 1.1,
   },
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '2.5rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "2.5rem",
     lineHeight: 1.2,
   },
 }
@@ -122,29 +122,29 @@ theme.typography.h6 = {
 theme.typography.subtitle1 = {
   // DisplayTiny
   fontFamily: suisseFontFamily,
-  fontSize: '1.125rem',
+  fontSize: "1.125rem",
   lineHeight: 1.33,
   fontWeight: 300,
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '1.25rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "1.25rem",
   },
 }
 
 theme.typography.subtitle2 = {
   // CaptionLarge
   fontFamily: suisseFontFamily,
-  fontSize: '1.125rem',
+  fontSize: "1.125rem",
   lineHeight: 1.33,
   fontWeight: 400,
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '1.25rem',
+  [theme.breakpoints.up("lg")]: {
+    fontSize: "1.25rem",
   },
 }
 
 theme.typography.body1 = {
   // bodyLarge
   fontFamily: suisseFontFamily,
-  fontSize: '1rem',
+  fontSize: "1rem",
   lineHeight: 1.5,
   fontWeight: 400,
 }
@@ -152,7 +152,7 @@ theme.typography.body1 = {
 theme.typography.body2 = {
   // bodyNormal
   fontFamily: suisseFontFamily,
-  fontSize: '0.875rem',
+  fontSize: "0.875rem",
   lineHeight: 1.5,
   fontWeight: 400,
 }
@@ -160,7 +160,7 @@ theme.typography.body2 = {
 theme.typography.caption = {
   // bodySmall
   fontFamily: suisseFontFamily,
-  fontSize: '0.75rem',
+  fontSize: "0.75rem",
   lineHeight: 1.33,
   fontWeight: 400,
 }
@@ -168,18 +168,18 @@ theme.typography.caption = {
 theme.typography.overline = {
   // OverlineNormal
   fontFamily: suisseFontFamily,
-  fontSize: '0.75rem',
+  fontSize: "0.75rem",
   lineHeight: 1.33,
   fontWeight: 600,
-  letterSpacing: '0.08rem',
-  textTransform: 'uppercase',
-  color: palette.grey['600'],
+  letterSpacing: "0.08rem",
+  textTransform: "uppercase",
+  color: palette.grey["600"],
 }
 
 theme.typography.button = {
   // ButtonLabel slim
   fontFamily: suisseFontFamily,
-  fontSize: '0.75rem',
+  fontSize: "0.75rem",
   lineHeight: 1.5,
   fontWeight: 500,
 }

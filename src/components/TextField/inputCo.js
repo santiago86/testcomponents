@@ -1,28 +1,28 @@
-import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { TextField, InputLabel, FormHelperText } from '@material-ui/core'
+import React, { useState } from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import { TextField, InputLabel, FormHelperText } from "@material-ui/core"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
-      width: '90%',
+      width: "90%",
     },
-    '& .Mui-disabled': {
-      backgroundColor: '#EFEFEE',
-      color: '#333333',
+    "& .Mui-disabled": {
+      backgroundColor: "#EFEFEE",
+      color: "#333333",
     },
-    '& .MuiOutlinedInput-input': {
-      fontSize: '1rem',
+    "& .MuiOutlinedInput-input": {
+      fontSize: "1rem",
     },
   },
   label: {
-    fontSize: '0.875rem',
+    fontSize: "0.875rem",
   },
   helperText: {
-    fontSize: '0.75rem',
-    marginTop: '0px',
-    marginLeft: '10px',
+    fontSize: "0.75rem",
+    marginTop: "0px",
+    marginLeft: "10px",
   },
 }))
 
@@ -42,11 +42,11 @@ const InputCo = (props) => {
 
   const classes = useStyles()
   const [inputPlaceholder, setPlaceholder] = useState(placeholder)
-  const [errors, setError] = useState('')
+  const [errors, setError] = useState("")
 
   const handleFocus = () => {
-    setPlaceholder('')
-    setError('')
+    setPlaceholder("")
+    setError("")
   }
   const handelBlur = () => {
     if (!value) {
@@ -55,7 +55,7 @@ const InputCo = (props) => {
       if (hasErrors) {
         setError(helperText)
       } else {
-        setError('')
+        setError("")
       }
     }
   }
@@ -79,7 +79,7 @@ const InputCo = (props) => {
         onFocus={handleFocus}
         onBlur={handelBlur}
         onChange={setValue}
-        error={errors !== ''}
+        error={errors !== ""}
         disabled={disabled}
         defaultValue={defaultValue}
       />

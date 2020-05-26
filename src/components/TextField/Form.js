@@ -1,43 +1,43 @@
-import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { InputAdornment, Typography } from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search'
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
-import CheckIcon from '@material-ui/icons/Check'
-import PhoneIcon from '@material-ui/icons/Phone'
-import InputCo from './inputCo'
+import React, { useState } from "react"
+import { makeStyles } from "@material-ui/core/styles"
+import { InputAdornment, Typography } from "@material-ui/core"
+import SearchIcon from "@material-ui/icons/Search"
+import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined"
+import CheckIcon from "@material-ui/icons/Check"
+import PhoneIcon from "@material-ui/icons/Phone"
+import InputCo from "./inputCo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
-      width: '50ch',
+      width: "50ch",
     },
   },
   inputTitle: {
-    fontSize: '12px',
-    textTransform: 'uppercase',
-    color: '#666666',
-    fontWeight: '600',
-    marginTop: '10px',
+    fontSize: "12px",
+    textTransform: "uppercase",
+    color: "#666666",
+    fontWeight: "600",
+    marginTop: "10px",
   },
   container: {
-    display: 'flex',
+    display: "flex",
   },
   column: {
-    width: '40%',
-    marginLeft: '5%',
+    width: "40%",
+    marginLeft: "5%",
   },
   fixMargin: {
-    marginTop: '30px',
+    marginTop: "30px",
   },
   inputWithoutLabel: {
-    fontSize: '12px',
-    textTransform: 'uppercase',
-    color: '#666666',
-    fontWeight: '600',
-    marginTop: '10px',
-    marginBottom: '30px',
+    fontSize: "12px",
+    textTransform: "uppercase",
+    color: "#666666",
+    fontWeight: "600",
+    marginTop: "10px",
+    marginBottom: "30px",
   },
 }))
 
@@ -45,26 +45,26 @@ const Form = () => {
   const classes = useStyles()
 
   const [values, setValues] = useState({
-    one: '',
-    two: '',
-    three: '',
-    four: '',
-    five: '',
-    six: '',
-    seven: '',
-    eight: 'Panamá',
+    one: "",
+    two: "",
+    three: "",
+    four: "",
+    five: "",
+    six: "",
+    seven: "",
+    eight: "Panamá",
   })
   const [country, setCountry] = useState({
-    name: '',
+    name: "",
     false: false,
-    error: '',
+    error: "",
   })
 
   const countries = [
-    { code: 'CO', label: 'Colombia', phone: '57' },
-    { code: 'US', label: 'Estados Unidos', phone: '1' },
-    { code: 'PA', label: 'Panamá', phone: '507' },
-    { code: 'PE', label: 'Peru', phone: '51' },
+    { code: "CO", label: "Colombia", phone: "57" },
+    { code: "US", label: "Estados Unidos", phone: "1" },
+    { code: "PA", label: "Panamá", phone: "507" },
+    { code: "PE", label: "Peru", phone: "51" },
   ]
 
   const validateCountry = (event) => {
@@ -78,7 +78,7 @@ const Form = () => {
         ...country,
         name: value,
         validCountry: isValid,
-        error: 'País Invalido',
+        error: "País Invalido",
       })
     }
   }
@@ -99,7 +99,7 @@ const Form = () => {
             placeholder="Texto de Ejemplo"
             label="Label"
             value={values.one}
-            setValue={handleChange('one')}
+            setValue={handleChange("one")}
           />
           <Typography className={classes.inputTitle}>
             con texto de ayuda
@@ -109,7 +109,7 @@ const Form = () => {
             placeholder="Texto de ejemplo"
             label="Label"
             value={values.two}
-            setValue={handleChange('two')}
+            setValue={handleChange("two")}
             helperText="Este texto de ayuda es para ayudar"
           />
         </div>
@@ -122,7 +122,7 @@ const Form = () => {
             placeholder="Texto de Ejemplo"
             label="Label"
             value={values.three}
-            setValue={handleChange('three')}
+            setValue={handleChange("three")}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -139,7 +139,7 @@ const Form = () => {
             placeholder="Texto de ejemplo"
             label="Label"
             value={values.four}
-            setValue={handleChange('four')}
+            setValue={handleChange("four")}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
@@ -159,7 +159,7 @@ const Form = () => {
             id="third-input"
             placeholder="Texto de Ejemplo"
             value={values.five}
-            setValue={handleChange('five')}
+            setValue={handleChange("five")}
           />
           <Typography className={classes.inputTitle}>con dos iconos</Typography>
           <InputCo
@@ -167,7 +167,7 @@ const Form = () => {
             placeholder="Texto de ejemplo"
             label="Label"
             value={values.six}
-            setValue={handleChange('six')}
+            setValue={handleChange("six")}
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -189,7 +189,7 @@ const Form = () => {
             placeholder="Texto de Ejemplo"
             label="País"
             value={values.seven}
-            setValue={handleChange('seven')}
+            setValue={handleChange("seven")}
             disabled
           />
           <Typography className={classes.inputTitle}>Solo Lectura</Typography>
@@ -198,7 +198,7 @@ const Form = () => {
             placeholder="Ingrese el Pais"
             label="País"
             defaultValue={values.eight}
-            setValue={handleChange('eight')}
+            setValue={handleChange("eight")}
             disabled
           />
         </div>
@@ -218,7 +218,7 @@ const Form = () => {
               country.validCountry && {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <CheckIcon style={{ color: 'green' }} />
+                    <CheckIcon style={{ color: "green" }} />
                   </InputAdornment>
                 ),
               }
