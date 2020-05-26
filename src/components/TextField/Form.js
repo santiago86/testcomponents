@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { InputAdornment, Typography } from '@material-ui/core'
-import InputCo from './inputCo'
 import SearchIcon from '@material-ui/icons/Search'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
 import CheckIcon from '@material-ui/icons/Check'
 import PhoneIcon from '@material-ui/icons/Phone'
+import InputCo from './inputCo'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -51,7 +51,8 @@ const Form = () => {
     four: '',
     five: '',
     six: '',
-    seven: 'Panamá',
+    seven: '',
+    eight: 'Panamá',
   })
   const [country, setCountry] = useState({
     name: '',
@@ -67,7 +68,7 @@ const Form = () => {
   ]
 
   const validateCountry = (event) => {
-    const value = event.target.value
+    const { value } = event.target
     const isValid = countries.find(
       (el) => el.label.toLocaleLowerCase() === value.toLocaleLowerCase()
     )
@@ -204,7 +205,9 @@ const Form = () => {
       </div>
       <div className={classes.container}>
         <div className={classes.column}>
-          <Typography className={classes.inputTitle}>validaciones</Typography>
+          <Typography className={classes.inputTitle}>
+            con validaciones
+          </Typography>
           <InputCo
             id="second-input"
             placeholder="Ingrese el País"
