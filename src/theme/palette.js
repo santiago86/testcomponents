@@ -57,4 +57,10 @@ export default {
     "700": "#333333",
     "800": "#121212",
   },
+  gradients: {
+    gradientDark: "linear-gradient(90deg, #0E4A81 0%, #0D3050 100%)",
+    gradient2: "linear-gradient(90deg, #0060A9 0%, #0D3050 100%)",
+    gradient3: "linear-gradient(270deg, #0060A9 0%, #0E4A81 100%)",
+    gradient4: "linear-gradient(270deg, #0060A9 0%, #0D3050 100%);",
+  },
 }

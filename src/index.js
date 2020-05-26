@@ -1,6 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import { ThemeProvider } from "@material-ui/styles"
+import CssBaseline from "@material-ui/core/CssBaseline"
 import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 import theme from "./theme"
@@ -8,6 +9,7 @@ import theme from "./theme"
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </React.StrictMode>,
