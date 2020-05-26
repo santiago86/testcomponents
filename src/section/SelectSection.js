@@ -23,7 +23,7 @@ const MappedStates = () => {
 }
 
 const Placeholder = (
-  <MenuItemCo value="" disabled>
+  <MenuItemCo style={{ display: "none" }} value="" disabled>
     Selecciona...
   </MenuItemCo>
 )
@@ -144,27 +144,30 @@ function SelectSection() {
         <TypographyCo variant="h3">Estados</TypographyCo>
       </Box>
       <Grid container spacing={8}>
-        {/* Por defecto */}
+        {/* Con error */}
         <Grid item xs={3}>
           <TypographyCo variant="h4" style={selectSubtitle}>
-            Por defecto
+            Con error
           </TypographyCo>
-          <SelectCo label="Label" value={state.valueEmpty}>
+          <SelectCo
+            label="Label"
+            error
+            inputProps={{ readOnly: true }}
+            value={state.valueEmpty}
+          >
             {Placeholder}
           </SelectCo>
         </Grid>
 
-        {/* Con Error */}
+        {/* Activo */}
         <Grid item xs={3}>
           <TypographyCo variant="h4" style={selectSubtitle}>
-            Con Error
+            Activo
           </TypographyCo>
           <SelectCo
             label="Pasaporte a utilizar"
             value={state.value7}
-            error
             onChange={(e) => handleChange(e, "value7")}
-            inputProps={{ readOnly: true }}
           >
             {Placeholder}
             <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
