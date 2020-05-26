@@ -51,6 +51,23 @@ const outlinedPrimary = {
 }
 
 export default {
+  root: {
+    transition:
+      "box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    padding: "8px 20px",
+    fontSize: "1rem",
+    lineHeight: 1.5,
+    boxShadow: "none",
+  },
+  sizeSmall: {
+    padding: "4px 12px",
+    fontSize: "0.75rem",
+    lineHeight: 1.33,
+  },
+  sizeLarge: {
+    fontSize: "1rem",
+    padding: "12px 24px",
+  },
   contained: {
     ...containedPrimary,
   },

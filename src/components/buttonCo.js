@@ -16,47 +16,40 @@ const VARIANTS_COLORS_MAP = {
   shadow: "contained",
 }
 
+const widthSize = 20
+
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
     paddingRight: theme.spacing(3),
     paddingLeft: theme.spacing(3),
   },
-  startIcon: {
-    marginRight: 4,
-  },
-  endIcon: {
-    marginLeft: 4,
-  },
-  buttonSmall: {
-    margin: theme.spacing(1),
-    paddingRight: theme.spacing(1.3),
-    paddingLeft: theme.spacing(1.3),
-    fontSize: 12,
-  },
   loadingLarge: {
-    width: 20,
-    height: 20,
-    paddingTop: 2,
-    paddingBottom: 2,
-    paddingRight: 32,
-    paddingLeft: 32,
+    width: widthSize,
+    height: widthSize,
+    marginTop: theme.spacing(0.25),
+    marginBottom: theme.spacing(0.25),
+    marginRight: theme.spacing(4.1),
+    marginLeft: theme.spacing(4.1),
+    color: "inherit",
   },
   loadingMedium: {
-    width: 20,
-    height: 20,
-    paddingTop: 2,
-    paddingBottom: 2,
-    paddingRight: 32,
-    paddingLeft: 32,
+    width: widthSize,
+    height: widthSize,
+    marginTop: theme.spacing(0.25),
+    marginBottom: theme.spacing(0.25),
+    marginRight: theme.spacing(3.8),
+    marginLeft: theme.spacing(3.8),
+    color: "inherit",
   },
   loadingSmall: {
     width: 14,
     height: 14,
-    paddingTop: 4,
-    paddingBottom: 4,
-    paddingRight: theme.spacing(4.2),
-    paddingLeft: theme.spacing(4.2),
+    marginTop: theme.spacing(0.25),
+    marginBottom: theme.spacing(0.25),
+    marginRight: theme.spacing(3.6),
+    marginLeft: theme.spacing(3.6),
+    color: "inherit",
   },
 }))
 
@@ -96,6 +89,9 @@ const useClasses = makeStyles(() => ({
   },
   shadowPrimary: {
     boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
+    // border: 1,
+    // bordercolor: "transparent",
+    // borderStyle: "solid",
     "&:hover": {
       boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
     },
@@ -151,10 +147,8 @@ function ButtonCo({
   const defaultColor = VARIANTS_COLORS_MAP[color] || color
   const defaultVariant = VARIANTS_COLORS_MAP[variant] || variant
   const loadingSize = LOADING_SIZES[size] || LOADING_SIZES.medium
-
   return (
     <Button
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
       className={clsx(styles.button, className)}
       color={defaultColor}
@@ -163,12 +157,14 @@ function ButtonCo({
       endIcon={!loading && EndIcon ? <EndIcon /> : null}
     >
       {loading ? (
-        <CircularProgress
-          variant="indeterminate"
-          color="white"
-          size="25"
-          className={styles[loadingSize]}
-        />
+        <>
+          <CircularProgress
+            variant="indeterminate"
+            color="primary"
+            size="25"
+            className={styles[loadingSize]}
+          />
+        </>
       ) : (
         children
       )}
