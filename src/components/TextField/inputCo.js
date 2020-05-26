@@ -1,6 +1,9 @@
 import React, { useState } from "react"
+import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
-import { TextField, InputLabel, FormHelperText } from "@material-ui/core"
+import TextField from "@material-ui/core/TextField"
+import InputLabel from "@material-ui/core/InputLabel"
+import FormHelperText from "@material-ui/core/FormHelperText"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,20 +29,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const InputCo = (props) => {
-  const {
-    id,
-    placeholder,
-    label,
-    value,
-    setValue,
-    helperText,
-    InputProps,
-    hasErrors,
-    disabled,
-    defaultValue,
-  } = props
-
+const InputCo = ({
+  id,
+  placeholder,
+  label,
+  value,
+  setValue,
+  helperText,
+  hasErrors,
+  ...props
+}) => {
   const classes = useStyles()
   const [inputPlaceholder, setPlaceholder] = useState(placeholder)
   const [errors, setError] = useState("")
@@ -54,42 +53,56 @@ const InputCo = (props) => {
     } else {
       if (hasErrors) {
         setError(helperText)
-      } else {
-        setError("")
       }
+      setError("")
     }
   }
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <div className={classes.root} noValidate autoComplete="off">
       {label && (
         <InputLabel htmlFor={id} className={classes.label}>
           {label}
         </InputLabel>
       )}
       <TextField
-        id={id}
-        className={classes.textfield}
+        {...props}
         placeholder={inputPlaceholder}
+        label={null}
+        helperText={null}
+        className={classes.textfield}
         InputLabelProps={{ shrink: false }}
         variant="outlined"
-        value={value}
         FormHelperTextProps={{ classes: classes.helperText }}
-        InputProps={InputProps}
         onFocus={handleFocus}
         onBlur={handelBlur}
         onChange={setValue}
         error={errors !== ""}
-        disabled={disabled}
-        defaultValue={defaultValue}
       />
       {helperText && (
         <FormHelperText className={classes.helperText} error={errors !== ""}>
           {(helperText && !hasErrors) || errors}
         </FormHelperText>
       )}
-    </form>
+    </div>
   )
+}
+
+InputCo.propTypes = {
+  id: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  setValue: PropTypes.func.isRequired,
+  helperText: PropTypes.string,
+  hasErrors: PropTypes.bool,
+}
+
+InputCo.defaultProps = {
+  label: "label",
+  value: "value",
+  helperText: "text",
+  hasErrors: false,
 }
 
 export default InputCo

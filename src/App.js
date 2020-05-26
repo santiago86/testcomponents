@@ -1,56 +1,53 @@
 import React from "react"
 import Box from "@material-ui/core/Box"
-import Button from "@material-ui/core/Button"
-import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 
 import Form from "./components/TextField/Form"
 import ButtonCo from "./components/buttonCo"
 import SelectCo from "./components/selectCo"
+import TypographyCo from "./components/typographyCo"
 
 function App() {
   return (
     <div className="App">
       <Container max-width="lg">
         <header className="App-header">
-          <Typography component="span" variant="overline">
+          <TypographyCo component="span" variant="overline">
             Vuelo de ida
-          </Typography>
-          <Typography variant="h1" component="h1" color="primary">
+          </TypographyCo>
+          <TypographyCo variant="h1" component="h1" color="primary">
             Hacia Buenos Aires
-          </Typography>
-          <Typography variant="body2" component="span" color="primary">
+          </TypographyCo>
+          <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
-          </Typography>
+          </TypographyCo>
           <h2>Input</h2>
           <Form />
-          <h2>Button </h2>
-          <ButtonCo />
           <h2> Select </h2>
           <SelectCo />
           <br />
-          <Button variant="contained" size="small" color="primary">
+          <ButtonCo variant="contained" size="small" color="primary">
             Primary Small
-          </Button>{" "}
-          <Button variant="contained" color="secondary">
+          </ButtonCo>{" "}
+          <ButtonCo variant="contained" color="secondary">
             Secondary Medium
-          </Button>{" "}
-          <Button variant="contained" size="large" color="secondary">
+          </ButtonCo>{" "}
+          <ButtonCo variant="contained" size="large" color="secondary">
             Secondary Large
-          </Button>{" "}
-          <Button variant="contained" size="large" color="secondary" disabled>
+          </ButtonCo>{" "}
+          <ButtonCo variant="contained" size="large" color="secondary" disabled>
             Disabled Large
-          </Button>{" "}
-          <Button variant="contained">Default</Button> <br />
-          <Button variant="outlined" color="primary">
+          </ButtonCo>{" "}
+          <ButtonCo variant="contained">Default</ButtonCo> <br />
+          <ButtonCo variant="outlined" color="primary">
             Outlined Primary
-          </Button>{" "}
-          <Button color="secondary" variant="outlined">
+          </ButtonCo>{" "}
+          <ButtonCo color="secondary" variant="outlined">
             Outlined Secondary
-          </Button>{" "}
-          <Button variant="outlined" color="primary" disabled>
+          </ButtonCo>{" "}
+          <ButtonCo variant="outlined" color="primary" disabled>
             Outlined Primary
-          </Button>{" "}
+          </ButtonCo>{" "}
           <Box
             display="flex"
             justifyContent="space-between"
@@ -58,20 +55,20 @@ function App() {
             p={3}
             my={3}
           >
-            <Button variant="outlined" size="medium">
+            <ButtonCo variant="outlined" size="medium">
               Outlined Invert
-            </Button>
-            <Button variant="outlined" disabled>
+            </ButtonCo>
+            <ButtonCo variant="outlined" disabled>
               Outlined Invert Disabled
-            </Button>{" "}
+            </ButtonCo>{" "}
           </Box>
           <br />
-          <Button>defaul</Button>
-          <Button color="secondary">Hello</Button>
-          <Button color="primary">Hello</Button>{" "}
-          <Button color="secondary" disabled>
+          <ButtonCo>defaul</ButtonCo>
+          <ButtonCo color="secondary">Hello</ButtonCo>
+          <ButtonCo color="primary">Hello</ButtonCo>{" "}
+          <ButtonCo color="secondary" disabled>
             Hello
-          </Button>
+          </ButtonCo>
         </header>
       </Container>
     </div>
