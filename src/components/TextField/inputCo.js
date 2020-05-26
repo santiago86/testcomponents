@@ -84,8 +84,8 @@ const InputCo = (props) => {
         defaultValue={defaultValue}
       />
       {helperText && (
-        <FormHelperText className={classes.helperText} error={hasErrors}>
-          {helperText}
+        <FormHelperText className={classes.helperText} error={errors !== ""}>
+          {(helperText && !hasErrors) || errors}
         </FormHelperText>
       )}
     </form>
