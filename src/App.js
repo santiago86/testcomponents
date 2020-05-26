@@ -4,7 +4,7 @@ import Container from "@material-ui/core/Container"
 
 import InputCo from "./components/inputCo"
 import ButtonCo from "./components/buttonCo"
-import SelectCo from "./components/selectCo"
+import SelectSection from "./section/SelectSection"
 import TypographyCo from "./components/typographyCo"
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
           </TypographyCo>
           <InputCo />
           <h2> Select </h2>
-          <SelectCo />
+          <SelectSection />
           <br />
           <ButtonCo variant="contained" size="small" color="primary">
             Primary Small
