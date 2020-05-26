@@ -13,23 +13,6 @@ const theme = createMuiTheme({
     MuiButton: {
       disableElevation: true,
     },
-    MuiSelect: {
-      fullWidth: true,
-      variant: "outlined",
-      displayEmpty: true,
-      MenuProps: {
-        PaperProps: {
-          style: {
-            maxHeight: "13.75rem",
-          },
-        },
-        getContentAnchorEl: null,
-        anchorOrigin: {
-          vertical: "bottom",
-          horizontal: "left",
-        },
-      },
-    },
   },
   spacing: 8,
   palette,

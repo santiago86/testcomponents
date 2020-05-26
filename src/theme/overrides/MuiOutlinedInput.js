@@ -1,16 +1,18 @@
+import palette from "../palette"
+
 export default {
   root: {
     position: "relative",
     "&:hover:not($disabled):not($focused):not($error) $notchedOutline": {
-      borderColor: "#0060A9",
+      borderColor: palette.primary.main,
     },
     "&$focused $notchedOutline": {
-      borderColor: "#0060A9",
+      borderColor: palette.primary.main,
       borderWidth: 1,
     },
     "&$disabled": {
-      color: "#999999",
-      backgroundColor: "#EFEFEE",
+      color: palette.grey["500"],
+      backgroundColor: palette.grey["100"],
     },
   },
 }

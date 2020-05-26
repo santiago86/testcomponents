@@ -1,5 +1,5 @@
 export default {
   root: {
-    marginBottom: "1.0rem",
+    marginBottom: "16px",
   },
 }

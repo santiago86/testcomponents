@@ -7,10 +7,11 @@ import MenuItemCo from "../components/secondaryComponents/menuItemCo"
 import SelectDividerCo from "../components/secondaryComponents/selectDividerCo"
 import SelectCo from "../components/selectCo"
 import states from "../assets/states"
+import theme from "../theme"
 
 const selectSubtitle = {
   textTransform: "uppercase",
-  marginBottom: "1.0rem",
+  marginBottom: theme.spacing(2),
 }
 const MappedStates = () => {
   return states.map((state) => [
@@ -30,6 +31,7 @@ const Placeholder = (
 function SelectSection() {
   const [state, setState] = React.useState({
     valueEmpty: "",
+    value2: "",
     value4: "",
     value5: "",
     value7: "",
@@ -41,7 +43,7 @@ function SelectSection() {
     setState(newState)
   }
   return (
-    <Box m={8}>
+    <Box m={2}>
       <TypographyCo mt={3} variant="h1" component="h1" color="primary">
         Campos de selección
       </TypographyCo>
@@ -55,7 +57,7 @@ function SelectSection() {
             Caja de selección básica
           </TypographyCo>
           <SelectCo
-            toplabel="Label"
+            label="Label"
             value={state.valueEmpty}
             displayEmpty
             inputProps={{ readOnly: true }}
@@ -70,16 +72,23 @@ function SelectSection() {
             Selección con Icono
           </TypographyCo>
           <SelectCo
-            toplabel="Label"
-            value={state.valueEmpty}
-            inputProps={{ readOnly: true }}
+            label="Label"
+            value={state.value2}
+            onChange={(e) => handleChange(e, "value2")}
             startAdornment={
               <LanguageIcon
-                style={{ marginRight: "1.0rem", color: "#666666" }}
+                style={{
+                  pointerEvents: "none",
+                  marginRight: theme.spacing(2),
+                  color: theme.palette.grey["600"],
+                  background: "transparent",
+                  zIndex: 100,
+                }}
               />
             }
           >
             {Placeholder}
+            {MappedStates()}
           </SelectCo>
         </Grid>
 
@@ -102,7 +111,7 @@ function SelectSection() {
             Lista de opción corta
           </TypographyCo>
           <SelectCo
-            toplabel="Pasaporte a utilizar"
+            label="Pasaporte a utilizar"
             value={state.value4}
             onChange={(e) => handleChange(e, "value4")}
           >
@@ -121,7 +130,7 @@ function SelectSection() {
             Lista de opción larga
           </TypographyCo>
           <SelectCo
-            toplabel="Provincia/Estado"
+            label="Provincia/Estado"
             value={state.value5}
             onChange={(e) => handleChange(e, "value5")}
           >
@@ -140,20 +149,22 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Por defecto
           </TypographyCo>
-          <SelectCo toplabel="Label" value={state.valueEmpty}>
+          <SelectCo label="Label" value={state.valueEmpty}>
             {Placeholder}
           </SelectCo>
         </Grid>
 
-        {/* Activo */}
+        {/* Con Error */}
         <Grid item xs={3}>
           <TypographyCo variant="h4" style={selectSubtitle}>
-            Activo
+            Con Error
           </TypographyCo>
           <SelectCo
-            toplabel="Pasaporte a utilizar"
+            label="Pasaporte a utilizar"
             value={state.value7}
+            error
             onChange={(e) => handleChange(e, "value7")}
+            inputProps={{ readOnly: true }}
           >
             {Placeholder}
             <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
@@ -170,7 +181,7 @@ function SelectSection() {
             Con Selección
           </TypographyCo>
           <SelectCo
-            toplabel="Provincia/Estado"
+            label="Provincia/Estado"
             value={state.value8}
             onChange={(e) => handleChange(e, "value8")}
           >
@@ -185,7 +196,7 @@ function SelectSection() {
             Inhabilitado
           </TypographyCo>
           <SelectCo
-            toplabel="Pasaporte a utilizar"
+            label="Pasaporte a utilizar"
             labelId="select9-label"
             value={state.valueEmpty}
             disabled

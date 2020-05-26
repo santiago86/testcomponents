@@ -1,10 +1,13 @@
 import React from "react"
 import Divider from "@material-ui/core/Divider"
 import { makeStyles } from "@material-ui/core/styles"
+import theme from "../../theme"
 // We can inject some CSS into the DOM.
 const useStyles = makeStyles({
   root: {
-    margin: "0 1.0rem",
+    marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(2),
+    color: theme.palette.divider,
   },
 })
 

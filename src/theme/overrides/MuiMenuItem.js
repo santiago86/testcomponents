@@ -1,10 +1,15 @@
+import palette from "../palette"
+
 export default {
   root: {
     "&$selected": {
-      backgroundColor: "#E0EBF2",
+      backgroundColor: palette.selection,
+    },
+    "&$selected&:hover": {
+      backgroundColor: palette.selection,
     },
     "&:hover": {
-      backgroundColor: "#E0EBF2",
+      backgroundColor: palette.selection,
     },
   },
 }
