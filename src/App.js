@@ -6,12 +6,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel"
 import Switch from "@material-ui/core/Switch"
 import Select from "@material-ui/core/Select"
 import MenuItem from "@material-ui/core/MenuItem"
-import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 
 import InputCo from "./components/inputCo"
 import ButtonCo from "./components/buttonCo"
 import SelectCo from "./components/selectCo"
+import TypographyCo from "./components/typographyCo"
 
 const BUTTONS = [
   {
@@ -58,15 +58,15 @@ function App() {
     <div className="App">
       <Container max-width="lg">
         <header className="App-header">
-          <Typography component="span" variant="overline">
+          <TypographyCo component="span" variant="overline">
             Vuelo de ida
-          </Typography>
-          <Typography variant="h1" component="h1" color="primary">
+          </TypographyCo>
+          <TypographyCo variant="h1" component="h1" color="primary">
             Hacia Buenos Aires
-          </Typography>
-          <Typography variant="body2" component="span" color="primary">
+          </TypographyCo>
+          <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
-          </Typography>
+          </TypographyCo>
           <InputCo />
           <h2>Button </h2>
           <Container
