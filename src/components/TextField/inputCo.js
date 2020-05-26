@@ -104,9 +104,9 @@ InputCo.propTypes = {
 }
 
 InputCo.defaultProps = {
-  label: "label",
-  value: "value",
-  helperText: "text",
+  label: "",
+  value: "",
+  helperText: "",
   hasErrors: false,
   component: null,
 }
