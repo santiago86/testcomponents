@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "0.75rem",
     marginTop: "0px",
     marginLeft: "10px",
+    display: "flex",
+    alignItems: "center",
   },
 }))
 
@@ -37,6 +39,7 @@ const InputCo = ({
   setValue,
   helperText,
   hasErrors,
+  component,
   ...props
 }) => {
   const classes = useStyles()
@@ -50,10 +53,10 @@ const InputCo = ({
   const handelBlur = () => {
     if (!value) {
       setPlaceholder(placeholder)
+    }
+    if (hasErrors) {
+      setError(helperText)
     } else {
-      if (hasErrors) {
-        setError(helperText)
-      }
       setError("")
     }
   }
@@ -81,7 +84,8 @@ const InputCo = ({
       />
       {helperText && (
         <FormHelperText className={classes.helperText} error={errors !== ""}>
-          {(helperText && !hasErrors) || errors}
+          <div>{errors && component}</div>
+          <div>{(helperText && !hasErrors) || errors}</div>
         </FormHelperText>
       )}
     </div>
@@ -96,6 +100,7 @@ InputCo.propTypes = {
   setValue: PropTypes.func.isRequired,
   helperText: PropTypes.string,
   hasErrors: PropTypes.bool,
+  component: PropTypes.element,
 }
 
 InputCo.defaultProps = {
@@ -103,6 +108,7 @@ InputCo.defaultProps = {
   value: "value",
   helperText: "text",
   hasErrors: false,
+  component: null,
 }
 
 export default InputCo

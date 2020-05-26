@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography"
 import InputAdornment from "@material-ui/core/InputAdornment"
 import SearchIcon from "@material-ui/icons/Search"
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined"
+import InfoIcon from "@material-ui/icons/Info"
 import CheckIcon from "@material-ui/icons/Check"
 import PhoneIcon from "@material-ui/icons/Phone"
 import InputCo from "./inputCo"
@@ -39,6 +40,10 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "600",
     marginTop: "10px",
     marginBottom: "30px",
+  },
+  warningInfo: {
+    width: "18px",
+    marginRight: "5px",
   },
 }))
 
@@ -224,6 +229,7 @@ const Form = () => {
             }
             hasErrors={!country.validCountry}
             helperText={!country.validCountry && country.error}
+            component={<InfoIcon className={classes.warningInfo} />}
           />
         </div>
       </div>
