@@ -57,7 +57,7 @@ function SelectCo(props) {
       {label !== "" && <InputLabelCo>{label}</InputLabelCo>}
       <StyledSelect
         color={color}
-        starticon={starticon}
+        starticon={starticon.toString()}
         {...currentProps}
         label={undefined}
       >
