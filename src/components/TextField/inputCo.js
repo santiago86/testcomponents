@@ -84,8 +84,8 @@ const InputCo = ({
       />
       {helperText && (
         <FormHelperText className={classes.helperText} error={errors !== ""}>
-          <div>{errors && component}</div>
-          <div>{(helperText && !hasErrors) || errors}</div>
+          <span>{errors && component}</span>
+          <span>{(helperText && !hasErrors) || errors}</span>
         </FormHelperText>
       )}
     </div>
