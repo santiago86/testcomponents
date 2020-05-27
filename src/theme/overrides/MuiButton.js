@@ -1,5 +1,55 @@
 import palette from "../palette"
 
+const containedPrimary = {
+  color: palette.common.white,
+  backgroundColor: palette.primary.main,
+  boxShadow: "none",
+  "&:hover": {
+    background: `
+      linear-gradient(
+        to right,
+        ${palette.primary.dark} 0%,
+        ${palette.primary.main} 100%
+      )
+    `,
+    boxShadow: "none",
+  },
+  "&:active": {
+    background: `
+      linear-gradient(
+        to right,
+        ${palette.secondary.dark} 0%,
+        ${palette.primary.main} 100%
+      )
+    `,
+    boxShadow: "none",
+  },
+  "&:disabled": {
+    color: palette.common.white,
+    backgroundColor: palette.text.disabled,
+  },
+}
+
+const outlinedPrimary = {
+  borderColor: palette.primary.main,
+  border: 1,
+  borderStyle: "solid",
+  color: palette.primary.main,
+  "&:hover": {
+    color: palette.common.white,
+    backgroundColor: palette.primary.main,
+  },
+  "&:active": {
+    color: palette.common.white,
+    backgroundColor: palette.primary.main,
+  },
+  "&:disabled": {
+    bordercolor: palette.grey[400],
+    backgroundColor: palette.grey[100],
+    color: palette.grey[400],
+  },
+}
+
 export default {
   root: {
     transition:
@@ -19,84 +69,61 @@ export default {
     padding: "12px 24px",
   },
   contained: {
-    // gray variant
-    "&:hover": {
-      backgroundColor: palette.white,
-      color: palette.primary.main,
-    },
-    "&:disabled": {
-      backgroundColor: palette.grey["200"],
-      color: palette.primary.contrastText,
-    },
+    ...containedPrimary,
   },
-  containedPrimary: {
-    backgroundColor: palette.primary.main,
-    "&:hover": {
-      background: palette.gradients.gradient3,
-      color: palette.white,
-    },
-    "&:active": {
-      background: palette.gradients.gradient4,
-    },
-  },
+  containedPrimary,
   containedSecondary: {
     backgroundColor: palette.secondary.dark,
     "&:hover": {
-      background: palette.gradients.gradientDark,
-      color: palette.white,
+      background: `
+        linear-gradient(
+          to right,
+          ${palette.secondary.main} 0%,
+          ${palette.secondary.dark} 100%
+        )
+      `,
     },
     "&:active": {
-      background: palette.gradients.gradient2,
+      background: `
+        linear-gradient(
+          to right,
+          ${palette.primary.main} 0%,
+          ${palette.secondary.dark} 100%
+        )
+      `,
+    },
+    "&:disabled": {
+      color: palette.common.white,
+      backgroundColor: palette.grey[200],
     },
   },
   outlined: {
-    padding: "8px 20px",
-    backgroundColor: "transparent",
-    border: "solid 1px",
-    borderColor: palette.white,
-    color: palette.white,
-    "&:hover": {
-      backgroundColor: palette.white,
-      color: palette.primary.main,
-    },
-    "&:disabled": {
-      backgroundColor: "transparent",
-      border: "solid 1px",
-      borderColor: palette.white,
-      color: palette.white,
-      opacity: 0.5,
-    },
+    ...outlinedPrimary,
   },
-  outlinedPrimary: {
-    borderColor: palette.primary.main,
-    color: palette.primary.main,
-    "&:hover": {
-      backgroundColor: palette.primary.main,
-      color: palette.primary.contrastText,
-      borderColor: palette.primary.main,
-    },
-    "&:disabled": {
-      opacity: 1,
-      backgroundColor: palette.grey["100"],
-      border: "solid 1px",
-      borderColor: palette.grey["300"],
-      color: palette.grey["400"],
-    },
-  },
+  outlinedPrimary,
   outlinedSecondary: {
     borderColor: palette.secondary.dark,
+    border: 1,
+    borderStyle: "solid",
     color: palette.secondary.dark,
     "&:hover": {
+      color: palette.common.white,
       backgroundColor: palette.secondary.dark,
-      color: palette.primary.contrastText,
-      borderColor: palette.secondary.dark,
+    },
+    "&:active": {
+      color: palette.common.white,
+      backgroundColor: palette.secondary.dark,
     },
     "&:disabled": {
-      opacity: 1,
-      backgroundColor: palette.grey["100"],
-      border: "solid 1px",
-      borderColor: palette.grey["300"],
-      color: palette.grey["400"],
+      bordercolor: palette.grey[400],
+      backgroundColor: palette.grey[100],
+      color: palette.grey[400],
     },
+  },
+  startIcon: {
+    marginRight: 4,
+  },
+  endIcon: {
+    marginLeft: 4,
   },
 }
