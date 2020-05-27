@@ -1,7 +1,7 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 
-import InputCo from "./components/inputCo"
+import Form from "./components/TextField/Form"
 import SelectSection from "./section/SelectSection"
 import TypographyCo from "./components/typographyCo"
 
@@ -21,7 +21,8 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
-          <InputCo />
+          <h2>Input</h2>
+          <Form />
           <h2>Button </h2>
           <ButtonSection />
           <h2> Select </h2>
