@@ -62,7 +62,7 @@ function SelectCo(props) {
   const placeholderCo = getPlaceholder(placeholder)
   return (
     <div>
-      {label !== "" && <InputLabelCo>{label}</InputLabelCo>}
+      {label && <InputLabelCo>{label}</InputLabelCo>}
       <StyledSelect
         color={color}
         starticon={starticon.toString()}
