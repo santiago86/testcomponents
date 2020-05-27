@@ -25,10 +25,10 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: "flex",
+    marginLeft: "5%",
   },
   column: {
-    width: "40%",
-    marginLeft: "5%",
+    width: "30%",
   },
   fixMargin: {
     marginTop: "30px",
@@ -155,8 +155,6 @@ const Form = () => {
             }}
           />
         </div>
-      </div>
-      <div className={classes.container}>
         <div className={classes.column}>
           <Typography className={classes.inputWithoutLabel}>
             sin label
@@ -188,6 +186,8 @@ const Form = () => {
             }}
           />
         </div>
+      </div>
+      <div className={classes.container}>
         <div className={classes.column}>
           <Typography className={classes.inputTitle}>Inhabilitado</Typography>
           <InputCo
@@ -208,8 +208,6 @@ const Form = () => {
             disabled
           />
         </div>
-      </div>
-      <div className={classes.container}>
         <div className={classes.column}>
           <Typography className={classes.inputTitle}>validaciones</Typography>
           <InputCo
@@ -233,6 +231,7 @@ const Form = () => {
           />
         </div>
       </div>
+      <div className={classes.container} />
     </div>
   )
 }

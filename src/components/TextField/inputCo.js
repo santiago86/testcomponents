@@ -85,7 +85,7 @@ const InputCo = ({
       {helperText && (
         <FormHelperText className={classes.helperText} error={errors !== ""}>
           <span>{errors && component}</span>
-          <span>{(helperText && !hasErrors) || errors}</span>
+          <span>{(!hasErrors && helperText) || errors}</span>
         </FormHelperText>
       )}
     </div>
@@ -104,9 +104,9 @@ InputCo.propTypes = {
 }
 
 InputCo.defaultProps = {
-  label: "label",
-  value: "value",
-  helperText: "text",
+  label: "",
+  value: "",
+  helperText: "",
   hasErrors: false,
   component: null,
 }
