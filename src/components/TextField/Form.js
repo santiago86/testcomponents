@@ -7,6 +7,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined"
 import InfoIcon from "@material-ui/icons/Info"
 import CheckIcon from "@material-ui/icons/Check"
 import PhoneIcon from "@material-ui/icons/Phone"
+import Autocomplete from "@material-ui/lab/Autocomplete"
 import InputCo from "./inputCo"
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   inputTitle: {
     fontSize: "12px",
     textTransform: "uppercase",
-    color: "#666666",
+    color: theme.palette.grey[600],
     fontWeight: "600",
     marginTop: "10px",
   },
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   inputWithoutLabel: {
     fontSize: "12px",
     textTransform: "uppercase",
-    color: "#666666",
+    color: theme.palette.grey[600],
     fontWeight: "600",
     marginTop: "10px",
     marginBottom: "30px",
@@ -59,6 +60,7 @@ const Form = () => {
     six: "",
     seven: "",
     eight: "Panamá",
+    nine: "",
   })
   const [country, setCountry] = useState({
     name: "",
@@ -228,6 +230,23 @@ const Form = () => {
             hasErrors={!country.validCountry}
             helperText={!country.validCountry && country.error}
             component={<InfoIcon className={classes.warningInfo} />}
+          />
+          <Typography className={classes.inputTitle}>autocomplete</Typography>
+          <Autocomplete
+            id="combo-box-demo"
+            options={countries}
+            getOptionLabel={(c) => c.label}
+            style={{ width: "100%" }}
+            renderInput={(params) => (
+              <InputCo
+                {...params}
+                placeholder="Ingrese el País"
+                setValue={handleChange("nine")}
+                id="country-input"
+                label="País"
+                variant="outlined"
+              />
+            )}
           />
         </div>
       </div>

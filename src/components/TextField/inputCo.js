@@ -5,15 +5,17 @@ import TextField from "@material-ui/core/TextField"
 import InputLabel from "@material-ui/core/InputLabel"
 import FormHelperText from "@material-ui/core/FormHelperText"
 
-const useStyles = makeStyles((theme) => ({
+import theme from "../../theme/index"
+
+const useStyles = makeStyles(() => ({
   root: {
     "& > *": {
       margin: theme.spacing(1),
       width: "90%",
     },
     "& .Mui-disabled": {
-      backgroundColor: "#EFEFEE",
-      color: "#333333",
+      backgroundColor: theme.palette.grey[100],
+      color: theme.palette.grey[600],
     },
     "& .MuiOutlinedInput-input": {
       fontSize: "1rem",
