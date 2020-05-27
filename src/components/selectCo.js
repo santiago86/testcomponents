@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Select from "@material-ui/core/Select"
 import InputLabel from "@material-ui/core/InputLabel"
 import { withStyles } from "@material-ui/core/styles"
-import MenuItemCo from "./secondaryComponents/menuItemCo"
+import MenuItemCo from "./menuItemCo"
 import theme from "../theme"
 
 const styledBy = (property, mapping) => (props) => mapping[props[property]]
