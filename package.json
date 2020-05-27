@@ -24,8 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . && flow",
-    "flow": "flow",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "flow": "flow"
   },
   "eslintConfig": {
     "extends": "react-app"
