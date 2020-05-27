@@ -4,12 +4,13 @@ import Container from "@material-ui/core/Container"
 import Form from "./components/TextField/Form"
 import SelectCo from "./components/selectCo"
 import TypographyCo from "./components/typographyCo"
-
 import ButtonSection from "./section/ButtonSection"
+import PassengerForm from "./section/PassengerForm"
 
 function App() {
   return (
     <div className="App">
+      <PassengerForm />
       <Container max-width="lg">
         <header className="App-header">
           <TypographyCo component="span" variant="overline">
