@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import Select from "@material-ui/core/Select"
 import { withStyles } from "@material-ui/core/styles"
 import InputLabelCo from "./secondaryComponents/inputLabelCo"
+import MenuItemCo from "./secondaryComponents/menuItemCo"
 import theme from "../theme"
 
 const styledBy = (property, mapping) => (props) => mapping[props[property]]
@@ -47,11 +48,18 @@ const StyledSelect = withStyles(styles)(({ classes, color, ...other }) => (
   <Select classes={{ root: classes.root, select: classes.select }} {...other} />
 ))
 
+const getPlaceholder = (placeholder) => (
+  <MenuItemCo style={{ display: "none" }} value="" disabled>
+    {placeholder}
+  </MenuItemCo>
+)
+
 function SelectCo(props) {
-  const { children, label, value, startAdornment } = props
+  const { children, label, value, startAdornment, placeholder } = props
   const color = value === "" ? "empty" : "primary"
   const currentProps = { ...defaultProps, ...props }
   const starticon = startAdornment !== undefined
+  const placeholderCo = getPlaceholder(placeholder)
   return (
     <div>
       {label !== "" && <InputLabelCo>{label}</InputLabelCo>}
@@ -61,6 +69,7 @@ function SelectCo(props) {
         {...currentProps}
         label={undefined}
       >
+        {placeholderCo}
         {children}
       </StyledSelect>
     </div>
@@ -68,15 +77,18 @@ function SelectCo(props) {
 }
 
 SelectCo.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   label: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  placeholder: PropTypes.string,
   startAdornment: PropTypes.node,
 }
 
 SelectCo.defaultProps = {
   label: "",
   startAdornment: undefined,
+  placeholder: "",
+  children: undefined,
 }
 
 export default SelectCo
