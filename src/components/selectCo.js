@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Select from "@material-ui/core/Select"
-import InputLabel from "@material-ui/core/InputLabel"
+import Box from "@material-ui/core/Box"
 import { withStyles } from "@material-ui/core/styles"
 import MenuItemCo from "./menuItemCo"
 import theme from "../theme"
@@ -66,7 +66,7 @@ function SelectCo(props) {
   const placeholderCo = getPlaceholder(placeholder)
   return (
     <div>
-      {label && <InputLabel>{label}</InputLabel>}
+      {label && <Box variant="body2">{label}</Box>}
       <StyledSelect
         color={color}
         starticon={starticon.toString()}
