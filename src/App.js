@@ -6,6 +6,7 @@ import SelectCo from "./components/selectCo"
 import TypographyCo from "./components/typographyCo"
 
 import ButtonSection from "./section/ButtonSection"
+import SliderSection from "./section/SliderSection"
 
 function App() {
   return (
@@ -26,6 +27,8 @@ function App() {
           <ButtonSection />
           <h2> Select </h2>
           <SelectCo />
+          <h2> Slider </h2>
+          <SliderSection />
         </header>
       </Container>
     </div>

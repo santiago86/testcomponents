@@ -58,6 +58,7 @@ export default {
     "800": "#121212",
   },
   transparent: {
+    tooltip: "rgba(18,18,18,0.6)",
     text: "rgba(255, 255, 255, 0.5)",
     bg: "rgba(255, 255, 255, 0.3)",
     shadow: "rgba(0,0,0,0.15)",
