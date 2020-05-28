@@ -5,6 +5,6 @@ export default {
     "&:focus": {
       backgroundColor: palette.white,
     },
-    minWidth: "100%",
+    minWidth: "inherit",
   },
 }

@@ -5,6 +5,7 @@ import InputLabel from "@material-ui/core/InputLabel"
 import { withStyles } from "@material-ui/core/styles"
 import MenuItemCo from "./menuItemCo"
 import theme from "../theme"
+import { ReactComponent as down } from "../assets/icons/down.svg"
 
 const styledBy = (property, mapping) => (props) => mapping[props[property]]
 
@@ -21,6 +22,9 @@ const styles = {
     paddingLeft: styledBy("starticon", {
       true: theme.spacing(6.2),
     }),
+  },
+  outlined: {
+    borderColor: "red",
   },
 }
 
@@ -68,6 +72,7 @@ function SelectCo(props) {
         starticon={starticon.toString()}
         {...currentProps}
         label={undefined}
+        IconComponent={down}
       >
         {placeholderCo}
         {children}

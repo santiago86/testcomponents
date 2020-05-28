@@ -90,7 +90,7 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Sin Label
           </TypographyCo>
-          <Box mt={5.8}>
+          <Box mt={4}>
             <SelectCo
               value={state.valueEmpty}
               inputProps={{ readOnly: true }}
