@@ -8,6 +8,7 @@ import SelectDividerCo from "../components/selectDividerCo"
 import SelectCo from "../components/selectCo"
 import states from "../assets/states"
 import theme from "../theme"
+import SelectCoC from "../components/custom/selectCoC"
 
 const selectSubtitle = {
   textTransform: "uppercase",
@@ -20,6 +21,14 @@ const MappedStates = () => {
     </MenuItemCo>,
     <SelectDividerCo />,
   ])
+}
+
+const MappedStatesOption = () => {
+  return states.map((state) => (
+    <option key={state} value={state}>
+      {state}
+    </option>
+  ))
 }
 
 function SelectSection() {
@@ -124,14 +133,17 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Lista de opción larga
           </TypographyCo>
-          <SelectCo
+          {/* <SelectCo
             label="Provincia/Estado"
             placeholder="Selecciona..."
             value={state.value5}
             onChange={(e) => handleChange(e, "value5")}
           >
             {MappedStates()}
-          </SelectCo>
+          </SelectCo> */}
+          <SelectCoC label="Provincia/Estado" placeholder="Selecciona...">
+            {MappedStatesOption()}
+          </SelectCoC>
         </Grid>
       </Grid>
 
