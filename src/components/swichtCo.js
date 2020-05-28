@@ -1,43 +1,117 @@
 import React from "react"
 import Switch from "@material-ui/core/Switch"
+import { withStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
-/* import FormControlLabel from "@material-ui/core/FormControlLabel"
- */
-/**
- *
- */
+import palette from "../theme/palette"
 
-const SwitchCo = ({ isDisable, name, color }) => {
-  const [state, setState] = React.useState({
-    checked: false,
-  })
-  const handleChange = (event) => {
-    setState({ ...state, checked: event.target.checked })
-  }
+const transparentColors = {
+  primary: "#0c60a9",
+  default: "#ffffff",
+}
 
+const SwichtCo = withStyles((theme) => ({
+  "@keyframes ripplesLoop": {
+    from: {
+      boxShadow: `0px 0px 0px 0.3rem ${
+        transparentColors.primary || transparentColors.default
+      }5D`,
+    },
+    to: {
+      boxShadow: `0px 0px 0px 0.6rem ${
+        transparentColors.primary || transparentColors.default
+      }00`,
+    },
+  },
+  root: {
+    width: 50,
+    height: 26,
+    padding: 0,
+    margin: theme.spacing(1),
+    overflow: "initial",
+  },
+  switchBase: {
+    padding: 1,
+    "&$disabled": {
+      boxShadow: "10px 10px 10px 10px #000",
+    },
+    "&$checked": {
+      transform: "translateX(24px)",
+      color: palette.white,
+      "& + $track": {
+        backgroundColor: palette.primary.main,
+        opacity: 1,
+        border: "none",
+      },
+    },
+    "&$focusVisible $thumb": {
+      color: palette.white,
+      border: "1px solid #fff",
+    },
+    "&$disabled + $track": {
+      opacity: 0,
+    },
+  },
+  thumb: {
+    width: 24,
+    height: 24,
+  },
+  track: {
+    borderRadius: 26 / 2,
+    border: `1px solid ${palette.grey[200]}`,
+    backgroundColor: palette.grey[200],
+    opacity: 1,
+    transition: theme.transitions.create(["background-color", "border"]),
+  },
+  disabled: {},
+  checked: {},
+  focusVisible: {
+    "&:before": {
+      content: '""',
+      position: "absolute",
+      bottom: 0,
+      left: 0,
+      width: 24,
+      height: 24,
+      display: "block",
+      animation: "$ripplesLoop 1.5s linear infinite",
+      borderRadius: 50,
+      zIndex: 1,
+    },
+  },
+}))(({ classes, name, checked, handleChange, disabled, label }) => {
   return (
-    <div>
-      <Switch
-        checked={state.checked}
-        onChange={handleChange}
-        disabled={isDisable}
-        color={color}
-        name={name}
-        inputProps={{ "aria-label": `primary ${name}` }}
-      />
-    </div>
+    <Switch
+      focusVisibleClassName={classes.focusVisible}
+      name={name}
+      onChange={handleChange}
+      checked={checked}
+      disabled={disabled}
+      inputProps={{ "aria-label": `${label}` }}
+      disableRipple
+      classes={{
+        root: classes.root,
+        switchBase: classes.switchBase,
+        thumb: classes.thumb,
+        track: classes.track,
+        checked: classes.checked,
+      }}
+    />
   )
-}
+})
 
-SwitchCo.propTypes = {
-  isDisable: PropTypes.bool,
+SwichtCo.propTypes = {
   name: PropTypes.string,
-  color: PropTypes.string,
+  label: PropTypes.string,
+  checked: PropTypes.bool,
+  handleChange: PropTypes.func,
+  disabled: PropTypes.bool,
 }
 
-SwitchCo.defaultProps = {
-  isDisable: false,
-  name: "Swicht",
+SwichtCo.defaultProps = {
+  disabled: false,
+  name: "swicht",
+  label: "swicht",
   color: "primary",
 }
-export default SwitchCo
+
+export default SwichtCo

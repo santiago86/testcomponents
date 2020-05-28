@@ -6,6 +6,7 @@ import SelectCo from "./components/selectCo"
 import TypographyCo from "./components/typographyCo"
 
 import ButtonSection from "./section/ButtonSection"
+import SwichtSection from "./section/SwichtSection"
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <ButtonSection />
           <h2> Select </h2>
           <SelectCo />
+          <h2> Swicht </h2>
+          <SwichtSection />
         </header>
       </Container>
     </div>
