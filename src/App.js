@@ -5,6 +5,7 @@ import Form from "./components/TextField/Form"
 import SelectCo from "./components/selectCo"
 import TypographyCo from "./components/typographyCo"
 
+import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
           <ButtonSection />
           <h2> Select </h2>
           <SelectCo />
+          <h2> Stepper </h2>
+          <StepperSection />
         </header>
       </Container>
     </div>
