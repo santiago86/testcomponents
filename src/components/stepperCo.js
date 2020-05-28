@@ -66,6 +66,7 @@ const useStyles = makeStyles(() => ({
 }))
 
 const StepperCo = ({
+  id,
   label,
   initialValue,
   maxValue,
@@ -90,16 +91,22 @@ const StepperCo = ({
 
   return (
     <div {...props}>
-      {label && <InputLabel className={classes.label}>{label}</InputLabel>}
+      {label && (
+        <InputLabel htmlFor={id} className={classes.label}>
+          {label}
+        </InputLabel>
+      )}
       <Grid container alignItems="center" style={{ marginBottom: "2em" }}>
         <Button
           className={clsx(maxHasError && "error", classes.button)}
           onClick={decrementStep}
           disabled={disabled || step <= minValue}
+          aria-label="decrement"
         >
           <Minus className={classes.icon} />
         </Button>
         <TypographyCo
+          id={id}
           className={clsx(
             (minHasError || maxHasError) && "error",
             classes.step,
@@ -112,6 +119,7 @@ const StepperCo = ({
           className={clsx(minHasError && "error", classes.button)}
           onClick={incrementStep}
           disabled={disabled || step >= maxValue}
+          aria-label="increment"
         >
           <Plus className={classes.icon} />
         </Button>
@@ -121,6 +129,7 @@ const StepperCo = ({
 }
 
 StepperCo.propTypes = {
+  id: PropTypes.string.isRequired,
   label: PropTypes.string,
   initialValue: PropTypes.number,
   maxValue: PropTypes.number,

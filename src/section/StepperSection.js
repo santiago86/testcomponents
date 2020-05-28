@@ -5,50 +5,52 @@ import StepperCo from "../components/stepperCo"
 
 const STEPPERS = [
   {
-    id: 1,
+    id: "stepper-1",
     label: "VALOR MÍNIMO",
     initialValue: 0,
     maxValue: 5,
     minValue: 0,
   },
   {
-    id: 2,
+    id: "stepper-2",
     label: "VALOR INTERMEDIO",
     initialValue: 3,
     maxValue: 5,
     minValue: 0,
   },
   {
-    id: 3,
+    id: "stepper-3",
     label: "VALOR MÁXIMO",
     initialValue: 5,
     maxValue: 5,
     minValue: 0,
   },
   {
-    id: 4,
+    id: "stepper-4",
     label: "ESTADO DE ERROR",
     initialValue: 5,
     maxValue: 3,
     minValue: 0,
   },
   {
-    id: 5,
+    id: "stepper-5",
     label: "INHABILITADO",
     disabled: true,
   },
 ]
 
-const ButtonSection = () => (
+const StepperSection = () => (
   <>
     <Grid container alignItems="center" justify="space-around">
       {STEPPERS.map(({ id, ...props }) => (
         <div key={id}>
-          <StepperCo {...props}>Label</StepperCo>
+          <StepperCo id={id} {...props}>
+            Label
+          </StepperCo>
         </div>
       ))}
     </Grid>
   </>
 )
 
-export default ButtonSection
+export default StepperSection
