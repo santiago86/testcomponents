@@ -5,13 +5,15 @@ export default {
     position: "relative",
     marginTop: "8px",
     marginBottom: "8px",
+    outline: "none",
+    outlineColor: "transparent",
     "& $notchedOutline": {
       borderColor: palette.grey["300"],
     },
     "&:hover:not($disabled):not($focused):not($error) $notchedOutline": {
       borderColor: palette.primary.main,
     },
-    "&$focused": {
+    "&$focused $notchedOutline": {
       borderColor: palette.primary.main,
       borderWidth: 1,
     },
