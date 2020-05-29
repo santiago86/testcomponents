@@ -13,6 +13,7 @@ const styles = {
   root: {
     color: styledBy("color", {
       empty: theme.palette.grey["600"],
+      primary: theme.typography.body1.color,
     }),
   },
   select: {
@@ -23,10 +24,9 @@ const styles = {
       true: theme.spacing(6.2),
     }),
   },
-  outlined: {
-    borderColor: "red",
-  },
 }
+
+styles.rootSet = theme.typography.body1.color
 
 const defaultProps = {
   fullWidth: true,
@@ -48,10 +48,10 @@ const defaultProps = {
   },
 }
 
-const StyledSelect = withStyles(styles)(({ classes, color, ...other }) => (
-  <Select classes={{ root: classes.root, select: classes.select }} {...other} />
-))
-
+const StyledSelect = withStyles(styles)(({ classes, color, ...other }) => {
+  const root = color === "primary" ? classes.rootSet : classes.root
+  return <Select classes={{ root, select: classes.select }} {...other} />
+})
 const getPlaceholder = (placeholder) => (
   <MenuItemCo style={{ display: "none" }} value="" disabled>
     {placeholder}
@@ -59,8 +59,21 @@ const getPlaceholder = (placeholder) => (
 )
 
 function SelectCo(props) {
-  const { children, label, value, startAdornment, placeholder } = props
-  const color = value === "" ? "empty" : "primary"
+  const {
+    children,
+    label,
+    value,
+    startAdornment,
+    placeholder,
+    onChange,
+  } = props
+
+  const [color, setColor] = React.useState(value === "" ? "empty" : "primary")
+
+  const handleChange = (e) => {
+    setColor(e.target.value === "" ? "empty" : "primary")
+    onChange(e)
+  }
   const currentProps = { ...defaultProps, ...props }
   const starticon = startAdornment !== undefined
   const placeholderCo = getPlaceholder(placeholder)
@@ -73,6 +86,7 @@ function SelectCo(props) {
         {...currentProps}
         label={undefined}
         IconComponent={down}
+        onChange={(e) => handleChange(e)}
       >
         {placeholderCo}
         {children}
@@ -87,6 +101,7 @@ SelectCo.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   placeholder: PropTypes.string,
   startAdornment: PropTypes.node,
+  onChange: PropTypes.func,
 }
 
 SelectCo.defaultProps = {
@@ -94,6 +109,7 @@ SelectCo.defaultProps = {
   startAdornment: undefined,
   placeholder: "",
   children: undefined,
+  onChange: () => {},
 }
 
 export default SelectCo

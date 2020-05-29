@@ -65,7 +65,7 @@ function SelectSection() {
             label="Label"
             value={state.value2}
             placeholder="Selecciona..."
-            onChange={(e) => handleChange(e, "value2")}
+            onSelect={(e) => handleChange(e, "value2")}
             startAdornment={
               <LanguageIcon
                 style={{
@@ -102,7 +102,7 @@ function SelectSection() {
             label="Pasaporte a utilizar"
             placeholder="Selecciona..."
             value={state.value4}
-            onChange={(e) => handleChange(e, "value4")}
+            onSelect={(e) => handleChange(e, "value4")}
           >
             <OptionCoC value="A">VEN - 0212877948</OptionCoC>
             <OptionCoC value="B">PAN - PA08994100</OptionCoC>
@@ -115,17 +115,10 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Lista de opción larga
           </TypographyCo>
-          {/* <SelectCoC
-            label="Provincia/Estado"
-            placeholder="Selecciona..."
-            value={state.value5}
-            onChange={(e) => handleChange(e, "value5")}
-          >
-            {MappedStatesOption()}
-          </SelectCoC> */}
           <SelectCoC
             label="Provincia/Estado"
             placeholder="Selecciona..."
+            value={state.value5}
             onSelect={(e) => handleChange(e, "value5")}
           >
             {MappedStatesOption()}
@@ -159,7 +152,7 @@ function SelectSection() {
             label="Pasaporte a utilizar"
             value={state.value7}
             placeholder="Selecciona..."
-            onChange={(e) => handleChange(e, "value7")}
+            onSelect={(e) => handleChange(e, "value7")}
           >
             <OptionCoC value="A">VEN - 0212877948</OptionCoC>
             <OptionCoC value="B">PAN - PA08994100</OptionCoC>
@@ -176,7 +169,7 @@ function SelectSection() {
             label="Provincia/Estado"
             value={state.value8}
             placeholder="Selecciona..."
-            onChange={(e) => handleChange(e, "value8")}
+            onSelect={(e) => handleChange(e, "value8")}
           >
             {MappedStatesOption()}
           </SelectCoC>

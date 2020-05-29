@@ -13,20 +13,26 @@ const setPlaceholder = (text) => {
 }
 
 function SelectCoC(props) {
-  const [selected, setSelected] = React.useState("")
+  const {
+    children,
+    label,
+    placeholder,
+    onSelect,
+    disabled,
+    error,
+    value,
+  } = props
   const [showDropdown, setMenu] = React.useState(false)
-  const { children, label, placeholder, onSelect, disabled, error } = props
   const empty = setPlaceholder(placeholder)
   const style = styles({ error })
 
-  function deployDropdown(value) {
-    setMenu(value)
+  function deployDropdown(open) {
+    setMenu(open)
   }
-  function setValue(e, value) {
+  function setValue(e, selected) {
     e.stopPropagation()
-    setSelected(value)
     deployDropdown(false)
-    onSelect({ target: { value } })
+    onSelect({ target: { value: selected } })
   }
   function onBlur(e) {
     if (!e.currentTarget.parentNode.parentNode.contains(e.relatedTarget)) {
@@ -59,8 +65,8 @@ function SelectCoC(props) {
       <span style={theme.typography.body2}>{label}</span>
       <div className={style.component}>
         <select
-          value={selected}
-          className={style[selected === "" ? "selectDefault" : "select"]}
+          value={value}
+          className={style[value === "" ? "selectDefault" : "select"]}
           disabled={disabled}
           onChange={() => {}}
           onBlur={(e) => {
@@ -87,7 +93,7 @@ SelectCoC.propTypes = {
   label: PropTypes.string,
   onSelect: PropTypes.func,
   error: PropTypes.bool,
-  // value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   // startAdornment: PropTypes.node,

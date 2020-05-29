@@ -30,8 +30,8 @@ function App() {
           <ButtonSection />
           <h2> Select </h2>
           <Switch checked={check} onChange={() => setCheck(!check)} />
-          {check && <SelectSection />}
-          {!check && <SelectCSection />}
+          {!check && <SelectSection />}
+          {check && <SelectCSection />}
         </header>
       </Container>
     </div>
