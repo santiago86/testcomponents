@@ -10,7 +10,6 @@ import PassengerForm from "./section/PassengerForm"
 function App() {
   return (
     <div className="App">
-      <PassengerForm />
       <Container max-width="lg">
         <header className="App-header">
           <TypographyCo component="span" variant="overline">
@@ -29,6 +28,9 @@ function App() {
           <h2> Select </h2>
           <SelectCo />
         </header>
+
+        <h2> Page PassengerForm</h2>
+        <PassengerForm />
       </Container>
     </div>
   )

@@ -158,6 +158,7 @@ const PassengerForm = () => {
 
   return (
     <div className={classes.root}>
+      <Divider variant="fullWidth" />
       <Container maxWidth="lg" className={classes.containerBottom}>
         <TypographyCo
           component="h1"
