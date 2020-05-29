@@ -10,7 +10,7 @@ import TypographyCo from "./components/typographyCo"
 import ButtonSection from "./section/ButtonSection"
 
 function App() {
-  const [check, setCheck] = React.useState(false)
+  const [check, setCheck] = React.useState(true)
   return (
     <div className="App">
       <Container max-width="lg">

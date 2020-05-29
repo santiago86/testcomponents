@@ -66,17 +66,7 @@ function SelectSection() {
             value={state.value2}
             placeholder="Selecciona..."
             onSelect={(e) => handleChange(e, "value2")}
-            startAdornment={
-              <LanguageIcon
-                style={{
-                  pointerEvents: "none",
-                  marginRight: theme.spacing(2),
-                  color: theme.palette.grey["600"],
-                  background: "transparent",
-                  zIndex: 100,
-                }}
-              />
-            }
+            icon={<LanguageIcon />}
           >
             {MappedStatesOption()}
           </SelectCoC>
@@ -87,7 +77,7 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Sin Label
           </TypographyCo>
-          <Box mt={5.5}>
+          <Box mt={5.6}>
             <SelectCoC value={state.valueEmpty} placeholder="Selecciona..." />
           </Box>
         </Grid>

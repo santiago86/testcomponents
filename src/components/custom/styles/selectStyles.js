@@ -3,13 +3,15 @@ import theme from "../../../theme"
 import icon from "../../../assets/icons/down.svg"
 
 const generalStyle = {
-  // Settings for the Select input
+  // Settings for the general component envolving the select
   component: {
     marginTop: theme.spacing(),
     marginBottom: theme.spacing(),
     position: "relative",
     display: "block",
   },
+
+  // Settings for the custom select component
   select: {
     // Characteristics of the original Select material component
     borderRadius: theme.shape.borderRadius,
@@ -18,7 +20,8 @@ const generalStyle = {
     borderColor: (props) =>
       props.error ? theme.palette.error.main : theme.palette.grey["300"],
 
-    padding: "16px 14px",
+    padding: (props) =>
+      props.icon !== undefined ? "16px 14px 16px 50px" : "16px 14px",
     // Applying original typography options
     ...theme.typography.body1,
     overflow: "hidden",
@@ -29,15 +32,11 @@ const generalStyle = {
     backgroundColor: "transparent",
     "-webkit-appearance": "none",
     "-moz-appearance": "none",
-
     // Personalized characteristics
     width: "100%",
     height: theme.spacing(7),
 
     // Events setup
-    "&&": {
-      paddingRight: 32,
-    },
     cursor: "pointer",
     "&:hover": {
       borderColor: theme.palette.primary.main,
@@ -51,15 +50,26 @@ const generalStyle = {
       borderColor: theme.palette.error.main,
     },
     "&:disabled": {
-      bordercolor: theme.palette.grey[400],
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.grey[700],
-      pointer: "default",
+      borderColor: theme.palette.grey[400],
+      color: theme.palette.grey["500"],
+      backgroundColor: theme.palette.grey["100"],
+      cursor: "default",
       pointerEvents: "none",
+      opacity: 1,
     },
 
     // Dynamic response
     color: theme.typography.body1.color,
+  },
+  // Settings for the adorment
+  icon: {
+    position: "absolute",
+    bottom: theme.spacing(2),
+    left: theme.spacing(1.8),
+    pointerEvents: "none",
+    color: theme.palette.grey["600"],
+    background: "transparent",
+    zIndex: 100,
   },
 
   // Settings for the Dropdown paper
@@ -72,6 +82,7 @@ const generalStyle = {
     zIndex: "1",
     maxHeight: "200px",
     overflowY: "auto",
+    padding: "8px 0px",
     ...theme.typography.body1,
   },
 
@@ -81,7 +92,6 @@ const generalStyle = {
     display: "block",
     textAlign: "left",
     border: "transparent",
-    backgroundColor: "transparent",
     width: "100%",
     padding: "6px 16px",
     outline: "none",
@@ -91,6 +101,8 @@ const generalStyle = {
     "&:hover": {
       backgroundColor: theme.palette.selection,
     },
+    backgroundColor: (props) =>
+      props.selected ? theme.palette.selection : "transparent",
   },
 
   // Settings for the Dropdown dividers

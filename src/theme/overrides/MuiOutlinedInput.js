@@ -17,9 +17,5 @@ export default {
       borderColor: palette.primary.main,
       borderWidth: 1,
     },
-    "&$disabled": {
-      color: palette.grey["500"],
-      backgroundColor: palette.grey["100"],
-    },
   },
 }

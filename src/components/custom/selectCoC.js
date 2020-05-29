@@ -21,11 +21,15 @@ function SelectCoC(props) {
     disabled,
     error,
     value,
+    icon,
   } = props
   const [showDropdown, setMenu] = React.useState(false)
   const empty = setPlaceholder(placeholder)
-  const style = styles({ error })
-
+  const style = styles({ error, icon })
+  let Icon
+  if (icon) {
+    Icon = React.cloneElement(icon, { className: style.icon })
+  }
   function deployDropdown(open) {
     setMenu(open)
   }
@@ -49,7 +53,9 @@ function SelectCoC(props) {
     ? children.map((child) => [
         <button
           type="button"
-          className={style.dropdownContent}
+          className={
+            styles({ selected: value === child.props.value }).dropdownContent
+          }
           key={child.key}
           value={child.props.value}
           onClick={(e) => setValue(e, child.props.value)}
@@ -59,7 +65,6 @@ function SelectCoC(props) {
         <hr key="hr" className={style.dropdownDivider} />,
       ])
     : null
-
   return (
     <div>
       <span style={theme.typography.body2}>{label}</span>
@@ -82,6 +87,7 @@ function SelectCoC(props) {
           {empty}
           {children}
         </select>
+        {Icon}
         {showDropdown && <div className={style.dropdown}>{dropdownMenu}</div>}
       </div>
     </div>
@@ -96,12 +102,12 @@ SelectCoC.propTypes = {
   value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
-  // startAdornment: PropTypes.node,
+  icon: PropTypes.node,
 }
 
 SelectCoC.defaultProps = {
   label: "",
-  // startAdornment: undefined,
+  icon: undefined,
   placeholder: "",
   children: undefined,
   onSelect: () => {},
