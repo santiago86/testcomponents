@@ -10,24 +10,36 @@ import theme from "../../theme/index"
 const useStyles = makeStyles(() => ({
   root: {
     "& > *": {
-      margin: theme.spacing(1),
-      width: "90%",
+      width: "100%",
+    },
+    "& .MuiOutlinedInput-root": {
+      marginTop: "8px",
+      marginBottom: "8px",
     },
     "& .Mui-disabled": {
       backgroundColor: theme.palette.grey[100],
       color: theme.palette.grey[600],
     },
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: theme.palette.grey[300],
+    },
+    "& .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline": {
+      borderColor: theme.palette.grey[300],
+    },
+    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: theme.palette.primary.main,
+    },
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderWidth: "1px",
+    },
     "& .MuiOutlinedInput-input": {
       fontSize: "1rem",
     },
   },
-  label: {
-    fontSize: "0.875rem",
-  },
+  label: theme.typography.body2,
   helperText: {
     fontSize: "0.75rem",
     marginTop: "0px",
-    marginLeft: "10px",
     display: "flex",
     alignItems: "center",
   },
