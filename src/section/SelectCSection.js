@@ -3,31 +3,21 @@ import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import LanguageIcon from "@material-ui/icons/Language"
 import TypographyCo from "../components/typographyCo"
-import MenuItemCo from "../components/menuItemCo"
-import SelectDividerCo from "../components/selectDividerCo"
-import SelectCo from "../components/selectCo"
 import states from "../assets/states"
 import theme from "../theme"
 import SelectCoC from "../components/custom/selectCoC"
+import OptionCoC from "../components/custom/optionCoC"
 
 const selectSubtitle = {
   textTransform: "uppercase",
   marginBottom: theme.spacing(2),
 }
-const MappedStates = () => {
-  return states.map((state) => [
-    <MenuItemCo key={state} value={state}>
-      {state}
-    </MenuItemCo>,
-    <SelectDividerCo />,
-  ])
-}
 
 const MappedStatesOption = () => {
   return states.map((state) => (
-    <option key={state} value={state}>
+    <OptionCoC key={state} value={state}>
       {state}
-    </option>
+    </OptionCoC>
   ))
 }
 
@@ -48,7 +38,7 @@ function SelectSection() {
   return (
     <Box m={2}>
       <TypographyCo mt={3} variant="h1" component="h1" color="primary">
-        Campos de selección (MUI)
+        Campos de selección (Custom)
       </TypographyCo>
       <Box my={4}>
         <TypographyCo variant="h3">Variaciones de Contenido</TypographyCo>
@@ -59,12 +49,10 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Caja de selección básica
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Label"
             value={state.valueEmpty}
-            displayEmpty
             placeholder="Selecciona..."
-            inputProps={{ readOnly: true }}
           />
         </Grid>
 
@@ -73,7 +61,7 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Selección con Icono
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Label"
             value={state.value2}
             placeholder="Selecciona..."
@@ -90,8 +78,8 @@ function SelectSection() {
               />
             }
           >
-            {MappedStates()}
-          </SelectCo>
+            {MappedStatesOption()}
+          </SelectCoC>
         </Grid>
 
         {/* Sin Label */}
@@ -99,12 +87,8 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Sin Label
           </TypographyCo>
-          <Box mt={4}>
-            <SelectCo
-              value={state.valueEmpty}
-              inputProps={{ readOnly: true }}
-              placeholder="Selecciona..."
-            />
+          <Box mt={5.5}>
+            <SelectCoC value={state.valueEmpty} placeholder="Selecciona..." />
           </Box>
         </Grid>
         <Grid item xs={3} />
@@ -114,18 +98,16 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Lista de opción corta
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Pasaporte a utilizar"
             placeholder="Selecciona..."
             value={state.value4}
             onChange={(e) => handleChange(e, "value4")}
           >
-            <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="B">PAN - PA08994100</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="C">COL - 3592790723</MenuItemCo>
-          </SelectCo>
+            <OptionCoC value="A">VEN - 0212877948</OptionCoC>
+            <OptionCoC value="B">PAN - PA08994100</OptionCoC>
+            <OptionCoC value="C">COL - 3592790723</OptionCoC>
+          </SelectCoC>
         </Grid>
 
         {/* Lista de opciones larga */}
@@ -133,15 +115,19 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Lista de opción larga
           </TypographyCo>
-          {/* <SelectCo
+          {/* <SelectCoC
             label="Provincia/Estado"
             placeholder="Selecciona..."
             value={state.value5}
             onChange={(e) => handleChange(e, "value5")}
           >
-            {MappedStates()}
-          </SelectCo> */}
-          <SelectCoC label="Provincia/Estado" placeholder="Selecciona...">
+            {MappedStatesOption()}
+          </SelectCoC> */}
+          <SelectCoC
+            label="Provincia/Estado"
+            placeholder="Selecciona..."
+            onSelect={(e) => handleChange(e, "value5")}
+          >
             {MappedStatesOption()}
           </SelectCoC>
         </Grid>
@@ -156,11 +142,10 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Con error
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Label"
             error
             placeholder="Selecciona..."
-            inputProps={{ readOnly: true }}
             value={state.valueEmpty}
           />
         </Grid>
@@ -170,18 +155,16 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Activo
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Pasaporte a utilizar"
             value={state.value7}
             placeholder="Selecciona..."
             onChange={(e) => handleChange(e, "value7")}
           >
-            <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="B">PAN - PA08994100</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="C">COL - 3592790723</MenuItemCo>
-          </SelectCo>
+            <OptionCoC value="A">VEN - 0212877948</OptionCoC>
+            <OptionCoC value="B">PAN - PA08994100</OptionCoC>
+            <OptionCoC value="C">COL - 3592790723</OptionCoC>
+          </SelectCoC>
         </Grid>
 
         {/* Con Selección */}
@@ -189,14 +172,14 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Con Selección
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Provincia/Estado"
             value={state.value8}
             placeholder="Selecciona..."
             onChange={(e) => handleChange(e, "value8")}
           >
-            {MappedStates()}
-          </SelectCo>
+            {MappedStatesOption()}
+          </SelectCoC>
         </Grid>
 
         {/* Inhabilitado */}
@@ -204,19 +187,16 @@ function SelectSection() {
           <TypographyCo variant="h4" style={selectSubtitle}>
             Inhabilitado
           </TypographyCo>
-          <SelectCo
+          <SelectCoC
             label="Pasaporte a utilizar"
-            labelId="select9-label"
             placeholder="Selecciona..."
             value={state.valueEmpty}
             disabled
           >
-            <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="B">PAN - PA08994100</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="C">COL - 3592790723</MenuItemCo>
-          </SelectCo>
+            <OptionCoC value="A">VEN - 0212877948</OptionCoC>
+            <OptionCoC value="B">PAN - PA08994100</OptionCoC>
+            <OptionCoC value="C">COL - 3592790723</OptionCoC>
+          </SelectCoC>
         </Grid>
       </Grid>
     </Box>
