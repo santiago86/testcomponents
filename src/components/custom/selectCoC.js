@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import theme from "../../theme"
 import styles from "./styles/selectStyles"
-import OptionCoC from "./optionCoC"
 
 /**
  * Sets the placeholder to be shown in the select when it's empty
@@ -10,9 +9,9 @@ import OptionCoC from "./optionCoC"
  */
 const setPlaceholder = (text) => {
   return (
-    <OptionCoC value="" key="" style={{ display: "none" }}>
+    <option value="" key="" style={{ display: "none" }}>
       {text}
-    </OptionCoC>
+    </option>
   )
 }
 
@@ -30,7 +29,6 @@ function SelectCoC(props) {
   /** Inmutable value for the state of the dropdown menu (open or closed) */
   const [showDropdown, setMenu] = React.useState(false)
   const empty = setPlaceholder(placeholder)
-
   /**
    * Sets the initial style for the components
    * @param {boolean} error If true, it will render the component as an error
@@ -81,28 +79,23 @@ function SelectCoC(props) {
   function onKeyDown(e) {
     if (e.keyCode === 32 || e.keyCode === 13) deployDropdown(true)
     if (e.keyCode === 27 || e.keyCode === 9) deployDropdown(false)
+    /* if (e.keyCode === 40) console.log("down")
+    if (e.keyCode === 38) console.log("up") */
   }
 
   /**
-   * Sets the buttons corresponding to each option
-   * @param {[OptionCoC]} children Children passed to the select.
+   * Sets the value of the children to display, setting the style and the setValueFunction
    */
-  const dropdownMenu = children
-    ? children.map((child) => [
-        <button
-          type="button"
-          className={
-            styles({ selected: value === child.props.value }).dropdownContent
-          }
-          key={child.key}
-          value={child.props.value}
-          onClick={(e) => setValue(e, child.props.value)}
-        >
-          {child.props.children}
-        </button>,
-        <hr key="hr" className={style.dropdownDivider} />,
-      ])
-    : null
+  const items = React.Children.map(children, (child) => {
+    return React.cloneElement(child, { setValue, selected: value, styles })
+  })
+  let currentOptionValue
+  if (children && value !== "") {
+    const currentOption = children.filter((button) => {
+      return button.props.value === value
+    })
+    currentOptionValue = currentOption[0].props.children
+  }
 
   return (
     <div>
@@ -124,12 +117,14 @@ function SelectCoC(props) {
           }}
         >
           {empty}
-          {children}
+          <option style={{ display: "none" }} value={value}>
+            {currentOptionValue}
+          </option>
         </select>
         {Icon}
         {showDropdown && (
           <div className={style.dropdown} id="dropdown-Menu">
-            {dropdownMenu}
+            {items}
           </div>
         )}
       </div>
