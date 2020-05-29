@@ -28,6 +28,7 @@ function SelectCoC(props) {
   } = props
   /** Inmutable value for the state of the dropdown menu (open or closed) */
   const [showDropdown, setMenu] = React.useState(false)
+  const [showDropdownPrev, setMenuPrev] = React.useState(false)
   /** Inmutable value for the focus in the selector */
   const [currentFocus, setFocus] = React.useState(-1)
   const empty = setPlaceholder(placeholder)
@@ -48,10 +49,10 @@ function SelectCoC(props) {
   /** Component lecture to set the state of focus for the select component */
   const selector = React.useRef()
   React.useEffect(() => {
-    if (!showDropdown) {
+    if (!showDropdown && showDropdownPrev) {
       selector.current.focus()
     }
-  }, [showDropdown, selector])
+  }, [showDropdown, showDropdownPrev, selector])
 
   /**
    * Reactive function that sets the state of the dropdown menu.
@@ -59,6 +60,7 @@ function SelectCoC(props) {
    * @param {boolean} open If the dropdown-Menu should be open (true) or closed (false)
    */
   function deployDropdown(open) {
+    setMenuPrev(showDropdown)
     setMenu(open)
     setFocus(-1)
   }
