@@ -83,8 +83,8 @@ const StepperCo = ({
 
   useEffect(() => onChange(step), [onChange, step])
 
-  const minHasError = step < minValue
-  const minDisabled = step <= minValue
+  const minHasError = step < (minValue || 0)
+  const minDisabled = step <= (minValue || 0)
 
   const maxHasError = step > maxValue
   const maxDisabled = step >= maxValue
@@ -103,7 +103,7 @@ const StepperCo = ({
         <Button
           className={clsx(maxHasError && "error", classes.button)}
           onClick={decrementStep}
-          disabled={disabled || step <= minValue}
+          disabled={disabled || minDisabled}
           aria-label="decrement"
         >
           <Minus className={classes.icon} />
@@ -121,7 +121,7 @@ const StepperCo = ({
         <Button
           className={clsx(minHasError && "error", classes.button)}
           onClick={incrementStep}
-          disabled={disabled || step >= maxValue}
+          disabled={disabled || maxDisabled}
           aria-label="increment"
         >
           <Plus className={classes.icon} />

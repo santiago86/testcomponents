@@ -9,28 +9,24 @@ const STEPPERS = [
     label: "VALOR MÍNIMO",
     initialValue: 0,
     maxValue: 5,
-    minValue: 0,
   },
   {
     id: "stepper-2",
     label: "VALOR INTERMEDIO",
     initialValue: 3,
     maxValue: 5,
-    minValue: 0,
   },
   {
     id: "stepper-3",
     label: "VALOR MÁXIMO",
     initialValue: 5,
     maxValue: 5,
-    minValue: 0,
   },
   {
     id: "stepper-4",
     label: "ESTADO DE ERROR",
     initialValue: 5,
     maxValue: 3,
-    minValue: 0,
   },
   {
     id: "stepper-5",
