@@ -6,6 +6,7 @@ import SelectCo from "./components/selectCo"
 import TypographyCo from "./components/typographyCo"
 
 import ButtonSection from "./section/ButtonSection"
+import RadioButton from "./components/RadioButton/Form"
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
           <ButtonSection />
           <h2> Select </h2>
           <SelectCo />
+          <h2> Radio Button </h2>
+          <RadioButton />
         </header>
       </Container>
     </div>
