@@ -78,6 +78,7 @@ const useClasses = makeStyles(() => ({
     color: palette.common.white,
     "&:hover": {
       color: palette.primary.main,
+      borderColor: palette.common.white,
       background: palette.common.white,
     },
     "&:disabled": {

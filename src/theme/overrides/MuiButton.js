@@ -58,6 +58,12 @@ export default {
     fontSize: "1rem",
     lineHeight: 1.5,
     boxShadow: "none",
+    "&:active, &:focus": {
+      outlineWidth: "thin",
+      outlineStyle: "solid",
+      outlineColor: palette.primary.main,
+      outlineOffset: 2,
+    },
   },
   sizeSmall: {
     padding: "4px 12px",

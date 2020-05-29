@@ -58,6 +58,7 @@ export default {
     "800": "#121212",
   },
   transparent: {
+    main: "transparent",
     text: "rgba(255, 255, 255, 0.5)",
     bg: "rgba(255, 255, 255, 0.3)",
     shadow: "rgba(0,0,0,0.15)",
@@ -67,5 +68,6 @@ export default {
     gradient2: "linear-gradient(90deg, #0060A9 0%, #0D3050 100%)",
     gradient3: "linear-gradient(270deg, #0060A9 0%, #0E4A81 100%)",
     gradient4: "linear-gradient(270deg, #0060A9 0%, #0D3050 100%);",
+    gradient5: "linear-gradient(45deg, #0D3050 30%, #0E4A81 90%)",
   },
 }
