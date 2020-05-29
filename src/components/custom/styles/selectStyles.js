@@ -102,6 +102,12 @@ const generalStyle = {
     "&:hover": {
       backgroundColor: theme.palette.selection,
     },
+    "&:focus": {
+      backgroundColor: theme.palette.selection,
+    },
+    "&:visited": {
+      backgroundColor: theme.palette.selection,
+    },
     /** Changes the property of the option if it has been selected */
     backgroundColor: (props) =>
       props.selected ? theme.palette.selection : "transparent",

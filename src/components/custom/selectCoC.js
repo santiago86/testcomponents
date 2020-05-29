@@ -28,7 +28,10 @@ function SelectCoC(props) {
   } = props
   /** Inmutable value for the state of the dropdown menu (open or closed) */
   const [showDropdown, setMenu] = React.useState(false)
+  /** Inmutable value for the focus in the selector */
+  const [currentFocus, setFocus] = React.useState(-1)
   const empty = setPlaceholder(placeholder)
+
   /**
    * Sets the initial style for the components
    * @param {boolean} error If true, it will render the component as an error
@@ -42,6 +45,14 @@ function SelectCoC(props) {
     Icon = React.cloneElement(icon, { className: style.icon })
   }
 
+  /** Component lecture to set the state of focus for the select component */
+  const selector = React.useRef()
+  React.useEffect(() => {
+    if (!showDropdown) {
+      selector.current.focus()
+    }
+  }, [showDropdown, selector])
+
   /**
    * Reactive function that sets the state of the dropdown menu.
    * This is done by selecting the `select` component, a `value` of the dropdown-Menu, or `onBlur`
@@ -49,6 +60,23 @@ function SelectCoC(props) {
    */
   function deployDropdown(open) {
     setMenu(open)
+    setFocus(-1)
+  }
+
+  /**
+   * Function that allows me to change between elements in the dropdown-Menu
+   * @param {number (1, -1)} step Which element of the array will be read later
+   */
+  function changeFocus(step) {
+    if (children) {
+      let focus = currentFocus + step
+      if (focus < 0) {
+        focus = children.length - 1
+      } else if (focus >= children.length) {
+        focus = 0
+      }
+      setFocus(focus)
+    }
   }
   /**
    * Sets the value for the current select
@@ -79,16 +107,39 @@ function SelectCoC(props) {
   function onKeyDown(e) {
     if (e.keyCode === 32 || e.keyCode === 13) deployDropdown(true)
     if (e.keyCode === 27 || e.keyCode === 9) deployDropdown(false)
-    /* if (e.keyCode === 40) console.log("down")
-    if (e.keyCode === 38) console.log("up") */
+    if (e.keyCode === 40 && showDropdown) changeFocus(1)
+    if (e.keyCode === 38 && showDropdown) changeFocus(-1)
+  }
+
+  function onHover(index) {
+    setFocus(index)
   }
 
   /**
-   * Sets the value of the children to display, setting the style and the setValueFunction
+   * Sets the value of the children to display
+   * @param {number} index index of the button in the array
+   * @param {value} selected checks if this button is the one selected
+   * @param {styles} styles sets the styles
+   * @param {boolean} highlighted checks if this button is the one highlighted
+   * @param {function} onHover perorms a change of index when hovering a button
+   * @param {function} setValue perorms the setValue task
+   * @param {function} continuePropagation reads the key inputs inside the buttons
    */
-  const items = React.Children.map(children, (child) => {
-    return React.cloneElement(child, { setValue, selected: value, styles })
+  const items = React.Children.map(children, (child, index) => {
+    return React.cloneElement(child, {
+      index,
+      selected: value,
+      styles,
+      highlighted: currentFocus === index,
+      onHover,
+      setValue,
+      continuePropagation: onKeyDown,
+    })
   })
+
+  /**
+   * Sets the value to be displayed as an option in the select
+   */
   let currentOptionValue
   if (children && value !== "") {
     const currentOption = children.filter((button) => {
@@ -96,12 +147,13 @@ function SelectCoC(props) {
     })
     currentOptionValue = currentOption[0].props.children
   }
-
   return (
     <div>
       <span style={theme.typography.body2}>{label}</span>
       <div className={style.component}>
         <select
+          tabIndex={!showDropdown ? 0 : -1}
+          ref={selector}
           value={value}
           className={style[value === "" ? "selectDefault" : "select"]}
           disabled={disabled}
