@@ -14,6 +14,9 @@ import theme from "../theme/index"
 const { palette } = theme
 
 const useStyles = makeStyles(() => ({
+  root: {
+    margin: "1rem",
+  },
   label: {
     fontSize: "0.875rem",
     marginBottom: "1rem",
@@ -90,13 +93,13 @@ const StepperCo = ({
   const decrementStep = () => setStep(minDisabled ? step : step - 1)
 
   return (
-    <div {...props}>
+    <div className={classes.root} {...props}>
       {label && (
         <InputLabel htmlFor={id} className={classes.label}>
           {label}
         </InputLabel>
       )}
-      <Grid container alignItems="center" style={{ marginBottom: "2em" }}>
+      <Grid container alignItems="center">
         <Button
           className={clsx(maxHasError && "error", classes.button)}
           onClick={decrementStep}
