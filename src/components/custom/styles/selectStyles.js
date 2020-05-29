@@ -16,10 +16,11 @@ const generalStyle = {
     // Characteristics of the original Select material component
     borderRadius: theme.shape.borderRadius,
 
-    // Dynamic border based on error
+    /** Sets the different border color if error prop was passed */
     borderColor: (props) =>
       props.error ? theme.palette.error.main : theme.palette.grey["300"],
 
+    /** Sets the padding depending on whether the function has an icon */
     padding: (props) =>
       props.icon !== undefined ? "16px 14px 16px 50px" : "16px 14px",
     // Applying original typography options
@@ -101,6 +102,7 @@ const generalStyle = {
     "&:hover": {
       backgroundColor: theme.palette.selection,
     },
+    /** Changes the property of the option if it has been selected */
     backgroundColor: (props) =>
       props.selected ? theme.palette.selection : "transparent",
   },
@@ -118,6 +120,7 @@ const generalStyle = {
   },
 }
 
+/** Sets a different color if there is a value selected or not in the component */
 generalStyle.selectDefault = {
   ...generalStyle.select,
   color: theme.palette.grey["600"],
