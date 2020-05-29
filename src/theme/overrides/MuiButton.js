@@ -65,6 +65,12 @@ export default {
       outlineOffset: 2,
     },
   },
+  focusVisible: {
+    outlineWidth: "thin",
+    outlineStyle: "solid",
+    outlineColor: palette.primary.main,
+    outlineOffset: 2,
+  },
   sizeSmall: {
     padding: "4px 12px",
     fontSize: "0.75rem",
