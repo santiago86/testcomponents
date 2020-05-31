@@ -59,17 +59,11 @@ export default {
     lineHeight: 1.5,
     boxShadow: "none",
     "&:active, &:focus": {
-      outlineWidth: "thin",
-      outlineStyle: "solid",
-      outlineColor: palette.primary.main,
-      outlineOffset: 2,
+      outlineColor: "#4D90FE",
+      outlineWidth: 5,
+      outlineStyle: "auto",
+      outlineOffset: -2,
     },
-  },
-  focusVisible: {
-    outlineWidth: "thin",
-    outlineStyle: "solid",
-    outlineColor: palette.primary.main,
-    outlineOffset: 2,
   },
   sizeSmall: {
     padding: "4px 12px",
