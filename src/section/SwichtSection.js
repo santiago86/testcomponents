@@ -44,7 +44,7 @@ const SwichtSection = () => {
       <div
         style={{
           display: "flex",
-          width: "350px",
+          width: "550px",
           justifyContent: "space-around",
         }}
       >
@@ -53,7 +53,11 @@ const SwichtSection = () => {
           <SwichtCo name="custom swicht" />
         </div>
         <div>
-          <h2>Disabled</h2>
+          <h2>Disabled-checked</h2>
+          <SwichtCo name="custom swicht" disabled checked />
+        </div>
+        <div>
+          <h2>Disabled </h2>
           <SwichtCo name="custom swicht" disabled />
         </div>
         <div>

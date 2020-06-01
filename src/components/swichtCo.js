@@ -28,12 +28,17 @@ const styles = (theme) => ({
     padding: 0,
     margin: theme.spacing(1),
     overflow: "initial",
+    "& >.Mui-disabled[aria-disabled='true']": {
+      backgroundColor: theme.palette.grey[100],
+      color: theme.palette.grey[600],
+      "& + $track": {
+        backgroundColor: palette.grey[200],
+        opacity: 1,
+      },
+    },
   },
   switchBase: {
     padding: 1,
-    "&$disabled": {
-      boxShadow: "10px 10px 10px 10px #000",
-    },
     "&$checked": {
       transform: "translateX(24px)",
       color: palette.white,
@@ -45,10 +50,6 @@ const styles = (theme) => ({
     },
     "&$focusVisible $thumb": {
       color: palette.white,
-      border: "1px solid #fff",
-    },
-    "&$disabled + $track": {
-      opacity: 0,
     },
   },
   thumb: {
@@ -115,7 +116,6 @@ SwichtCo.defaultProps = {
   disabled: false,
   name: "swicht",
   label: "swicht",
-  checked: null,
   handleChange: () => {},
 }
 
