@@ -6,11 +6,13 @@ import Form from "./components/TextField/Form"
 import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
+import BreakpointsCo from "./components/breakpointsCo"
 
 import StepperSection from "./section/StepperSection"
 import TypographySection from "./section/TypographySection"
 import ButtonSection from "./section/ButtonSection"
 import PassengerForm from "./section/PassengerForm"
+import SliderSection from "./section/SliderSection"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -27,6 +29,8 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
+          <h2>Breakpoints</h2>
+          <BreakpointsCo />
           <h2>Input</h2>
           <Form />
           <h2>Button </h2>
@@ -39,6 +43,8 @@ function App() {
           {check && <SelectCSection />}
           <h2> Typography </h2>
           <TypographySection />
+          <h2> Slider </h2>
+          <SliderSection />
         </header>
 
         <h2> Page PassengerForm</h2>
