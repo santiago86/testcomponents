@@ -8,11 +8,12 @@ import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
 
 import StepperSection from "./section/StepperSection"
-import TypographySection from "./section/TypographySection"
 import ButtonSection from "./section/ButtonSection"
+import CheckboxSection from "./section/CheckboxSection"
 import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
+import RadioButton from "./components/RadioButton/Form"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -33,6 +34,10 @@ function App() {
           <Form />
           <h2>Button </h2>
           <ButtonSection />
+          <h2>Checkbox </h2>
+          <CheckboxSection />
+          <h2> Select </h2>
+          <SelectSection />
           <h2> Swicht Component </h2>
           <SwichtSection />
           <h2> Stepper </h2>
@@ -41,10 +46,10 @@ function App() {
           <Switch checked={check} onChange={() => setCheck(!check)} />
           {!check && <SelectSection />}
           {check && <SelectCSection />}
-          <h2> Typography </h2>
-          <TypographySection />
           <h2> Slider </h2>
           <SliderSection />
+          <h2> Radio Button </h2>
+          <RadioButton />
         </header>
       </Container>
     </div>

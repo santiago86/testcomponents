@@ -62,7 +62,7 @@ const useStyles = makeStyles({
 export default function Types() {
   const classes = useStyles()
   return (
-    <div>
+    <div style={{ padding: theme.spacing(10) }}>
       <TypographyCo variant="overline" display="block" gutterBottom>
         Heading 1
       </TypographyCo>
