@@ -9,6 +9,7 @@ import TypographyCo from "./components/typographyCo"
 
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
+import ColorPalletteSection from "./section/ColorPaletteSection"
 import PassengerForm from "./section/PassengerForm"
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
+          <ColorPalletteSection />
           <h2>Input</h2>
           <Form />
           <h2>Button </h2>
