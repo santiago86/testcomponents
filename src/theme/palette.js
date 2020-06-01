@@ -64,6 +64,7 @@ export default {
     light: "#CB9938",
   },
   transparent: {
+    tooltip: "rgba(18,18,18,0.6)",
     main: "transparent",
     text: "rgba(255, 255, 255, 0.5)",
     bg: "rgba(255, 255, 255, 0.3)",
