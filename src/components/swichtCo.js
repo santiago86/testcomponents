@@ -9,7 +9,7 @@ const transparentColors = {
   default: "#ffffff",
 }
 
-const SwichtCo = withStyles((theme) => ({
+const styles = (theme) => ({
   "@keyframes ripplesLoop": {
     from: {
       boxShadow: `0px 0px 0px 0.3rem ${
@@ -78,26 +78,30 @@ const SwichtCo = withStyles((theme) => ({
       zIndex: 1,
     },
   },
-}))(({ classes, name, checked, handleChange, disabled, label }) => {
-  return (
-    <Switch
-      focusVisibleClassName={classes.focusVisible}
-      name={name}
-      onChange={handleChange}
-      checked={checked}
-      disabled={disabled}
-      inputProps={{ "aria-label": `${label}` }}
-      disableRipple
-      classes={{
-        root: classes.root,
-        switchBase: classes.switchBase,
-        thumb: classes.thumb,
-        track: classes.track,
-        checked: classes.checked,
-      }}
-    />
-  )
 })
+
+const SwichtCo = withStyles(styles)(
+  ({ classes, name, checked, handleChange, disabled, label }) => {
+    return (
+      <Switch
+        focusVisibleClassName={classes.focusVisible}
+        name={name}
+        onChange={handleChange}
+        checked={checked}
+        disabled={disabled}
+        inputProps={{ "aria-label": `${label}` }}
+        disableRipple
+        classes={{
+          root: classes.root,
+          switchBase: classes.switchBase,
+          thumb: classes.thumb,
+          track: classes.track,
+          checked: classes.checked,
+        }}
+      />
+    )
+  }
+)
 
 SwichtCo.propTypes = {
   name: PropTypes.string,
@@ -111,7 +115,8 @@ SwichtCo.defaultProps = {
   disabled: false,
   name: "swicht",
   label: "swicht",
-  color: "primary",
+  checked: null,
+  handleChange: () => {},
 }
 
 export default SwichtCo
