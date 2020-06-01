@@ -11,6 +11,10 @@ import SelectCo from "./components/selectCo"
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 import SwichtSection from "./section/SwichtSection"
+import BreakpointsCo from "./components/breakpointsCo"
+
+import PassengerForm from "./section/PassengerForm"
+import SliderSection from "./section/SliderSection"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -27,6 +31,8 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
+          <h2>Breakpoints</h2>
+          <BreakpointsCo />
           <h2>Input</h2>
           <Form />
           <h2>Button </h2>
@@ -41,7 +47,12 @@ function App() {
           <Switch checked={check} onChange={() => setCheck(!check)} />
           {!check && <SelectSection />}
           {check && <SelectCSection />}
+          <h2> Slider </h2>
+          <SliderSection />
         </header>
+
+        <h2> Page PassengerForm</h2>
+        <PassengerForm />
       </Container>
     </div>
   )
