@@ -2,7 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { ThemeProvider } from "@material-ui/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Navigation from "./components/navigation"
 import * as serviceWorker from "./serviceWorker"
 import theme from "./theme"
 
@@ -13,8 +14,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Link to="/">Home</Link>
-        <Link to="/passenger">Passenger</Link>
+        <Navigation />
         <Switch>
           {ROUTES_CONFIG.map((props, index) => (
             <Route key={props.path || index} {...props} />
