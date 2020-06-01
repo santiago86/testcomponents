@@ -9,7 +9,6 @@ import TypographyCo from "./components/typographyCo"
 import SelectCo from "./components/selectCo"
 
 import StepperSection from "./section/StepperSection"
-import TypographySection from "./section/TypographySection"
 import ButtonSection from "./section/ButtonSection"
 import SwichtSection from "./section/SwichtSection"
 import BreakpointsCo from "./components/breakpointsCo"
@@ -47,8 +46,6 @@ function App() {
           <Switch checked={check} onChange={() => setCheck(!check)} />
           {!check && <SelectSection />}
           {check && <SelectCSection />}
-          <h2> Typography </h2>
-          <TypographySection />
           <h2> Slider </h2>
           <SliderSection />
         </header>
