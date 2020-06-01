@@ -35,9 +35,10 @@ function App() {
           <Form />
           <h2>Button </h2>
           <ButtonSection />
+          <h2>Checkbox </h2>
+          <CheckboxSection />
           <h2> Select </h2>
           <SelectSection />
-          <CheckboxSection />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Switch </h2>
