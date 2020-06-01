@@ -10,6 +10,7 @@ import SelectCo from "./components/selectCo"
 
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
+import CheckboxSection from "./section/CheckboxSection"
 import SwichtSection from "./section/SwichtSection"
 import BreakpointsCo from "./components/breakpointsCo"
 
@@ -37,6 +38,10 @@ function App() {
           <Form />
           <h2>Button </h2>
           <ButtonSection />
+          <h2>Checkbox </h2>
+          <CheckboxSection />
+          <h2> Select </h2>
+          <SelectSection />
           <h2> Select </h2>
           <SelectCo />
           <h2> Swicht Component </h2>
