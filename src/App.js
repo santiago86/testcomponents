@@ -14,7 +14,6 @@ import ButtonSection from "./section/ButtonSection"
 import SwichtSection from "./section/SwichtSection"
 import BreakpointsCo from "./components/breakpointsCo"
 
-import PassengerForm from "./section/PassengerForm"
 import SliderSection from "./section/SliderSection"
 
 function App() {
@@ -53,9 +52,6 @@ function App() {
           <h2> Slider </h2>
           <SliderSection />
         </header>
-
-        <h2> Page PassengerForm</h2>
-        <PassengerForm />
       </Container>
     </div>
   )
