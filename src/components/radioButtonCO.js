@@ -59,11 +59,7 @@ const useStyles = makeStyles({
       content: '""',
     },
     "input:disabled ~ &": {
-      display: "block",
-      width: 24,
-      height: 24,
-      backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
-      content: '""',
+      backgroundColor: theme.palette.grey[100],
     },
   },
 })

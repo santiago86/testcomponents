@@ -37,9 +37,9 @@ const RADIO_BUTTONS = [
 function Form() {
   return (
     <RadioGroup
-      defaultValue="radioButton5"
       aria-label="gender"
       name="customized-radios"
+      defaultValue="radioButton5"
     >
       {RADIO_BUTTONS.map((element) => {
         return (
@@ -47,7 +47,6 @@ function Form() {
             value={element.value}
             label={element.label}
             disabled={element.disabled || false}
-            defaultChecked={element.defaultChecked || false}
           />
         )
       })}
