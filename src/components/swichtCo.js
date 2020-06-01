@@ -29,10 +29,10 @@ const styles = (theme) => ({
     margin: theme.spacing(1),
     overflow: "initial",
     "& >.Mui-disabled[aria-disabled='true']": {
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.grey[600],
+      backgroundColor: theme.palette.white,
+      color: theme.palette.white,
       "& + $track": {
-        backgroundColor: palette.grey[200],
+        backgroundColor: palette.grey[300],
         opacity: 1,
       },
     },

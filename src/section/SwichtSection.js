@@ -50,7 +50,7 @@ const SwichtSection = () => {
       >
         <div>
           <h2>Normal</h2>
-          <SwichtCo name="custom swicht" />
+          <SwichtCo name="custom swicht" handleChange={console.log} />
         </div>
         <div>
           <h2>Disabled-checked</h2>
