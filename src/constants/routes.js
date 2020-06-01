@@ -18,6 +18,10 @@ export const ROUTES_CONFIG = [
     exact: true,
   },
   {
+    path: ROUTES.TYPOGRAPHY,
+    component: TypographySection,
+  },
+  {
     path: ROUTES.BREAKPOINT,
     component: BreakpointsCo,
   },
@@ -28,9 +32,5 @@ export const ROUTES_CONFIG = [
   {
     path: ROUTES.COLORS_PALETTE,
     component: ColorsPalette,
-  },
-  {
-    path: ROUTES.TYPOGRAPHY,
-    component: TypographySection,
   },
 ]
