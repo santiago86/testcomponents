@@ -7,6 +7,7 @@ import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
 
+import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
           <h2>Button </h2>
           <ButtonSection />
           <h2> Select </h2>
+          <SelectCo />
+          <h2> Stepper </h2>
+          <StepperSection />
+          <h2> Switch </h2>
           <Switch checked={check} onChange={() => setCheck(!check)} />
           {!check && <SelectSection />}
           {check && <SelectCSection />}
