@@ -8,6 +8,7 @@ import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
 
 import StepperSection from "./section/StepperSection"
+import TypographySection from "./section/TypographySection"
 import ButtonSection from "./section/ButtonSection"
 import PassengerForm from "./section/PassengerForm"
 
@@ -36,6 +37,8 @@ function App() {
           <Switch checked={check} onChange={() => setCheck(!check)} />
           {!check && <SelectSection />}
           {check && <SelectCSection />}
+          <h2> Typography </h2>
+          <TypographySection />
         </header>
 
         <h2> Page PassengerForm</h2>
