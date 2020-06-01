@@ -29,8 +29,6 @@ function App() {
           <Form />
           <h2>Button </h2>
           <ButtonSection />
-          <h2> Select </h2>
-          <SelectCo />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Switch </h2>
