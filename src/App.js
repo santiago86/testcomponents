@@ -9,6 +9,7 @@ import TypographyCo from "./components/typographyCo"
 
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
+import PassengerForm from "./section/PassengerForm"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -36,6 +37,9 @@ function App() {
           {!check && <SelectSection />}
           {check && <SelectCSection />}
         </header>
+
+        <h2> Page PassengerForm</h2>
+        <PassengerForm />
       </Container>
     </div>
   )
