@@ -53,6 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+// Here are just the new styles "variants"
 const useClasses = makeStyles(() => ({
   outlinedGrey: {
     borderColor: palette.grey[500],
@@ -77,6 +78,7 @@ const useClasses = makeStyles(() => ({
     color: palette.common.white,
     "&:hover": {
       color: palette.primary.main,
+      borderColor: palette.common.white,
       background: palette.common.white,
     },
     "&:disabled": {
@@ -150,8 +152,8 @@ function ButtonCo({
       className={clsx(styles.button, className)}
       color={defaultColor}
       variant={defaultVariant}
-      startIcon={!loading && StartIcon ? <StartIcon /> : null}
-      endIcon={!loading && EndIcon ? <EndIcon /> : null}
+      startIcon={!loading && StartIcon && <StartIcon />}
+      endIcon={!loading && EndIcon && <EndIcon />}
     >
       {loading ? (
         <>

@@ -19,7 +19,7 @@ const useStyles = makeStyles({
       backgroundColor: theme.palette.grey[100],
     },
     "& .Mui-disabled": {
-      color: theme.palette.grey[600],
+      color: theme.palette.grey[700],
     },
   },
   label: {
