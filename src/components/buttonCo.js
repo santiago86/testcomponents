@@ -54,7 +54,27 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 // Here are just the new styles "variants"
-const useClasses = makeStyles(() => ({
+const useClasses = makeStyles((theme) => ({
+  outlinedPrimary: {
+    [theme.breakpoints.down("sm")]: {
+      backgroundColor: "transparent",
+      color: palette.primary.main,
+      "&:active, &:focus": {
+        backgroundColor: palette.primary.main,
+        color: palette.common.white,
+      },
+    },
+  },
+  outlinedSecondary: {
+    [theme.breakpoints.down("sm")]: {
+      backgroundColor: "transparent",
+      color: palette.secondary.dark,
+      "&:active, &:focus": {
+        backgroundColor: palette.secondary.dark,
+        color: palette.common.white,
+      },
+    },
+  },
   outlinedGrey: {
     borderColor: palette.grey[500],
     border: 1,

@@ -5,10 +5,15 @@ import ButtonCo from "./buttonCo"
 const Navigation = () => {
   return (
     <>
-      <ButtonCo variant="outlined" to="/" component={Link}>
+      <ButtonCo variant="outlined" color="primary" to="/" component={Link}>
         Home
       </ButtonCo>
-      <ButtonCo variant="outlined" to="/passenger" component={Link}>
+      <ButtonCo
+        variant="outlined"
+        color="primary"
+        to="/passenger"
+        component={Link}
+      >
         Passenger
       </ButtonCo>
     </>
