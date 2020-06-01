@@ -26,12 +26,18 @@ const RADIO_BUTTONS = [
     label: "Disable",
     disabled: true,
   },
+  {
+    id: "radioButton5",
+    value: "Cinco",
+    label: "Disable checked",
+    disabled: true,
+  },
 ]
 
 function Form() {
   return (
     <RadioGroup
-      defaultValue="female"
+      defaultValue="radioButton5"
       aria-label="gender"
       name="customized-radios"
     >
@@ -41,6 +47,7 @@ function Form() {
             value={element.value}
             label={element.label}
             disabled={element.disabled || false}
+            defaultChecked={element.defaultChecked || false}
           />
         )
       })}

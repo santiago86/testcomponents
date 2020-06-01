@@ -15,6 +15,12 @@ const useStyles = makeStyles({
       borderColor: palette.primary.main,
       backgroundColor: palette.selection,
     },
+    "& .MuiRadio-colorSecondary.Mui-disabled": {
+      backgroundColor: theme.palette.grey[100],
+    },
+    "& .Mui-disabled": {
+      color: theme.palette.grey[600],
+    },
   },
   label: {
     display: "flex",
@@ -25,10 +31,6 @@ const useStyles = makeStyles({
       lineHeight: "1.25rem",
       width: (label) => label,
     },
-    "input:disabled ~ &": {
-      borderColor: palette.grey[300],
-      backgroundColor: palette.grey[100],
-    },
   },
   root: {
     "&:hover": {
@@ -37,9 +39,6 @@ const useStyles = makeStyles({
     "&:active": {
       backgroundColor: theme.palette.grey[900],
       backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
-    },
-    "&:disabled": {
-      borderColor: "red",
     },
     width: 24,
     height: 24,
@@ -53,6 +52,13 @@ const useStyles = makeStyles({
     backgroundColor: palette.primary.main,
     backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
     "&:before": {
+      display: "block",
+      width: 24,
+      height: 24,
+      backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
+      content: '""',
+    },
+    "input:disabled ~ &": {
       display: "block",
       width: 24,
       height: 24,
