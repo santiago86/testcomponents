@@ -1,5 +1,8 @@
+import typography from "../typography"
+
+const { body2 } = typography
 export default {
   root: {
-    marginBottom: "16px",
+    ...body2,
   },
 }

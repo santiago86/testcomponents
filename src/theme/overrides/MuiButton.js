@@ -58,6 +58,12 @@ export default {
     fontSize: "1rem",
     lineHeight: 1.5,
     boxShadow: "none",
+    "&:active, &:focus": {
+      outlineColor: "#4D90FE",
+      outlineWidth: 5,
+      outlineStyle: "auto",
+      outlineOffset: -2,
+    },
   },
   sizeSmall: {
     padding: "4px 12px",
