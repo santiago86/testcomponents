@@ -70,4 +70,5 @@ export default {
     gradient4: "linear-gradient(270deg, #0060A9 0%, #0D3050 100%);",
     gradient5: "linear-gradient(45deg, #0D3050 30%, #0E4A81 90%)",
   },
+  selection: "#E0EBF2",
 }

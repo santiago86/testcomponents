@@ -1,13 +1,18 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
+import Switch from "@material-ui/core/Switch"
 
 import Form from "./components/TextField/Form"
-import SelectCo from "./components/selectCo"
+import SelectSection from "./section/SelectSection"
+import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
+
+import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 import PassengerForm from "./section/PassengerForm"
 
 function App() {
+  const [check, setCheck] = React.useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
@@ -25,8 +30,12 @@ function App() {
           <Form />
           <h2>Button </h2>
           <ButtonSection />
-          <h2> Select </h2>
-          <SelectCo />
+          <h2> Stepper </h2>
+          <StepperSection />
+          <h2> Switch </h2>
+          <Switch checked={check} onChange={() => setCheck(!check)} />
+          {!check && <SelectSection />}
+          {check && <SelectCSection />}
         </header>
 
         <h2> Page PassengerForm</h2>
