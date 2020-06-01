@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
 
 const SliderSection = () => {
   const classes = useStyles()
-  const [slide, setSlide] = useState(20)
+  const [slide, setSlide] = useState(0)
   const [slideDouble, setSlideDouble] = useState([10, 50])
 
   return (
@@ -31,16 +31,11 @@ const SliderSection = () => {
       <SliderCo
         value={slideDouble}
         scale={(x) => `${x} USD`}
+        minRange={10}
         handleChange={setSlideDouble}
         label="Dos Nodos"
       />
-      <SliderCo
-        disabled
-        value={slide}
-        scale={(x) => `${x} USD`}
-        handleChange={setSlide}
-        label="Dos Nodos"
-      />
+      <SliderCo disabled value={20} label="Inhabilitado" />
     </div>
   )
 }

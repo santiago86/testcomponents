@@ -17,10 +17,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const SliderCo = ({ value, styles, handleChange, label, ...props }) => {
+const SliderCo = ({
+  value,
+  styles,
+  handleChange,
+  minRange,
+  label,
+  step,
+  ...props
+}) => {
   const classes = useStyles(styles)
   const onChange = (event, newValue) => {
-    handleChange(newValue)
+    if (Array.isArray(newValue)) {
+      if (Math.abs(newValue[1] - newValue[0]) > (minRange || step)) {
+        handleChange(newValue)
+      }
+    } else {
+      handleChange(newValue)
+    }
   }
   return (
     <div className={classes.root}>
@@ -40,7 +54,8 @@ SliderCo.propTypes = {
   max: PropTypes.number,
   step: PropTypes.number,
   label: PropTypes.string,
-  styles: PropTypes.shape,
+  minRange: PropTypes.number,
+  styles: PropTypes.shape({}),
   value: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number),
@@ -55,6 +70,7 @@ SliderCo.defaultProps = {
   label: "",
   value: 10,
   styles: {},
+  minRange: null,
 }
 
 export default SliderCo
