@@ -14,6 +14,7 @@ import SwichtSection from "./section/SwichtSection"
 import BreakpointsCo from "./components/breakpointsCo"
 
 import SliderSection from "./section/SliderSection"
+import RadioButton from "./components/RadioButton/Form"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -48,6 +49,8 @@ function App() {
           {check && <SelectCSection />}
           <h2> Slider </h2>
           <SliderSection />
+          <h2> Radio Button </h2>
+          <RadioButton />
         </header>
       </Container>
     </div>
