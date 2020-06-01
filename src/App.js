@@ -11,7 +11,6 @@ import SelectCo from "./components/selectCo"
 import StepperSection from "./section/StepperSection"
 import TypographySection from "./section/TypographySection"
 import ButtonSection from "./section/ButtonSection"
-import ColorPalletteSection from "./section/ColorPaletteSection"
 import SwichtSection from "./section/SwichtSection"
 import BreakpointsCo from "./components/breakpointsCo"
 
@@ -32,7 +31,6 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
-          <ColorPalletteSection />
           <h2>Breakpoints</h2>
           <BreakpointsCo />
           <h2>Input</h2>

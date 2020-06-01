@@ -1,5 +1,6 @@
 import React from "react"
 
+import Container from "@material-ui/core/Container"
 import ColorPaletteCo from "../components/colorsCo/colorPaletteCo"
 import palette from "../theme/palette"
 
@@ -140,14 +141,14 @@ const gradientsPalette = [
 ]
 
 const ColorPalletteSection = () => (
-  <>
+  <Container>
     <h2> Color palettes </h2>
     <ColorPaletteCo title="Color theme" colors={colorThemePalette} />
     <ColorPaletteCo title="Brand colors" colors={colorBrandPalette} />
     <ColorPaletteCo title="Brand colors" colors={greyScalePalette} />
     <ColorPaletteCo title="System colors" colors={systemColorsPalette} />
     <ColorPaletteCo title="Gradients" colors={gradientsPalette} />
-  </>
+  </Container>
 )
 
 export default ColorPalletteSection
