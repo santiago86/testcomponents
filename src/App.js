@@ -6,6 +6,7 @@ import SelectSection from "./section/SelectSection"
 import TypographyCo from "./components/typographyCo"
 
 import ButtonSection from "./section/ButtonSection"
+import CheckboxSection from "./section/CheckboxSection"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <ButtonSection />
           <h2> Select </h2>
           <SelectSection />
+          <CheckboxSection />
         </header>
       </Container>
     </div>
