@@ -6,10 +6,13 @@ import Form from "./components/TextField/Form"
 import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
-import BreakpointsCo from "./components/breakpointsCo"
+import SelectCo from "./components/selectCo"
 
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
+import SwichtSection from "./section/SwichtSection"
+import BreakpointsCo from "./components/breakpointsCo"
+
 import PassengerForm from "./section/PassengerForm"
 import SliderSection from "./section/SliderSection"
 
@@ -34,6 +37,10 @@ function App() {
           <Form />
           <h2>Button </h2>
           <ButtonSection />
+          <h2> Select </h2>
+          <SelectCo />
+          <h2> Swicht Component </h2>
+          <SwichtSection />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Switch </h2>
