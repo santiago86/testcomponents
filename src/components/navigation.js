@@ -14,6 +14,9 @@ const Navigation = () => {
       <ButtonCo variant="outlined" to="/passenger" component={Link}>
         Passenger
       </ButtonCo>
+      <ButtonCo variant="outlined" to="/typography" component={Link}>
+        Typography
+      </ButtonCo>
     </>
   )
 }

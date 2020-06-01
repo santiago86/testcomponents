@@ -1,11 +1,12 @@
 import App from "../App"
 import Passenger from "../section/PassengerForm"
 import ColorsPalette from "../section/ColorPaletteSection"
+import TypographySection from "../section/TypographySection"
 
 export const ROUTES = {
   HOME: "/",
   PASSENGER: "/passenger",
-  COLORS_PALETTE: "/palette",
+  TYPOGRAPHY: "/typography",
 }
 
 export const ROUTES_CONFIG = [
@@ -21,5 +22,9 @@ export const ROUTES_CONFIG = [
   {
     path: ROUTES.COLORS_PALETTE,
     component: ColorsPalette,
+  },
+  {
+    path: ROUTES.TYPOGRAPHY,
+    component: TypographySection,
   },
 ]
