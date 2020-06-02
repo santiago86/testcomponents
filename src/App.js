@@ -14,6 +14,7 @@ import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
+import ModalSection from "./section/ModalSection"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -50,6 +51,8 @@ function App() {
           <SliderSection />
           <h2> Radio Button </h2>
           <RadioButton />
+          <h2> Modal </h2>
+          <ModalSection />
         </header>
       </Container>
     </div>
