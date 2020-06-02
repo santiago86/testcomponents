@@ -10,7 +10,7 @@ import palette from "../theme/palette"
 const useStyles = makeStyles({
   div: {
     width: 180,
-    height: 40,
+    height: 32,
     "& .Mui-focusVisible": {
       borderColor: palette.primary.main,
       backgroundColor: palette.selection,
@@ -50,7 +50,6 @@ const useStyles = makeStyles({
   },
   checkedIcon: {
     backgroundColor: palette.primary.main,
-    backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
     "&:before": {
       display: "block",
       width: 24,
@@ -60,15 +59,22 @@ const useStyles = makeStyles({
     },
     "input:disabled ~ &": {
       backgroundColor: theme.palette.grey[100],
+      "&:before": {
+        display: "block",
+        width: 24,
+        height: 24,
+        backgroundImage: "radial-gradient(#CCCCCB,#CCCCCB 28%,transparent 32%)",
+        content: '""',
+      },
     },
   },
 })
 
-const widthLabelNormal = 100
-const widthLabelMultiLinea = 180
+const widthLabel = 100
+const widthLabelMultiLine = 180
 
-function RadioButtonCo({ id, label, value, ...props }) {
-  const width = label.length <= 20 ? widthLabelNormal : widthLabelMultiLinea
+function RadioButtonCo({ id, label, onChange, value, ...props }) {
+  const width = label.length <= 20 ? widthLabel : widthLabelMultiLine
   const classes = useStyles(width)
 
   return (
@@ -84,6 +90,7 @@ function RadioButtonCo({ id, label, value, ...props }) {
               <span className={clsx(classes.icon, classes.checkedIcon)} />
             }
             icon={<span className={classes.icon} />}
+            onChange={onChange}
             {...props}
           />
         }
@@ -96,6 +103,7 @@ function RadioButtonCo({ id, label, value, ...props }) {
 RadioButtonCo.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
   value: PropTypes.string,
   disabled: PropTypes.bool,
 }
