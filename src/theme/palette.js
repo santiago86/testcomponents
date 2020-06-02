@@ -6,6 +6,7 @@ const black = "#000000"
 export default {
   black,
   white,
+  gold: "#8D7249",
   common: {
     black: "#000",
     white: "#fff",
@@ -27,7 +28,7 @@ export default {
     contrastText: "#fff",
   },
   warning: {
-    main: "rgba(219, 49, 49, 1)",
+    main: "#FFC82C",
     contrastText: "rgba(51, 51, 51, 1)",
   },
   error: {
@@ -58,6 +59,11 @@ export default {
     "800": "#121212",
     "900": "#0D3050",
   },
+  orange: {
+    dark: "#944E23",
+    main: "#C37028",
+    light: "#CB9938",
+  },
   transparent: {
     tooltip: "rgba(18,18,18,0.6)",
     main: "transparent",
@@ -66,6 +72,7 @@ export default {
     shadow: "rgba(0,0,0,0.15)",
   },
   gradients: {
+    gradientGrey: "linear-gradient(180deg, #FFF 0%, #000 100%)",
     gradientDark: "linear-gradient(90deg, #0E4A81 0%, #0D3050 100%)",
     gradient2: "linear-gradient(90deg, #0060A9 0%, #0D3050 100%)",
     gradient3: "linear-gradient(270deg, #0060A9 0%, #0E4A81 100%)",
