@@ -2,7 +2,7 @@ import React from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
 
-import Form from "./section/TextfieldSection"
+import TextfieldSection from "./section/TextfieldSection"
 import DividerSection from "./section/DividerSection"
 import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
@@ -32,7 +32,7 @@ function App() {
             Hacia Buenos Aires
           </TypographyCo>
           <h2>Input</h2>
-          <Form />
+          <TextfieldSection />
           <h2>Divider</h2>
           <DividerSection />
           <h2>Button </h2>
