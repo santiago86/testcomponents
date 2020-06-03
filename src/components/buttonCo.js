@@ -119,6 +119,38 @@ const useClasses = makeStyles(() => ({
       color: palette.common.white,
     },
   },
+  planePrimary: {
+    border: "none",
+    color: palette.primary.main,
+    "&:hover": {
+      color: palette.primary.main,
+      backgroundColor: "transparent",
+      cursor: "pointer",
+    },
+    "&:focus": {
+      border: 0,
+      outline: 0,
+      cursor: "pointer",
+    },
+    "&.MuiButton-root.Mui-disabled": {
+      color: palette.grey[300],
+    },
+  },
+  planeInverted: {
+    border: "none",
+    color: palette.common.white,
+    "&:hover": {
+      color: palette.common.white,
+      backgroundColor: palette.transparent.bg2,
+    },
+    "&:focus": {
+      border: 0,
+      outline: 0,
+    },
+    "&.MuiButton-root.Mui-disabled": {
+      color: palette.grey[300],
+    },
+  },
 }))
 
 const LOADING_SIZES = {

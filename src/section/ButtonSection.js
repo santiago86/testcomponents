@@ -44,6 +44,21 @@ const BUTTONS = [
   { id: 10, color: "inverted", variant: "outlined", background: true },
   { id: 11, color: "primary", variant: "shadow", background: true },
   { id: 12, color: "confirm", variant: "contained" },
+  {
+    id: 13,
+    color: "primary",
+    variant: "plane",
+    end: Right,
+    href: "#",
+  },
+  {
+    id: 14,
+    color: "inverted",
+    variant: "plane",
+    end: Right,
+    href: "#",
+    background: true,
+  },
 ]
 
 const BUTTON_SIZES = ["small", "medium", "large"]

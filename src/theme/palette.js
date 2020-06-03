@@ -68,6 +68,7 @@ export default {
     tooltip: "rgba(18,18,18,0.6)",
     main: "transparent",
     text: "rgba(255, 255, 255, 0.5)",
+    bg2: "rgba(255, 255, 255, 0.1)",
     bg: "rgba(255, 255, 255, 0.3)",
     shadow: "rgba(0,0,0,0.15)",
   },

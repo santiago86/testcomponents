@@ -5,35 +5,12 @@ import TextField from "@material-ui/core/TextField"
 import InputLabel from "@material-ui/core/InputLabel"
 import FormHelperText from "@material-ui/core/FormHelperText"
 
-import theme from "../../theme/index"
+import theme from "../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {
     "& > *": {
       width: "100%",
-    },
-    "& .MuiOutlinedInput-root": {
-      marginTop: "8px",
-      marginBottom: "8px",
-    },
-    "& .Mui-disabled": {
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.grey[600],
-    },
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.grey[300],
-    },
-    "& .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.grey[300],
-    },
-    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.primary.main,
-    },
-    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderWidth: "1px",
-    },
-    "& .MuiOutlinedInput-input": {
-      fontSize: "1rem",
     },
   },
   label: theme.typography.body2,
@@ -42,6 +19,9 @@ const useStyles = makeStyles(() => ({
     marginTop: "0px",
     display: "flex",
     alignItems: "center",
+  },
+  helperTextContainer: {
+    height: "20px",
   },
 }))
 
@@ -96,12 +76,14 @@ const InputCo = ({
         onChange={setValue}
         error={errors !== ""}
       />
-      {helperText && (
-        <FormHelperText className={classes.helperText} error={errors !== ""}>
-          <span>{errors && component}</span>
-          <span>{(!hasErrors && helperText) || errors}</span>
-        </FormHelperText>
-      )}
+      <div className={classes.helperTextContainer}>
+        {helperText && (
+          <FormHelperText className={classes.helperText} error={errors !== ""}>
+            <span>{errors && component}</span>
+            <span>{(!hasErrors && helperText) || errors}</span>
+          </FormHelperText>
+        )}
+      </div>
     </div>
   )
 }

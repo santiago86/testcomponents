@@ -8,7 +8,7 @@ import InfoIcon from "@material-ui/icons/Info"
 import CheckIcon from "@material-ui/icons/Check"
 import PhoneIcon from "@material-ui/icons/Phone"
 import Autocomplete from "@material-ui/lab/Autocomplete"
-import InputCo from "./inputCo"
+import InputCo from "../components/inputCo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,8 +44,9 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "30px",
   },
   warningInfo: {
-    width: "18px",
+    width: "12px",
     marginRight: "5px",
+    height: "auto",
   },
 }))
 
@@ -134,7 +135,7 @@ const Form = () => {
             setValue={handleChange("three")}
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment disablePointerEvents position="start">
                   <SearchIcon />
                 </InputAdornment>
               ),
@@ -151,7 +152,7 @@ const Form = () => {
             setValue={handleChange("four")}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="end">
+                <InputAdornment disablePointerEvents position="end">
                   <InfoOutlinedIcon />
                 </InputAdornment>
               ),
@@ -177,12 +178,12 @@ const Form = () => {
             setValue={handleChange("six")}
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment disablePointerEvents position="start">
                   <PhoneIcon />
                 </InputAdornment>
               ),
               endAdornment: (
-                <InputAdornment position="end">
+                <InputAdornment disablePointerEvents position="end">
                   <InfoOutlinedIcon />
                 </InputAdornment>
               ),
@@ -223,7 +224,7 @@ const Form = () => {
               country.validCountry && {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <CheckIcon style={{ color: "green" }} />
+                    <CheckIcon style={{ color: "green", fontSize: "18px" }} />
                   </InputAdornment>
                 ),
               }
