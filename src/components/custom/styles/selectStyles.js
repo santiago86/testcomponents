@@ -94,7 +94,7 @@ const generalStyle = {
     textAlign: "left",
     border: "transparent",
     width: "100%",
-    padding: "6px 16px",
+    padding: "12px 16px",
     outline: "none",
     ...theme.typography.body1,
     color: theme.palette.text.primary,

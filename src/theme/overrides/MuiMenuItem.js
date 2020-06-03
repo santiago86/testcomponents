@@ -11,5 +11,7 @@ export default {
     "&:hover": {
       backgroundColor: palette.selection,
     },
+    paddingTop: 12,
+    paddingBottom: 12,
   },
 }
