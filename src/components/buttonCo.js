@@ -124,7 +124,7 @@ const useClasses = makeStyles(() => ({
     color: palette.primary.main,
     "&:hover": {
       color: palette.primary.main,
-      backgroundColor: "transparent",
+      backgroundColor: palette.transparent.main,
       cursor: "pointer",
     },
     "&:focus": {

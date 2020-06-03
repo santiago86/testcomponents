@@ -16,12 +16,12 @@ const useStyles = makeStyles(() => ({
   label: theme.typography.body2,
   helperText: {
     fontSize: "0.75rem",
-    marginTop: "0px",
+    marginTop: 0,
     display: "flex",
     alignItems: "center",
   },
   helperTextContainer: {
-    height: "20px",
+    height: 20,
   },
 }))
 
@@ -44,6 +44,9 @@ const InputCo = ({
     setPlaceholder("")
     setError("")
   }
+
+  const isValid = errors !== ""
+
   const handelBlur = () => {
     if (!value) {
       setPlaceholder(placeholder)
@@ -74,11 +77,11 @@ const InputCo = ({
         onFocus={handleFocus}
         onBlur={handelBlur}
         onChange={setValue}
-        error={errors !== ""}
+        error={isValid}
       />
       <div className={classes.helperTextContainer}>
         {helperText && (
-          <FormHelperText className={classes.helperText} error={errors !== ""}>
+          <FormHelperText className={classes.helperText} error={isValid}>
             <span>{errors && component}</span>
             <span>{(!hasErrors && helperText) || errors}</span>
           </FormHelperText>

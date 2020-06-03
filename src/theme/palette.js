@@ -47,6 +47,7 @@ export default {
   },
   icon: colors.blueGrey[600],
   divider: colors.grey[200],
+  dividerDefault: "#D1D1D1",
   grey: {
     "50": "#FFFFFF",
     "100": "#EFEFEE",

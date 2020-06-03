@@ -10,19 +10,19 @@ const useStyles = makeStyles(() => ({
     width: "100%",
     height: "inherit",
     "& .MuiDivider-flexItem": {
-      width: "1px",
+      width: 1,
       height: "inherit",
-      backgroundColor: "#D1D1D1",
+      backgroundColor: theme.palette.dividerDefault,
     },
   },
   lightSolid: {
-    backgroundColor: "#D1D1D1",
+    backgroundColor: theme.palette.dividerDefault,
     height: "1px",
   },
   lightDashed: {
     border: "dashed 1px",
-    borderColor: "#D1D1D1",
-    backgroundColor: "transparent",
+    borderColor: theme.palette.dividerDefault,
+    backgroundColor: theme.palette.transparent.main,
   },
   darkDashed: {
     border: "dashed 1px",
