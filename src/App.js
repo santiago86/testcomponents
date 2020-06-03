@@ -1,7 +1,6 @@
 import React from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
-
 import Form from "./components/TextField/Form"
 import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
@@ -14,12 +13,21 @@ import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
+import AlertFull from "./components/AlertFullCo"
+
+const text = "Cras mattis consectetur purus sit amet fermentum."
 
 function App() {
   const [check, setCheck] = React.useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
+        <AlertFull
+          type="info"
+          visible={check}
+          message={text}
+          onClose={() => setCheck(!check)}
+        />
         <header className="App-header">
           <TypographyCo component="span" variant="overline">
             Vuelo de ida
@@ -30,6 +38,7 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
+          <Switch checked={check} onChange={() => setCheck(!check)} />
           <h2>Input</h2>
           <Form />
           <h2>Button </h2>
