@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Form = () => {
+const TextfieldSection = () => {
   const classes = useStyles()
 
   const [values, setValues] = useState({
@@ -257,4 +257,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default TextfieldSection
