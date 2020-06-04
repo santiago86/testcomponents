@@ -4,17 +4,11 @@ import Radio from "@material-ui/core/Radio"
 import { makeStyles } from "@material-ui/core/styles"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import clsx from "clsx"
-import theme from "../theme/index"
-import palette from "../theme/palette"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   div: {
     width: 180,
     height: 32,
-    "& .Mui-focusVisible": {
-      borderColor: palette.primary.main,
-      backgroundColor: palette.selection,
-    },
     "& .MuiRadio-colorSecondary.Mui-disabled": {
       backgroundColor: theme.palette.grey[100],
     },
@@ -34,27 +28,32 @@ const useStyles = makeStyles({
   },
   root: {
     "&:hover": {
-      borderColor: palette.primary.main,
+      borderColor: theme.palette.primary.main,
     },
     "&:active": {
       backgroundColor: theme.palette.grey[900],
-      backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
+      backgroundImage: "radial-gradient(#fff,#fff 20%,transparent 24%)",
     },
     width: 24,
     height: 24,
     border: "1px solid",
-    borderColor: palette.grey[500],
+    borderColor: theme.palette.grey[500],
   },
   icon: {
     borderRadius: "50%",
+    "$root.Mui-focusVisible &": {
+      border: "1px solid",
+      borderColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.white,
+    },
   },
   checkedIcon: {
-    backgroundColor: palette.primary.main,
+    backgroundColor: theme.palette.primary.main,
     "&:before": {
       display: "block",
       width: 24,
       height: 24,
-      backgroundImage: "radial-gradient(#fff,#fff 28%,transparent 32%)",
+      backgroundImage: "radial-gradient(#fff,#fff 20%,transparent 24%)",
       content: '""',
     },
     "input:disabled ~ &": {
@@ -63,12 +62,12 @@ const useStyles = makeStyles({
         display: "block",
         width: 24,
         height: 24,
-        backgroundImage: "radial-gradient(#CCCCCB,#CCCCCB 28%,transparent 32%)",
+        backgroundImage: "radial-gradient(#CCCCCB,#CCCCCB 20%,transparent 24%)",
         content: '""',
       },
     },
   },
-})
+}))
 
 const widthLabel = 100
 const widthLabelMultiLine = 180
