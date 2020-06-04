@@ -6,27 +6,22 @@ import FormControlLabel from "@material-ui/core/FormControlLabel"
 import clsx from "clsx"
 
 const useStyles = makeStyles((theme) => ({
-  div: {
+  root: {
     width: 180,
     height: 32,
-    "& .MuiRadio-colorSecondary.Mui-disabled": {
-      backgroundColor: theme.palette.grey[100],
-    },
-    "& .Mui-disabled": {
-      color: theme.palette.grey[700],
-    },
   },
   label: {
     display: "flex",
     alignItems: "normal",
     "& .MuiTypography-body1": {
+      color: theme.palette.grey[700],
       paddingLeft: theme.spacing(1),
       fontSize: "0.875rem",
       lineHeight: "1.25rem",
       width: (label) => label,
     },
   },
-  root: {
+  radio: {
     "&:hover": {
       borderColor: theme.palette.primary.main,
     },
@@ -41,7 +36,19 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     borderRadius: "50%",
-    "$root.Mui-focusVisible &": {
+    "input:disabled ~ &": {
+      backgroundColor: theme.palette.grey[100],
+      "&:before": {
+        display: "block",
+        width: 24,
+        height: 24,
+        content: '""',
+        borderColor: theme.palette.grey[500],
+        border: "1px solid",
+        borderRadius: "50%",
+      },
+    },
+    "$radio.Mui-focusVisible &": {
       border: "1px solid",
       borderColor: theme.palette.primary.main,
       backgroundColor: theme.palette.white,
@@ -64,6 +71,9 @@ const useStyles = makeStyles((theme) => ({
         height: 24,
         backgroundImage: "radial-gradient(#CCCCCB,#CCCCCB 20%,transparent 24%)",
         content: '""',
+        borderColor: theme.palette.grey[500],
+        border: "1px solid",
+        borderRadius: "50%",
       },
     },
   },
@@ -77,14 +87,14 @@ function RadioButtonCo({ id, label, onChange, value, ...props }) {
   const classes = useStyles(width)
 
   return (
-    <div className={classes.div}>
+    <div className={classes.root}>
       <FormControlLabel
         className={classes.label}
         value={value}
         control={
           <Radio
             disableRipple
-            className={classes.root}
+            className={classes.radio}
             checkedIcon={
               <span className={clsx(classes.icon, classes.checkedIcon)} />
             }
