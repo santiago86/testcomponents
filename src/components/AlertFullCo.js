@@ -1,5 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
+import Alert from "@material-ui/lab/Alert"
 import Collapse from "@material-ui/core/Collapse"
 import IconButton from "@material-ui/core/IconButton"
 import PropTypes from "prop-types"
@@ -7,44 +8,43 @@ import Close from "@material-ui/icons/Close"
 import Info from "@material-ui/icons/Info"
 import Typography from "@material-ui/core/Typography"
 
-import palette from "../theme/palette"
-
 const useStyles = makeStyles((theme) => ({
   collapse: {
     top: 0,
     zIndex: 999,
     position: "sticky",
   },
-  root: (props) => ({
+  root: {
+    padding: "12px 24px 12px 18px",
+    borderRadius: 0,
     width: "100%",
-    height: "7.625rem",
-    backgroundColor: props.color,
+    height: 122,
+    display: "flex",
+  },
+  contentInfo: {
+    padding: 0,
+    width: "100%",
     display: "flex",
     justifyContent: "space-between",
-  }),
-  contentInfo: {
-    margin: "14px 16px",
-    display: "flex",
-  },
-  iconMessage: {
-    size: 16,
-    color: theme.palette.common.white,
   },
   text: {
-    marginLeft: 16,
+    margin: "2px 18px",
     color: theme.palette.common.white,
     fontWeight: 500,
   },
   iconButton: {
-    marginTop: 12,
-    marginRight: 24,
     padding: 5,
+    borderRadius: "50%",
     border: 0,
-    backgroundColor: "rgba(66, 66, 66, 0.3)",
+    backgroundColor: theme.palette.transparent.alertIcons,
     alignSelf: "flex-start",
     "&:hover": {
-      backgroundColor: "rgba(66, 66, 66, 0.6)",
+      backgroundColor: "rgba(0,0,0,0.4)",
     },
+  },
+  iconMessage: {
+    margin: 0,
+    padding: "2px 0",
   },
   icon: {
     size: 16,
@@ -52,22 +52,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const switchColor = (value) => {
-  switch (value) {
-    case "info":
-      return palette.primary.main
-    case "success":
-      return palette.success.main
-    case "error":
-      return palette.error.main
-    default:
-      return palette.primary.main
-  }
-}
-
 const AlertFull = ({ visible, message, type, customIcon, onClose }) => {
-  const styles = { color: switchColor(type) }
-  const classes = useStyles(styles)
+  const classes = useStyles()
 
   return (
     <Collapse
@@ -75,13 +61,19 @@ const AlertFull = ({ visible, message, type, customIcon, onClose }) => {
       in={visible}
       timeout={600}
     >
-      <div className={classes.root}>
-        <div className={classes.contentInfo}>
-          {customIcon || <Info className={classes.iconMessage} />}
-          <Typography className={classes.text} variant="body1">
-            {message}
-          </Typography>
-        </div>
+      <Alert
+        color={type}
+        variant="filled"
+        classes={{
+          root: classes.root,
+          message: classes.contentInfo,
+          icon: classes.iconMessage,
+        }}
+        icon={customIcon || <Info className={classes.icon} />}
+      >
+        <Typography className={classes.text} variant="body1">
+          {message}
+        </Typography>
         <IconButton
           className={classes.iconButton}
           onClick={onClose}
@@ -89,7 +81,7 @@ const AlertFull = ({ visible, message, type, customIcon, onClose }) => {
         >
           <Close className={classes.icon} />
         </IconButton>
-      </div>
+      </Alert>
     </Collapse>
   )
 }

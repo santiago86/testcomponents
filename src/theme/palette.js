@@ -69,6 +69,7 @@ export default {
     main: "transparent",
     text: "rgba(255, 255, 255, 0.5)",
     bg: "rgba(255, 255, 255, 0.3)",
+    alertIcons: "rgba(0,0,0,0.2)",
     shadow: "rgba(0,0,0,0.15)",
   },
   gradients: {
