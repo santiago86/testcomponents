@@ -58,7 +58,22 @@ export default {
     fontSize: "1rem",
     lineHeight: 1.5,
     boxShadow: "none",
-    "&:active, &:focus": {
+    border: "none",
+    color: palette.primary.main,
+    "&:hover": {
+      color: palette.primary.main,
+      backgroundColor: palette.transparent.main,
+      cursor: "pointer",
+    },
+    "&:focus": {
+      border: 0,
+      outline: 0,
+      cursor: "pointer",
+    },
+    "&:disabled": {
+      color: palette.grey[300],
+    },
+    "&:active": {
       outlineColor: "#4D90FE",
       outlineWidth: 5,
       outlineStyle: "auto",

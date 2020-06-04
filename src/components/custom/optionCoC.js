@@ -11,6 +11,7 @@ const OptionCoC = (props) => {
     index,
     setValue,
     onHover,
+    onBlur,
     continuePropagation,
   } = props
 
@@ -58,6 +59,7 @@ const OptionCoC = (props) => {
         styles({ selected: selected === value || highlighted }).dropdownContent
       }
       onClick={(e) => setValue(e, value)}
+      onBlur={(e) => onBlur(e)}
       onKeyDown={(e) => onKeyDown(e)}
       key={value}
       tabIndex={highlighted ? "0" : "-1"}

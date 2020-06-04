@@ -8,7 +8,7 @@ import InfoIcon from "@material-ui/icons/Info"
 import CheckIcon from "@material-ui/icons/Check"
 import PhoneIcon from "@material-ui/icons/Phone"
 import Autocomplete from "@material-ui/lab/Autocomplete"
-import InputCo from "./inputCo"
+import InputCo from "../components/inputCo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,38 +18,39 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   inputTitle: {
-    fontSize: "12px",
+    fontSize: 12,
     textTransform: "uppercase",
     color: theme.palette.grey[600],
     fontWeight: "600",
-    marginTop: "10px",
-    marginBottom: "10px",
+    marginTop: 10,
+    marginBottom: 10,
   },
   container: {
     display: "flex",
   },
   column: {
     width: "32%",
-    marginRight: "20px",
+    marginRight: 20,
   },
   fixMargin: {
-    marginTop: "30px",
+    marginTop: 30,
   },
   inputWithoutLabel: {
-    fontSize: "12px",
+    fontSize: 12,
     textTransform: "uppercase",
     color: theme.palette.grey[600],
     fontWeight: "600",
-    marginTop: "10px",
-    marginBottom: "30px",
+    marginTop: 10,
+    marginBottom: 30,
   },
   warningInfo: {
-    width: "18px",
-    marginRight: "5px",
+    width: 12,
+    marginRight: 5,
+    height: "auto",
   },
 }))
 
-const Form = () => {
+const TextfieldSection = () => {
   const classes = useStyles()
 
   const [values, setValues] = useState({
@@ -134,7 +135,7 @@ const Form = () => {
             setValue={handleChange("three")}
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment disablePointerEvents position="start">
                   <SearchIcon />
                 </InputAdornment>
               ),
@@ -151,7 +152,7 @@ const Form = () => {
             setValue={handleChange("four")}
             InputProps={{
               endAdornment: (
-                <InputAdornment position="end">
+                <InputAdornment disablePointerEvents position="end">
                   <InfoOutlinedIcon />
                 </InputAdornment>
               ),
@@ -177,12 +178,12 @@ const Form = () => {
             setValue={handleChange("six")}
             InputProps={{
               startAdornment: (
-                <InputAdornment position="start">
+                <InputAdornment disablePointerEvents position="start">
                   <PhoneIcon />
                 </InputAdornment>
               ),
               endAdornment: (
-                <InputAdornment position="end">
+                <InputAdornment disablePointerEvents position="end">
                   <InfoOutlinedIcon />
                 </InputAdornment>
               ),
@@ -223,7 +224,7 @@ const Form = () => {
               country.validCountry && {
                 endAdornment: (
                   <InputAdornment position="end">
-                    <CheckIcon style={{ color: "green" }} />
+                    <CheckIcon style={{ color: "green", fontSize: "18px" }} />
                   </InputAdornment>
                 ),
               }
@@ -256,4 +257,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default TextfieldSection
