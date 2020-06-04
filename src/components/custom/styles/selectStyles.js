@@ -30,7 +30,7 @@ const generalStyle = {
     // Custom arrow setup
     background: `url(${icon}) no-repeat right center`,
     backgroundPosition: "right 5px top 50%",
-    backgroundColor: "transparent",
+    backgroundColor: theme.palette.transparent.main,
     "-webkit-appearance": "none",
     "-moz-appearance": "none",
     // Personalized characteristics
@@ -69,7 +69,7 @@ const generalStyle = {
     left: theme.spacing(1.8),
     pointerEvents: "none",
     color: theme.palette.grey["600"],
-    background: "transparent",
+    background: theme.palette.transparent.main,
     zIndex: 100,
   },
 
@@ -83,7 +83,7 @@ const generalStyle = {
     zIndex: "1",
     maxHeight: "200px",
     overflowY: "auto",
-    padding: "8px 0px",
+    padding: [8, 0],
     ...theme.typography.body1,
   },
 
@@ -92,9 +92,9 @@ const generalStyle = {
     textDecoration: "none",
     display: "block",
     textAlign: "left",
-    border: "transparent",
+    border: theme.palette.transparent.main,
     width: "100%",
-    padding: "12px 16px",
+    padding: [12, 16],
     outline: "none",
     ...theme.typography.body1,
     color: theme.palette.text.primary,
@@ -110,7 +110,7 @@ const generalStyle = {
     },
     /** Changes the property of the option if it has been selected */
     backgroundColor: (props) =>
-      props.selected ? theme.palette.selection : "transparent",
+      props.selected ? theme.palette.selection : theme.palette.transparent.main,
   },
 
   // Settings for the Dropdown dividers
