@@ -12,9 +12,13 @@ function ButtonLoading() {
     return () => clearTimeout(timer)
   }, [loading])
 
+  const onClick = () => {
+    setLoading(true)
+  }
+
   return (
     <div>
-      <ButtonCo onClick={() => setLoading(true)}>Click Me</ButtonCo>
+      <ButtonCo onClick={onClick}>Click Me</ButtonCo>
       {loading && <LoadingCo />}
     </div>
   )
