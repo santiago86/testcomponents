@@ -39,7 +39,7 @@ const outlinedPrimary = {
     color: palette.common.white,
     backgroundColor: palette.primary.main,
   },
-  "&:active": {
+  "&:active, &:focus": {
     color: palette.common.white,
     backgroundColor: palette.primary.main,
   },
@@ -131,7 +131,7 @@ export default {
       color: palette.common.white,
       backgroundColor: palette.secondary.dark,
     },
-    "&:active": {
+    "&:active, &:focus": {
       color: palette.common.white,
       backgroundColor: palette.secondary.dark,
     },
