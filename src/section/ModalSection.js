@@ -27,7 +27,7 @@ export default function ModalSection() {
     openModal2: false,
     openModal3: false,
     openModal4: false,
-    openModal5: true,
+    openModal5: false,
     openModal6: false,
     openModal7: false,
     openModal8: false,
