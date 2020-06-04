@@ -39,7 +39,7 @@ const outlinedPrimary = {
     color: palette.common.white,
     backgroundColor: palette.primary.main,
   },
-  "&:active": {
+  "&:active, &:focus": {
     color: palette.common.white,
     backgroundColor: palette.primary.main,
   },
@@ -58,6 +58,12 @@ export default {
     fontSize: "1rem",
     lineHeight: 1.5,
     boxShadow: "none",
+    "&:active, &:focus": {
+      outlineColor: "#4D90FE",
+      outlineWidth: 5,
+      outlineStyle: "auto",
+      outlineOffset: -2,
+    },
   },
   sizeSmall: {
     padding: "4px 12px",
@@ -110,7 +116,7 @@ export default {
       color: palette.common.white,
       backgroundColor: palette.secondary.dark,
     },
-    "&:active": {
+    "&:active, &:focus": {
       color: palette.common.white,
       backgroundColor: palette.secondary.dark,
     },

@@ -23,13 +23,14 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[600],
     fontWeight: "600",
     marginTop: "10px",
+    marginBottom: "10px",
   },
   container: {
     display: "flex",
-    marginLeft: "5%",
   },
   column: {
-    width: "30%",
+    width: "32%",
+    marginRight: "20px",
   },
   fixMargin: {
     marginTop: "30px",
