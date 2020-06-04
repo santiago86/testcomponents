@@ -4,6 +4,7 @@ import Dialog from "@material-ui/core/Dialog"
 import DialogActions from "@material-ui/core/DialogActions"
 import SvgIcon from "@material-ui/core/SvgIcon"
 import IconButton from "@material-ui/core/IconButton"
+import Right from "@material-ui/icons/ChevronRight"
 import { withStyles } from "@material-ui/core/styles"
 import ButtonCo from "../buttonCo"
 import theme from "../../theme"
@@ -105,11 +106,14 @@ const styles = {
    * Style defined for the label to overflow it's text
    */
   btnLabel: {
+    position: "relative",
+    display: "inline-block",
+    wordWrap: "break-word",
     overflow: "hidden",
+    maxHeight: "3.6em",
+    lineHeight: "1.2em",
+    textAlign: "justify",
     textOverflow: "ellipsis",
-    display: "-webkit-box",
-    "-webkit-line-clamp": 3 /* number of lines to show */,
-    "-webkit-box-orient": "vertical",
   },
   /**
    * Variables to make the CloseSVG button stay in place
@@ -126,12 +130,7 @@ const styles = {
  * Creates an stylized Action button to apply the dynamic changes
  */
 const ActionButton = withStyles(styles)(({ classes, type, ...other }) => {
-  return (
-    <ButtonCo
-      classes={{ root: classes.btnRoot, label: classes.btnLabel }}
-      {...other}
-    />
-  )
+  return <ButtonCo classes={{ root: classes.btnRoot }} {...other} />
 })
 
 /**
@@ -184,8 +183,8 @@ const CloseButton = withStyles(styles)(({ classes, ...other }) => {
  */
 const justPrimary = (text, action) => {
   return (
-    <ActionButton type="primary" fullWidth onClick={action}>
-      {text}
+    <ActionButton type="primary" fullWidth onClick={action} end={Right}>
+      <div style={styles.btnLabel}>{text}</div>
     </ActionButton>
   )
 }
@@ -205,10 +204,10 @@ const primaryAndSecondary = (primary, secondary) => {
       onClick={secondary[1]}
       fullWidth
     >
-      {secondary[0]}
+      <div style={styles.btnLabel}>{secondary[0]}</div>
     </ActionButton>,
     <ActionButton key="primary" type="primary" fullWidth onClick={primary[1]}>
-      {primary[0]}
+      <div style={styles.btnLabel}>{primary[0]}</div>
     </ActionButton>,
   ]
 }
