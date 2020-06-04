@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
 const useClasses = makeStyles((theme) => ({
   outlinedPrimary: {
     [theme.breakpoints.down("sm")]: {
-      backgroundColor: theme.palette.transparent,
+      backgroundColor: theme.palette.transparent.main,
       color: theme.palette.primary.main,
       "&:active, &:focus": {
         backgroundColor: theme.palette.primary.main,
@@ -66,7 +66,7 @@ const useClasses = makeStyles((theme) => ({
   },
   outlinedSecondary: {
     [theme.breakpoints.down("sm")]: {
-      backgroundColor: theme.palette.transparent,
+      backgroundColor: theme.palette.transparent.main,
       color: theme.palette.secondary.dark,
       "&:active, &:focus": {
         backgroundColor: theme.palette.secondary.dark,
@@ -105,7 +105,7 @@ const useClasses = makeStyles((theme) => ({
       border: 1,
       borderStyle: "solid",
       color: theme.palette.transparent.text,
-      background: theme.palette.transparent,
+      background: theme.palette.transparent.main,
     },
   },
   shadowPrimary: {
@@ -114,7 +114,7 @@ const useClasses = makeStyles((theme) => ({
       boxShadow: `1px 2px 4px ${theme.palette.transparent.shadow}`,
     },
     "&:disabled": {
-      backgroundColor: theme.palette.transparent,
+      backgroundColor: theme.palette.transparent.main,
       bordercolor: theme.palette.transparent.bg,
       border: 1,
       color: theme.palette.transparent.bg,
