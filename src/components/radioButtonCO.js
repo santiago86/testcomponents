@@ -5,6 +5,11 @@ import { makeStyles } from "@material-ui/core/styles"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import clsx from "clsx"
 
+const widthLabel = 100
+const widthLabelMultiLine = 180
+const whitePoint = "radial-gradient(#fff,#fff 20%,transparent 24%)"
+const grayPoint = "radial-gradient(#CCCCCB,#CCCCCB 20%,transparent 24%)"
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: 180,
@@ -27,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:active": {
       backgroundColor: theme.palette.grey[900],
-      backgroundImage: theme.palette.gradients[700],
+      backgroundImage: whitePoint,
     },
     width: 24,
     height: 24,
@@ -60,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
       width: 24,
       height: 24,
-      backgroundImage: theme.palette.gradients[700],
+      backgroundImage: whitePoint,
       content: '""',
     },
     "input:disabled ~ &": {
@@ -69,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
         display: "block",
         width: 24,
         height: 24,
-        backgroundImage: theme.palette.gradients[800],
+        backgroundImage: grayPoint,
         content: '""',
         borderColor: theme.palette.grey[500],
         border: "1px solid",
@@ -78,9 +83,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }))
-
-const widthLabel = 100
-const widthLabelMultiLine = 180
 
 function RadioButtonCo({ id, label, onChange, value, ...props }) {
   const width = label.length <= 20 ? widthLabel : widthLabelMultiLine
