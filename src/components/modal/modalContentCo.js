@@ -2,10 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import DialogContent from "@material-ui/core/DialogContent"
 import { withStyles } from "@material-ui/core/styles"
-import theme from "../theme"
+import theme from "../../theme"
 
 const styles = {
   root: {
+    width: "100%",
     "&:first-child": {
       [theme.breakpoints.down("lg")]: {
         paddingTop: theme.spacing(13),

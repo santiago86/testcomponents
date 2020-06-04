@@ -70,6 +70,7 @@ export default {
     text: "rgba(255, 255, 255, 0.5)",
     bg: "rgba(255, 255, 255, 0.3)",
     shadow: "rgba(0,0,0,0.15)",
+    dimmer: "rgba(0,0,0,0.64)",
   },
   gradients: {
     gradientGrey: "linear-gradient(180deg, #FFF 0%, #000 100%)",

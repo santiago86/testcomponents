@@ -2,14 +2,22 @@ import React from "react"
 import PropTypes from "prop-types"
 import Dialog from "@material-ui/core/Dialog"
 import DialogActions from "@material-ui/core/DialogActions"
-import CancelIcon from "@material-ui/icons/Cancel"
+import SvgIcon from "@material-ui/core/SvgIcon"
 import IconButton from "@material-ui/core/IconButton"
 import { withStyles } from "@material-ui/core/styles"
-import ButtonCo from "./buttonCo"
-import theme from "../theme"
+import ButtonCo from "../buttonCo"
+import theme from "../../theme"
+import { ReactComponent as Close } from "../../assets/icons/Modal_close_default.svg"
 
 const styledBy = (property, mapping) => (props) => mapping[props[property]]
 
+function CloseIcon(props) {
+  return (
+    <SvgIcon {...props}>
+      <Close />
+    </SvgIcon>
+  )
+}
 const styles = {
   btnRoot: {
     margin: 0,
@@ -20,11 +28,21 @@ const styles = {
       secondary: theme.palette.grey["600"],
       primary: theme.palette.white,
     }),
-    backgroundColor: styledBy("type", {
-      primary: theme.palette.gradients.gradient4,
+    background: styledBy("type", {
+      primary: theme.palette.gradients["500"],
     }),
-    "&:not(:first-child)": {
+    "&:hover": {
+      background: styledBy("type", {
+        primary: theme.palette.gradients["600"],
+      }),
+    },
+    "&:last-child": {
       margin: 0,
+      borderBottomRightRadius: 8,
+    },
+    "&:first-child": {
+      margin: 0,
+      borderBottomLeftRadius: 8,
     },
   },
   btnLabel: {
@@ -47,6 +65,10 @@ const styles = {
     [theme.breakpoints.up("lg")]: {
       margin: theme.spacing(5),
     },
+    overflow: "visible",
+    width: "100%",
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
   },
   actions: {
     padding: 0,
@@ -61,8 +83,10 @@ const styles = {
     alignItems: "stretch",
   },
   close: {
-    marginLeft: "-8px",
-    position: "fixed",
+    float: "right",
+    position: "sticky",
+    top: "5vh",
+    width: 0,
   },
 }
 
@@ -101,22 +125,21 @@ const StyledModal = withStyles(styles)(({ classes, ...other }) => {
 const StyledClose = withStyles(styles)(({ classes, ...other }) => {
   return (
     <IconButton
+      color="primary"
+      size="small"
+      {...other}
       classes={{
         root: classes.close,
       }}
-      color="primary"
-      disableRipple
-      disableFocusRipple
-      size="small"
-      {...other}
     >
-      <CancelIcon style={{ fontSize: 63 }} />
+      <CloseIcon style={{ fontSize: 52 }} />
     </IconButton>
   )
 })
 
 const defaultProps = {
   fullWidth: true,
+  maxWidth: "lg",
 }
 
 const justPrimary = (text) => {
@@ -159,11 +182,13 @@ function ModalCo(props) {
   delete currentProps.onSecondary
   delete currentProps.showClose
   return (
-    <StyledModal {...currentProps} styles={{}}>
-      {showClose && <StyledClose onClick={onClose} aria-label="Close" />}
-      {children}
-      <StyledActions>{modalButton}</StyledActions>
-    </StyledModal>
+    <div>
+      <StyledModal {...currentProps}>
+        {showClose && <StyledClose onClick={onClose} aria-label="Close" />}
+        {children}
+        {modalButton && <StyledActions>{modalButton}</StyledActions>}
+      </StyledModal>
+    </div>
   )
 }
 
