@@ -1,4 +1,4 @@
-import React, { useMemo } from "react"
+import React, { useMemo, forwardRef } from "react"
 import Button from "@material-ui/core/Button"
 import { makeStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
@@ -134,6 +134,7 @@ function ButtonCo({
   end: EndIcon,
   children,
   loading,
+  buttonRef,
   ...props
 }) {
   const { size } = props
@@ -148,6 +149,7 @@ function ButtonCo({
   const loadingSize = LOADING_SIZES[size] || LOADING_SIZES.medium
   return (
     <Button
+      ref={buttonRef}
       {...props}
       className={clsx(styles.button, className)}
       color={defaultColor}
@@ -179,6 +181,7 @@ ButtonCo.propTypes = {
   children: PropTypes.node,
   loading: PropTypes.bool,
   size: PropTypes.string,
+  buttonRef: PropTypes.node,
 }
 
 ButtonCo.defaultProps = {
@@ -189,5 +192,8 @@ ButtonCo.defaultProps = {
   end: null,
   children: null,
   loading: false,
+  buttonRef: null,
 }
-export default ButtonCo
+export default forwardRef((props, ref) => (
+  <ButtonCo buttonRef={ref} {...props} />
+))

@@ -14,6 +14,7 @@ import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
+import PopperCo from "./components/popperCo"
 
 function App() {
   const [check, setCheck] = React.useState(false)
@@ -21,6 +22,15 @@ function App() {
     <div className="App">
       <Container max-width="lg">
         <header className="App-header">
+          <br />
+          <br />
+          <br />
+          <center>
+            <PopperCo />
+          </center>
+          <br />
+          <br />
+          <br />
           <TypographyCo component="span" variant="overline">
             Vuelo de ida
           </TypographyCo>
