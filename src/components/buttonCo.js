@@ -138,6 +138,21 @@ const useClasses = makeStyles((theme) => ({
       color: theme.palette.common.white,
     },
   },
+  Inverted: {
+    border: "none",
+    color: theme.palette.common.white,
+    "&:hover": {
+      color: theme.palette.common.white,
+      backgroundColor: theme.palette.transparent.bg2,
+    },
+    "&:focus": {
+      border: 0,
+      outline: 0,
+    },
+    "&:disabled": {
+      color: theme.palette.grey[300],
+    },
+  },
 }))
 
 const LOADING_SIZES = {
@@ -148,7 +163,7 @@ const LOADING_SIZES = {
 
 function ButtonCo({
   color = "primary",
-  variant = "contained",
+  variant = "",
   start: StartIcon,
   end: EndIcon,
   children,
@@ -202,7 +217,7 @@ ButtonCo.propTypes = {
 
 ButtonCo.defaultProps = {
   color: "primary",
-  variant: "contained",
+  variant: "",
   size: "medium",
   start: null,
   end: null,

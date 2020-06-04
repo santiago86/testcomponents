@@ -6,7 +6,7 @@ export default {
     marginTop: "8px",
     marginBottom: "8px",
     outline: "none",
-    outlineColor: "transparent",
+    outlineColor: palette.transparent.main,
     "& $notchedOutline": {
       borderColor: palette.grey["300"],
     },

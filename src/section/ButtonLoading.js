@@ -18,7 +18,9 @@ function ButtonLoading() {
 
   return (
     <div>
-      <ButtonCo onClick={onClick}>Click Me</ButtonCo>
+      <ButtonCo onClick={onClick} variant="contained">
+        Click Me
+      </ButtonCo>
       {loading && <LoadingCo />}
     </div>
   )
