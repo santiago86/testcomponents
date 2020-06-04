@@ -5,6 +5,7 @@ import MuiMenuItem from "./MuiMenuItem"
 import MuiOutlinedInput from "./MuiOutlinedInput"
 import MuiSelect from "./MuiSelect"
 import MuiSlider from "./MuiSlider"
+import MuiTextField from "./MuiTextField"
 
 export default {
   MuiCssBaseline,
@@ -14,4 +15,5 @@ export default {
   MuiMenuItem,
   MuiOutlinedInput,
   MuiSelect,
+  MuiTextField,
 }

@@ -2,7 +2,8 @@ import React, { useState } from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
 
-import Form from "./components/TextField/Form"
+import TextfieldSection from "./section/TextfieldSection"
+import DividerSection from "./section/DividerSection"
 import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
@@ -32,7 +33,9 @@ function App() {
             Hacia Buenos Aires
           </TypographyCo>
           <h2>Input</h2>
-          <Form />
+          <TextfieldSection />
+          <h2>Divider</h2>
+          <DividerSection />
           <h2>Button </h2>
           <ButtonSection />
           <h2>Checkbox </h2>
