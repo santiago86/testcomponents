@@ -5,7 +5,6 @@ import PropTypes from "prop-types"
 import clsx from "clsx"
 
 import CircularProgress from "@material-ui/core/CircularProgress"
-import palette from "../theme/palette"
 
 const VARIANTS_COLORS_MAP = {
   // Colors
@@ -54,69 +53,89 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 // Here are just the new styles "variants"
-const useClasses = makeStyles(() => ({
+const useClasses = makeStyles((theme) => ({
+  outlinedPrimary: {
+    [theme.breakpoints.down("sm")]: {
+      backgroundColor: theme.palette.transparent.main,
+      color: theme.palette.primary.main,
+      "&:active, &:focus": {
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.common.white,
+      },
+    },
+  },
+  outlinedSecondary: {
+    [theme.breakpoints.down("sm")]: {
+      backgroundColor: theme.palette.transparent.main,
+      color: theme.palette.secondary.dark,
+      "&:active, &:focus": {
+        backgroundColor: theme.palette.secondary.dark,
+        color: theme.palette.common.white,
+      },
+    },
+  },
   outlinedGrey: {
-    borderColor: palette.grey[500],
+    borderColor: theme.palette.grey[500],
     border: 1,
     borderStyle: "solid",
-    color: palette.grey[500],
+    color: theme.palette.grey[500],
     "&:hover": {
-      color: palette.common.white,
-      backgroundColor: palette.grey[500],
-      borderColor: palette.grey[500],
+      color: theme.palette.common.white,
+      backgroundColor: theme.palette.grey[500],
+      borderColor: theme.palette.grey[500],
     },
     "&:disabled": {
-      bordercolor: palette.grey[400],
-      backgroundColor: palette.grey[100],
-      color: palette.grey[400],
+      bordercolor: theme.palette.grey[400],
+      backgroundColor: theme.palette.grey[100],
+      color: theme.palette.grey[400],
     },
   },
   outlinedInverted: {
-    borderColor: palette.common.white,
+    borderColor: theme.palette.common.white,
     border: 1,
     borderStyle: "solid",
-    color: palette.common.white,
+    color: theme.palette.common.white,
     "&:hover": {
-      color: palette.primary.main,
-      borderColor: palette.common.white,
-      background: palette.common.white,
+      color: theme.palette.primary.main,
+      borderColor: theme.palette.common.white,
+      background: theme.palette.common.white,
     },
     "&:disabled": {
-      bordercolor: "palette.transparent.bg",
+      bordercolor: theme.palette.transparent.bg,
       border: 1,
       borderStyle: "solid",
-      color: palette.transparent.text,
-      background: "transparent",
+      color: theme.palette.transparent.text,
+      background: theme.palette.transparent.main,
     },
   },
   shadowPrimary: {
-    boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
+    boxShadow: `1px 2px 4px ${theme.palette.transparent.shadow}`,
     "&:hover": {
-      boxShadow: `1px 2px 4px ${palette.transparent.shadow}`,
+      boxShadow: `1px 2px 4px ${theme.palette.transparent.shadow}`,
     },
     "&:disabled": {
-      backgroundColor: "transparent",
-      bordercolor: palette.transparent.bg,
+      backgroundColor: theme.palette.transparent.main,
+      bordercolor: theme.palette.transparent.bg,
       border: 1,
-      color: palette.transparent.bg,
+      color: theme.palette.transparent.bg,
       borderStyle: "solid",
       boxShadow: "none",
     },
   },
   containedConfirm: {
-    background: palette.success.main,
-    color: palette.common.white,
+    background: theme.palette.success.main,
+    color: theme.palette.common.white,
     "&:hover": {
-      background: palette.success.main,
-      color: palette.common.white,
+      background: theme.palette.success.main,
+      color: theme.palette.common.white,
     },
     "&:active": {
-      background: palette.success.main,
-      color: palette.common.white,
+      background: theme.palette.success.main,
+      color: theme.palette.common.white,
     },
     "&:disabled": {
-      background: palette.grey[200],
-      color: palette.common.white,
+      background: theme.palette.grey[200],
+      color: theme.palette.common.white,
     },
   },
 }))

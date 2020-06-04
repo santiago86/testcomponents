@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
 
@@ -14,10 +14,11 @@ import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
+import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
 
 function App() {
-  const [check, setCheck] = React.useState(false)
+  const [check, setCheck] = useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
@@ -53,6 +54,8 @@ function App() {
           <RadioButton />
           <h2> Modal </h2>
           <ModalSection />
+          <h2> Alert Message </h2>
+          <AlertSection />
         </header>
       </Container>
     </div>
