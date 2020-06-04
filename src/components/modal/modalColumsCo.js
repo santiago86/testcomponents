@@ -1,11 +1,14 @@
 import React from "react"
-import PropTypes from "prop-types"
 import DialogContent from "@material-ui/core/DialogContent"
 import Divider from "@material-ui/core/Divider"
 import { makeStyles } from "@material-ui/core/styles"
 import theme from "../../theme"
 
 const useStyles = makeStyles({
+  /**
+   * Styles definding the content.With some breakpoints, it behaves
+   * different.
+   */
   content: {
     alignContent: "center",
     display: "flex",
@@ -14,6 +17,10 @@ const useStyles = makeStyles({
       display: "block",
     },
   },
+  /**
+   * Styles for the divider. With some breakpoints, it behaves
+   * different and can even dissapear.
+   */
   divider: {
     borderColor: "rgba(209, 209, 209, 0.50)",
     [theme.breakpoints.up("xs")]: {
@@ -38,24 +45,42 @@ function ModalColumsCo(props) {
   const styles = useStyles()
   let child1
   let child2
+  /**
+   * Divides the children in order to place them properly
+   */
   if (Array.isArray(children)) {
     ;[child1, child2] = children
   }
   return (
     <DialogContent className={styles.content}>
-      <div>{child1}</div>
+      {child1}
       <Divider orientation="vertical" flexItem className={styles.divider} />
-      <div>{child2}</div>
+      {child2}
     </DialogContent>
   )
 }
 
+/**
+ * PropType function which handles the validation for the children to be type <div>.
+ */
+const childrenPropTypeLogic = (props, propName, componentName) => {
+  const prop = props[propName]
+  return (
+    React.Children.toArray(prop).find((child) => child.type !== "div") &&
+    new Error(`${componentName} only accepts "div" elements`)
+  )
+}
+
 ModalColumsCo.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.node),
+  /**
+   * The children can only be type div. This is in order to assure
+   * consistency, and read the two columns properly.
+   */
+  children: childrenPropTypeLogic,
 }
 
 ModalColumsCo.defaultProps = {
-  children: [undefined, undefined],
+  children: [<div />, <div />],
 }
 
 export default ModalColumsCo

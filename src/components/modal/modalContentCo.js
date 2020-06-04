@@ -1,10 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import DialogContent from "@material-ui/core/DialogContent"
-import { withStyles } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles"
 import theme from "../../theme"
 
-const styles = {
+/**
+ * Styles which define the behavior of the padding for the content.
+ * The first-child and last-child will have different padding
+ */
+const useStyles = makeStyles({
   root: {
     width: "100%",
     "&:first-child": {
@@ -60,18 +64,22 @@ const styles = {
       paddingLeft: theme.spacing(3),
     },
   },
-}
-
-const StyledDC = withStyles(styles)(({ classes, ...other }) => {
-  return <DialogContent classes={{ root: classes.root }} {...other} />
 })
 
 function ModalContentCo(props) {
   const { children } = props
-  return <StyledDC {...props}>{children}</StyledDC>
+  const styles = useStyles()
+  return (
+    <DialogContent className={styles.root} {...props}>
+      {children}
+    </DialogContent>
+  )
 }
 
 ModalContentCo.propTypes = {
+  /**
+   * The children can be of any type
+   */
   children: PropTypes.node,
 }
 

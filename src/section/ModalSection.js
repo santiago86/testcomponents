@@ -51,6 +51,9 @@ export default function ModalSection() {
     openModalBig,
   } = state
 
+  /**
+   * Large modal with a lot of items inside.
+   */
   const bigModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModalBig")}
@@ -67,6 +70,11 @@ export default function ModalSection() {
     </ModalCo>
   )
 
+  /**
+   * Basic modal with one Action button
+   * To make the button appear, just place `primarybutton`
+   * If you want an action for this button, put `onPrimary`
+   */
   const firstModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal1")}
@@ -79,6 +87,11 @@ export default function ModalSection() {
       </ModalContentCo>
     </ModalCo>
   )
+  /**
+   * Basic modal with two Action buttons
+   * To make the second button appear, just place `secondarybutton`
+   * If you want an action for this button, put `onSecondary`
+   */
   const secondModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal2")}
@@ -92,6 +105,10 @@ export default function ModalSection() {
       </ModalContentCo>
     </ModalCo>
   )
+  /**
+   * Basic modal without the close button.
+   * ONLY remove the `showClose`prop.
+   */
   const thirdModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal3")}
@@ -104,6 +121,10 @@ export default function ModalSection() {
       </ModalContentCo>
     </ModalCo>
   )
+  /**
+   * Basic modal without Action Buttons.
+   * Do not place `primarybutton` nor `secondaryButton`
+   */
   const fourthModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal4")}
@@ -115,6 +136,11 @@ export default function ModalSection() {
       </ModalContentCo>
     </ModalCo>
   )
+  /**
+   * Basic modal with one Action button.
+   * If the button exceeds the lenght, it will continue next line.
+   * Valid up to three lines.
+   */
   const fifthModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal5")}
@@ -128,6 +154,12 @@ export default function ModalSection() {
       </ModalContentCo>
     </ModalCo>
   )
+  /**
+   * Basic modal with two Action buttons.
+   * If one or both of the buttons exceeds the lenght,
+   * it will continue next line.
+   * Valid up to three lines.
+   */
   const sixthModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal6")}
@@ -143,6 +175,10 @@ export default function ModalSection() {
     </ModalCo>
   )
 
+  /**
+   * Two column Modal. In order for it to behave like this
+   * pass a child with type `ModalColumsCo` with two `<div>`components.
+   */
   const seventhModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal7")}
@@ -153,16 +189,28 @@ export default function ModalSection() {
     >
       <ModalTitleCo>Título</ModalTitleCo>
       <ModalColumsCo>
-        <ModalContentCo>
-          <ButtonCo>Contenido</ButtonCo>
-        </ModalContentCo>
-        <ModalContentCo>
-          <ButtonCo>Contenido</ButtonCo>
-        </ModalContentCo>
+        <div>
+          <ModalContentCo>
+            <ButtonCo>Contenido</ButtonCo>
+          </ModalContentCo>
+        </div>
+        <div>
+          <ModalContentCo>
+            <ButtonCo>Contenido</ButtonCo>
+          </ModalContentCo>
+          <ModalContentCo>
+            <ButtonCo>Contenido 2</ButtonCo>
+          </ModalContentCo>
+          <ModalContentCo>
+            <ButtonCo>Contenido 3</ButtonCo>
+          </ModalContentCo>
+        </div>
       </ModalColumsCo>
     </ModalCo>
   )
-
+  /**
+   * Two column Modal. But with more stuff
+   */
   const eighthModal = (
     <ModalCo
       onClose={() => handleOpen(false, "openModal8")}
@@ -173,11 +221,16 @@ export default function ModalSection() {
     >
       <ModalTitleCo>Título</ModalTitleCo>
       <ModalColumsCo>
-        <ModalContentCo>{pileButtons(false)}</ModalContentCo>
-        <ModalContentCo>{pileButtons(false)}</ModalContentCo>
+        <div>
+          <ModalContentCo>{pileButtons(false)}</ModalContentCo>
+        </div>
+        <div>
+          <ModalContentCo>{pileButtons(false)}</ModalContentCo>
+        </div>
       </ModalColumsCo>
     </ModalCo>
   )
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={3}>
@@ -225,6 +278,7 @@ export default function ModalSection() {
           Modal Grande
         </ButtonCo>
       </Grid>
+      {/* Always declarate the modals at the bottom of the JSX */}
       {firstModal}
       {secondModal}
       {thirdModal}
