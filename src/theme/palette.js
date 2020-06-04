@@ -84,6 +84,8 @@ export default {
     "400": "linear-gradient(270deg, #0060A9 0%, #0D3050 100%)",
     "500": "linear-gradient(270deg, #12416e 0%, #0d3050 100%)",
     "600": "linear-gradient(270deg, #006cb3 0%, #12416e 100%)",
+    "700": "radial-gradient(#fff,#fff 20%,transparent 24%)",
+    "800": "radial-gradient(#CCCCCB,#CCCCCB 20%,transparent 24%)",
   },
   alternative: {
     copaGold: "#8D7249",

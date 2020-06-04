@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
     "&:active": {
       backgroundColor: theme.palette.grey[900],
-      backgroundImage: "radial-gradient(#fff,#fff 20%,transparent 24%)",
+      backgroundImage: theme.palette.gradients[700],
     },
     width: 24,
     height: 24,
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
       display: "block",
       width: 24,
       height: 24,
-      backgroundImage: "radial-gradient(#fff,#fff 20%,transparent 24%)",
+      backgroundImage: theme.palette.gradients[700],
       content: '""',
     },
     "input:disabled ~ &": {
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
         display: "block",
         width: 24,
         height: 24,
-        backgroundImage: "radial-gradient(#CCCCCB,#CCCCCB 20%,transparent 24%)",
+        backgroundImage: theme.palette.gradients[800],
         content: '""',
         borderColor: theme.palette.grey[500],
         border: "1px solid",
