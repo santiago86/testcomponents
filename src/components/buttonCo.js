@@ -140,17 +140,17 @@ const useClasses = makeStyles((theme) => ({
   },
   Inverted: {
     border: "none",
-    color: palette.common.white,
+    color: theme.palette.common.white,
     "&:hover": {
-      color: palette.common.white,
-      backgroundColor: palette.transparent.bg2,
+      color: theme.palette.common.white,
+      backgroundColor: theme.palette.transparent.bg2,
     },
     "&:focus": {
       border: 0,
       outline: 0,
     },
-    "&.MuiButton-root.Mui-disabled": {
-      color: palette.grey[300],
+    "&:disabled": {
+      color: theme.palette.grey[300],
     },
   },
 }))

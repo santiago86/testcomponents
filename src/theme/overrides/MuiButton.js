@@ -70,7 +70,7 @@ export default {
       outline: 0,
       cursor: "pointer",
     },
-    "&.MuiButton-root.Mui-disabled": {
+    "&:disabled": {
       color: palette.grey[300],
     },
     "&:active": {
