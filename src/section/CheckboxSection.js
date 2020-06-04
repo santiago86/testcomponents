@@ -4,11 +4,10 @@ import CheckboxCo from "../components/checkboxCo"
 const checkboxSection = () => {
   return (
     <>
-      <CheckboxCo checked label="Label" />
-      <CheckboxCo label="Label" />
-      <CheckboxCo disabled label="Label" />
-      <CheckboxCo disabled checked label="Label" />
-      <CheckboxCo label="Quiero suscribirme a los correos de copa" />
+      <CheckboxCo id="1" label="Label" />
+      <CheckboxCo id="2" disabled label="Label" />
+      <CheckboxCo id="3" disabled checked label="Label" />
+      <CheckboxCo id="4" label="Quiero suscribirme a los correos de copa" />
     </>
   )
 }

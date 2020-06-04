@@ -7,6 +7,7 @@ import MuiSelect from "./MuiSelect"
 import MuiSlider from "./MuiSlider"
 import MuiDialog from "./MuiDialog"
 import MuiBackdrop from "./MuiBackdrop"
+import MuiTextField from "./MuiTextField"
 
 export default {
   MuiCssBaseline,
@@ -18,4 +19,5 @@ export default {
   MuiSelect,
   MuiDialog,
   MuiBackdrop,
+  MuiTextField,
 }

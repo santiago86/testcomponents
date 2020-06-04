@@ -134,6 +134,7 @@ function SelectCoC(props) {
       styles,
       highlighted: currentFocus === index,
       onHover,
+      onBlur,
       setValue,
       continuePropagation: onKeyDown,
     })
