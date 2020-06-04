@@ -70,6 +70,7 @@ export default {
     text: "rgba(255, 255, 255, 0.5)",
     bg: "rgba(255, 255, 255, 0.3)",
     shadow: "rgba(0,0,0,0.15)",
+    backdrop: "rgba(0, 0, 0, 0.64)",
   },
   gradients: {
     gradientGrey: "linear-gradient(180deg, #FFF 0%, #000 100%)",
@@ -78,6 +79,7 @@ export default {
     gradient3: "linear-gradient(270deg, #0060A9 0%, #0E4A81 100%)",
     gradient4: "linear-gradient(270deg, #0060A9 0%, #0D3050 100%);",
     gradient5: "linear-gradient(45deg, #0D3050 30%, #0E4A81 90%)",
+    gradientr: "red",
   },
   selection: "#E0EBF2",
 }
