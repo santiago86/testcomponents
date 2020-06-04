@@ -78,6 +78,29 @@ export default {
     gradient3: "linear-gradient(270deg, #0060A9 0%, #0E4A81 100%)",
     gradient4: "linear-gradient(270deg, #0060A9 0%, #0D3050 100%);",
     gradient5: "linear-gradient(45deg, #0D3050 30%, #0E4A81 90%)",
+    "100": "linear-gradient(90deg, #0E4A81 0%, #0D3050 100%)",
+    "200": "linear-gradient(90deg, #0060A9 0%, #0D3050 100%)",
+    "300": "linear-gradient(270deg, #0060A9 0%, #0E4A81 100%)",
+    "400": "linear-gradient(270deg, #0060A9 0%, #0D3050 100%)",
+    "500": "linear-gradient(270deg, #12416e 0%, #0d3050 100%)",
+    "600": "linear-gradient(270deg, #006cb3 0%, #12416e 100%)",
+  },
+  alternative: {
+    copaGold: "#8D7249",
+    orange: "#C27028",
+    darkOrange: "#9E4E23",
+    lightOrange: "#CB9938",
+  },
+  shadows: {
+    tiny:
+      "0 1px 1px 0 rgba(0,0,0,0.1), 0 2px 1px -1px rgba(0,0,0,0.04), 0 1px 3px 0 rgba(0,0,0,0.08)",
+    small: "0 2px 4px 0 rgba(0,0,0,0.15)",
+    medium:
+      "0 4px 5px 0 rgba(0,0,0,0.07), 0 3px 15px 0 rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.12)",
+    large:
+      "0 12px 17px 2px rgba(0,0,0,0.06), 0 5px 22px 4px rgba(0,0,0,0.06), 0 7px 8px -4px rgba(0,0,0,0.1)",
+    modal: "0 24px 24px 12px rgba(0,0,0,0.1)",
+    tooltip: "0 -2px 10px 0 rgba(0,0,0,0.05), 0 4px 5px 0 rgba(0,0,0,0.07)",
   },
   selection: "#E0EBF2",
 }
