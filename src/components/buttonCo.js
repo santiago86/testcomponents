@@ -119,24 +119,7 @@ const useClasses = makeStyles(() => ({
       color: palette.common.white,
     },
   },
-  planePrimary: {
-    border: "none",
-    color: palette.primary.main,
-    "&:hover": {
-      color: palette.primary.main,
-      backgroundColor: palette.transparent.main,
-      cursor: "pointer",
-    },
-    "&:focus": {
-      border: 0,
-      outline: 0,
-      cursor: "pointer",
-    },
-    "&.MuiButton-root.Mui-disabled": {
-      color: palette.grey[300],
-    },
-  },
-  planeInverted: {
+  Inverted: {
     border: "none",
     color: palette.common.white,
     "&:hover": {
@@ -161,7 +144,7 @@ const LOADING_SIZES = {
 
 function ButtonCo({
   color = "primary",
-  variant = "contained",
+  variant = "",
   start: StartIcon,
   end: EndIcon,
   children,
@@ -215,7 +198,7 @@ ButtonCo.propTypes = {
 
 ButtonCo.defaultProps = {
   color: "primary",
-  variant: "contained",
+  variant: "",
   size: "medium",
   start: null,
   end: null,

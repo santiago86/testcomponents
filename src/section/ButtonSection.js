@@ -47,16 +47,14 @@ const BUTTONS = [
   {
     id: 13,
     color: "primary",
-    variant: "plane",
     end: Right,
-    href: "#",
+    href: "",
   },
   {
     id: 14,
     color: "inverted",
-    variant: "plane",
     end: Right,
-    href: "#",
+    href: "",
     background: true,
   },
 ]
