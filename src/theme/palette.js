@@ -71,6 +71,7 @@ export default {
     text: "rgba(255, 255, 255, 0.5)",
     bg2: "rgba(255, 255, 255, 0.1)",
     bg: "rgba(255, 255, 255, 0.3)",
+    alertIcons: "rgba(0,0,0,0.2)",
     shadow: "rgba(0,0,0,0.15)",
     dimmer: "rgba(0,0,0,0.64)",
   },
