@@ -7,6 +7,6 @@ const cases = ["AlertCo", "ButtonCo"]
 const stories = storiesOf("ButtonCo", module)
 cases.forEach((label) =>
   stories.add(label, () => (
-    <ButtonCo loading={boolean("Set Loading", false)}> {label} </ButtonCo>
+    <ButtonCo loading={boolean("Set Loading", false)}>{label}</ButtonCo>
   ))
 )
