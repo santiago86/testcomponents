@@ -17,6 +17,7 @@ import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
+import ModalSection from "./section/ModalSection"
 
 const text = "Cras mattis consectetur purus sit amet fermentum."
 
@@ -64,6 +65,8 @@ function App() {
           <SliderSection />
           <h2> Radio Button </h2>
           <RadioButton />
+          <h2> Modal </h2>
+          <ModalSection />
           <h2> Alert Message </h2>
           <AlertSection />
         </header>
