@@ -12,16 +12,16 @@ const useStyles = makeStyles(() => ({
     "& .MuiDivider-flexItem": {
       width: 1,
       height: "inherit",
-      backgroundColor: theme.palette.dividerDefault,
+      backgroundColor: theme.palette.grey[300],
     },
   },
   lightSolid: {
-    backgroundColor: theme.palette.dividerDefault,
+    backgroundColor: theme.palette.grey[300],
     height: "1px",
   },
   lightDashed: {
     border: "dashed 1px",
-    borderColor: theme.palette.dividerDefault,
+    borderColor: theme.palette.grey[300],
     backgroundColor: theme.palette.transparent.main,
   },
   darkDashed: {
