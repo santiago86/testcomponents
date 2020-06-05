@@ -1,7 +1,5 @@
 import React from "react"
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { action } from "@storybook/addon-actions"
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { boolean } from "@storybook/addon-knobs"
 
 import SwitchCo from "../../../components/swichtCo"
