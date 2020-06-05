@@ -15,14 +15,24 @@ import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
+import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
+import ModalSection from "./section/ModalSection"
 import ButtonLoading from "./section/ButtonLoading"
+
+const text = "Cras mattis consectetur purus sit amet fermentum."
 
 function App() {
   const [check, setCheck] = useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
+        <AlertFull
+          type="info"
+          visible={check}
+          message={text}
+          onClose={() => setCheck(!check)}
+        />
         <header className="App-header">
           <TypographyCo component="span" variant="overline">
             Vuelo de ida
@@ -33,6 +43,7 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
+          <Switch checked={check} onChange={() => setCheck(!check)} />
           <h2>Input</h2>
           <TextfieldSection />
           <h2>Divider</h2>
@@ -55,6 +66,8 @@ function App() {
           <SliderSection />
           <h2> Radio Button </h2>
           <RadioButton />
+          <h2> Modal </h2>
+          <ModalSection />
           <h2> Alert Message </h2>
           <AlertSection />
           <h2>Loading</h2>

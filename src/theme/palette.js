@@ -47,7 +47,6 @@ export default {
   },
   icon: colors.blueGrey[600],
   divider: colors.grey[200],
-  dividerDefault: "#D1D1D1",
   grey: {
     "50": "#FFFFFF",
     "100": "#EFEFEE",
@@ -69,9 +68,11 @@ export default {
     tooltip: "rgba(18,18,18,0.6)",
     main: "transparent",
     text: "rgba(255, 255, 255, 0.5)",
-    bg2: "rgba(255, 255, 255, 0.1)",
     bg: "rgba(255, 255, 255, 0.3)",
+    bg2: "rgba(255, 255, 255, 0.1)",
+    alertIcons: "rgba(0,0,0,0.2)",
     shadow: "rgba(0,0,0,0.15)",
+    dimmer: "rgba(0,0,0,0.64)",
   },
   gradients: {
     gradientGrey: "linear-gradient(180deg, #FFF 0%, #000 100%)",
