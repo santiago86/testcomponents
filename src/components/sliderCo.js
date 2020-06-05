@@ -41,6 +41,7 @@ const SliderCo = ({
       {label && <InputLabel className={classes.label}>{label}</InputLabel>}
       <Slider
         {...props}
+        step={step}
         value={value}
         onChange={onChange}
         ValueLabelComponent={TooltipCO}
@@ -55,7 +56,7 @@ SliderCo.propTypes = {
   step: PropTypes.number,
   label: PropTypes.string,
   minRange: PropTypes.number,
-  styles: PropTypes.shape({}),
+  styles: PropTypes.objectOf(PropTypes.object),
   value: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.arrayOf(PropTypes.number),

@@ -5,6 +5,7 @@ import MuiMenuItem from "./MuiMenuItem"
 import MuiOutlinedInput from "./MuiOutlinedInput"
 import MuiSelect from "./MuiSelect"
 import MuiSlider from "./MuiSlider"
+import MuiAlert from "./MuiAlert"
 import MuiTextField from "./MuiTextField"
 
 export default {
@@ -15,5 +16,6 @@ export default {
   MuiMenuItem,
   MuiOutlinedInput,
   MuiSelect,
+  MuiAlert,
   MuiTextField,
 }

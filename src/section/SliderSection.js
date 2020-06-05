@@ -35,7 +35,12 @@ const SliderSection = () => {
         handleChange={setSlideDouble}
         label="Dos Nodos"
       />
-      <SliderCo disabled value={20} label="Inhabilitado" />
+      <SliderCo
+        disabled
+        value={20}
+        label="Inhabilitado"
+        handleChange={setSlide}
+      />
     </div>
   )
 }
