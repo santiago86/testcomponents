@@ -1,23 +1,35 @@
-import React, { useState, useRef } from "react"
+import React, { useRef } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Popper from "@material-ui/core/Popper"
 import Paper from "@material-ui/core/Paper"
-import ButtonCo from "./buttonCo"
+import PropTypes from "prop-types"
+import SWOOSH from "../assets/images/swoosh.svg"
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: 500,
-  },
   typography: {
     padding: theme.spacing(2),
   },
-  paper: {
-    maxWidth: 400,
+  paper: ({ color, shine }) => ({
+    maxWidth: shine === true ? 424 : 282,
     padding: 16,
     overflow: "auto",
     boxShadow: `5px 5px 17px 5px  ${theme.palette.transparent.shadow}`,
+    background:
+      color === "primary" ? theme.palette.gradients.gradientDark : null,
+    position: "relative",
+    height: shine === true ? 300 : 180,
+  }),
+  shine: {
+    backgroundImage: `url(${SWOOSH})`,
+    position: "absolute",
+    backgroundRepeat: "no-repeat",
+    backgroundPositionY: "bottom",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    height: 300,
+    zIndex: 0,
   },
-
   popper: {
     zIndex: 1,
     '&[x-placement*="top"]': {
@@ -31,7 +43,9 @@ const useStyles = makeStyles((theme) => ({
       height: "1em",
       "&::before": {
         borderWidth: "1em 1em 0 1em",
-        borderColor: `${theme.palette.background.paper} ${theme.palette.transparent.main} ${theme.palette.transparent.main} ${theme.palette.transparent.main}`,
+        borderRightColor: theme.palette.transparent.main,
+        borderLeftColor: theme.palette.transparent.main,
+        borderBottomColor: theme.palette.transparent.main,
       },
     },
     '&[x-placement*="top-start"] $arrow': {
@@ -50,7 +64,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "-0.9em",
       "&::before": {
         borderWidth: "1em 1em 1em 0",
-        borderColor: `${theme.palette.transparent.main} ${theme.palette.background.paper} ${theme.palette.transparent.main} ${theme.palette.transparent.main}`,
+        borderLeftColor: theme.palette.transparent.main,
+        borderBottomColor: theme.palette.transparent.main,
+        borderTopColor: theme.palette.transparent.main,
       },
     },
     '&[x-placement*="right-start"] $arrow': {
@@ -71,7 +87,9 @@ const useStyles = makeStyles((theme) => ({
       height: "1em",
       "&::before": {
         borderWidth: "0 1em 1em 1em",
-        borderColor: `${theme.palette.transparent.main} ${theme.palette.transparent.main} ${theme.palette.background.paper} ${theme.palette.transparent.main}`,
+        borderRightColor: theme.palette.transparent.main,
+        borderLeftColor: theme.palette.transparent.main,
+        borderTopColor: theme.palette.transparent.main,
       },
     },
     '&[x-placement*="bottom-start"] $arrow': {
@@ -90,7 +108,9 @@ const useStyles = makeStyles((theme) => ({
       marginRight: "-0.9em",
       "&::before": {
         borderWidth: "1em 0 1em 1em",
-        borderColor: `${theme.palette.transparent.main} ${theme.palette.transparent.main} ${theme.palette.transparent.main} ${theme.palette.background.paper}`,
+        borderRightColor: theme.palette.transparent.main,
+        borderBottomColor: theme.palette.transparent.main,
+        borderTopColor: theme.palette.transparent.main,
       },
     },
     '&[x-placement*="left-start"] $arrow': {
@@ -101,12 +121,16 @@ const useStyles = makeStyles((theme) => ({
       bottom: 15,
     },
   },
-  arrow: {
+  arrow: ({ color }) => ({
     position: "absolute",
     fontSize: 7,
     width: 7,
     height: 14,
     "&::before": {
+      borderColor:
+        color === "primary"
+          ? `${theme.palette.secondary.dark}`
+          : `${theme.palette.common.white}`,
       content: '""',
       margin: "auto",
       display: "block",
@@ -114,67 +138,62 @@ const useStyles = makeStyles((theme) => ({
       height: 0,
       borderStyle: "solid",
     },
-  },
+  }),
 }))
 
-const PopperCo = () => {
-  const classes = useStyles()
+const PopperCo = ({ anchorEl, arrow, children, flip, ...props }) => {
+  const { shine } = props
+  const classes = useStyles(props)
   const arrowRef = useRef()
-  const contentRef = useRef()
-  const [anchorEl, setAnchorEl] = useState()
-  const [open, setOpen] = useState(false)
-  const [placement, setPlacement] = useState()
 
-  const handleClick = (newPlacement) => (event) => {
-    setAnchorEl(event.currentTarget)
-    setOpen((prev) => placement !== newPlacement || !prev)
-    setPlacement(newPlacement)
-    // console.log(contentRef, "contentRef")
+  if (!anchorEl) {
+    return null
   }
 
-  const arrow = true
   return (
-    <>
-      <Popper
-        placement={placement}
-        open={open}
-        anchorEl={anchorEl}
-        popperRef={contentRef}
-        className={classes.popper}
-        transition
-        disablePortal
-        modifiers={{
-          flip: {
-            enabled: false,
-          },
-          preventOverflow: {
-            enabled: false,
-            boundariesElement: "scrollParent",
-          },
-          arrow: {
-            enabled: true,
-            element: arrowRef.current,
-          },
-        }}
-      >
-        {arrow ? <span className={classes.arrow} ref={arrowRef} /> : null}
-        <Paper className={classes.paper}>
-          Lorem ipsum dolor et asimet Lorem ipsum dolor et asimet Lorem ipsum
-          dolor et asimet Lorem ipsum dolor et asimet Lorem ipsum dolor et
-          asimet Lorem ipsum dolor et asimet Lorem ipsum dolor et asimet
-        </Paper>
-      </Popper>
-
-      <ButtonCo
-        ref={setAnchorEl}
-        variant="contained"
-        color="primary"
-        onClick={handleClick("bottom")}
-      >
-        bottom
-      </ButtonCo>
-    </>
+    <Popper
+      {...props}
+      anchorEl={anchorEl}
+      className={classes.popper}
+      modifiers={{
+        flip: {
+          enabled: flip,
+        },
+        preventOverflow: {
+          enabled: false,
+          boundariesElement: "scrollParent",
+        },
+        arrow: {
+          enabled: arrow,
+          element: arrowRef.current,
+        },
+      }}
+    >
+      <Paper className={classes.paper}>
+        <span style={{ zIndex: 1, position: "relative" }}>{children}</span>
+        {shine && <div className={classes.shine} />}
+      </Paper>
+      {arrow ? <span className={classes.arrow} ref={arrowRef} /> : null}
+    </Popper>
   )
+}
+
+PopperCo.propTypes = {
+  anchorEl: PropTypes.number,
+  arrow: PropTypes.bool,
+  children: PropTypes.node,
+  flip: PropTypes.bool,
+  color: PropTypes.string,
+  shine: PropTypes.bool,
+}
+
+PopperCo.defaultProps = {
+  anchorEl: 400,
+  arrow: true,
+  children: null,
+  flip: true,
+  color: "white",
+  shine: false,
 }
 
 export default PopperCo
