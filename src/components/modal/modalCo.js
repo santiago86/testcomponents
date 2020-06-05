@@ -90,6 +90,9 @@ const styles = {
       background: styledBy("type", {
         primary: theme.palette.gradients["600"],
       }),
+      color: styledBy("type", {
+        primary: theme.palette.white,
+      }),
     },
     /* If the button is the element at the right, change their borderRadius */
     "&:last-child": {
@@ -121,7 +124,7 @@ const styles = {
   CloseSVG: {
     float: "right",
     position: "sticky",
-    top: "5vh",
+    top: theme.spacing(9),
     width: 0,
   },
 }
@@ -236,8 +239,8 @@ function ModalCo(props) {
    * Sets the action portion of the modal, according to the props
    */
   let modalButton
-  if (primarybutton !== "") {
-    if (secondarybutton !== "") {
+  if (primarybutton) {
+    if (secondarybutton) {
       modalButton = primaryAndSecondary(
         [primarybutton, onPrimary],
         [secondarybutton, onSecondary]

@@ -10,7 +10,7 @@ const pileButtons = (stack = true) => {
   const bts = []
   for (let i = 0; i < 25; i += 1) {
     bts.push(
-      <ButtonCo key={i} style={{ margin: 0 }}>
+      <ButtonCo variant="contained" key={i} style={{ margin: 0 }}>
         Boton{i}
       </ButtonCo>
     )
@@ -65,7 +65,7 @@ export default function ModalSection() {
       <ModalContentCo>{pileButtons()}</ModalContentCo>
       <ModalContentCo>{pileButtons(false)}</ModalContentCo>
       <ModalContentCo>
-        <ButtonCo>Bottom</ButtonCo>
+        <ButtonCo variant="contained">Bottom</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -83,7 +83,7 @@ export default function ModalSection() {
       showClose
     >
       <ModalContentCo>
-        <ButtonCo>Contenido</ButtonCo>
+        <ButtonCo variant="contained">Contenido</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -101,7 +101,7 @@ export default function ModalSection() {
       showClose
     >
       <ModalContentCo>
-        <ButtonCo>Contenido</ButtonCo>
+        <ButtonCo variant="contained">Contenido</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -117,7 +117,7 @@ export default function ModalSection() {
       secondarybutton="Cancelar"
     >
       <ModalContentCo>
-        <ButtonCo>Contenido</ButtonCo>
+        <ButtonCo variant="contained">Contenido</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -132,7 +132,7 @@ export default function ModalSection() {
       showClose
     >
       <ModalContentCo>
-        <ButtonCo>Contenido</ButtonCo>
+        <ButtonCo variant="contained">Contenido</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -150,7 +150,7 @@ export default function ModalSection() {
     >
       <ModalTitleCo>Título</ModalTitleCo>
       <ModalContentCo>
-        <ButtonCo>Contenido</ButtonCo>
+        <ButtonCo variant="contained">Contenido</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -170,7 +170,7 @@ export default function ModalSection() {
     >
       <ModalTitleCo>Título</ModalTitleCo>
       <ModalContentCo>
-        <ButtonCo>Contenido</ButtonCo>
+        <ButtonCo variant="contained">Contenido</ButtonCo>
       </ModalContentCo>
     </ModalCo>
   )
@@ -191,18 +191,18 @@ export default function ModalSection() {
       <ModalColumsCo>
         <div>
           <ModalContentCo>
-            <ButtonCo>Contenido</ButtonCo>
+            <ButtonCo variant="contained">Contenido</ButtonCo>
           </ModalContentCo>
         </div>
         <div>
           <ModalContentCo>
-            <ButtonCo>Contenido</ButtonCo>
+            <ButtonCo variant="contained">Contenido</ButtonCo>
           </ModalContentCo>
           <ModalContentCo>
-            <ButtonCo>Contenido 2</ButtonCo>
+            <ButtonCo variant="contained">Contenido 2</ButtonCo>
           </ModalContentCo>
           <ModalContentCo>
-            <ButtonCo>Contenido 3</ButtonCo>
+            <ButtonCo variant="contained">Contenido 3</ButtonCo>
           </ModalContentCo>
         </div>
       </ModalColumsCo>
@@ -234,47 +234,74 @@ export default function ModalSection() {
   return (
     <Grid container spacing={3}>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal1")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal1")}
+        >
           Opción única
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal2")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal2")}
+        >
           Dos Opciones
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal3")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal3")}
+        >
           Sin cerrar
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal4")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal4")}
+        >
           Sin opciones
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal5")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal5")}
+        >
           Boton 3 Lineas
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal6")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal6")}
+        >
           Boton 3 lineas (Dos Opciones)
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal7")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal7")}
+        >
           Dos columnas
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModal8")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModal8")}
+        >
           Dos columnas full
         </ButtonCo>
       </Grid>
       <Grid item xs={3}>
-        <ButtonCo onClick={() => handleOpen(true, "openModalBig")}>
+        <ButtonCo
+          variant="contained"
+          onClick={() => handleOpen(true, "openModalBig")}
+        >
           Modal Grande
         </ButtonCo>
       </Grid>
