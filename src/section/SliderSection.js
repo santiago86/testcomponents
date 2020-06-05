@@ -1,7 +1,12 @@
 import React, { useState } from "react"
 import { makeStyles } from "@material-ui/core/styles"
 
+import ButtonCo from "../components/buttonCo"
 import SliderCo from "../components/sliderCo"
+import Tooltip from "../components/tooltipCo"
+
+const popover = "Un mesanje de multiples lineas es soportado por el tooltip"
+// const popover2 = "Popover message"
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -35,6 +40,9 @@ const SliderSection = () => {
         handleChange={setSlideDouble}
         label="Dos Nodos"
       />
+      <Tooltip value={popover} placement="bottom">
+        <ButtonCo variant="contained">Tooltip</ButtonCo>
+      </Tooltip>
       <SliderCo
         disabled
         value={20}
