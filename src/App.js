@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
 
-import Form from "./components/TextField/Form"
+import TextfieldSection from "./section/TextfieldSection"
+import DividerSection from "./section/DividerSection"
 import SelectSection from "./section/SelectSection"
 import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
@@ -15,12 +16,23 @@ import SwichtSection from "./section/SwichtSection"
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
 import PopperSection from "./section/PopperSection"
+import AlertFull from "./components/AlertFullCo"
+import AlertSection from "./section/AlertSection"
+import ModalSection from "./section/ModalSection"
+
+const text = "Cras mattis consectetur purus sit amet fermentum."
 
 function App() {
-  const [check, setCheck] = React.useState(false)
+  const [check, setCheck] = useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
+        <AlertFull
+          type="info"
+          visible={check}
+          message={text}
+          onClose={() => setCheck(!check)}
+        />
         <header className="App-header">
           <TypographyCo component="span" variant="overline">
             Vuelo de ida
@@ -31,8 +43,11 @@ function App() {
           <TypographyCo variant="body2" component="span" color="primary">
             Hacia Buenos Aires
           </TypographyCo>
+          <Switch checked={check} onChange={() => setCheck(!check)} />
           <h2>Input</h2>
-          <Form />
+          <TextfieldSection />
+          <h2>Divider</h2>
+          <DividerSection />
           <h2>Button </h2>
           <ButtonSection />
           <h2>Checkbox </h2>
@@ -51,6 +66,10 @@ function App() {
           <SliderSection />
           <h2> Radio Button </h2>
           <RadioButton />
+          <h2> Modal </h2>
+          <ModalSection />
+          <h2> Alert Message </h2>
+          <AlertSection />
           <PopperSection />
         </header>
       </Container>
