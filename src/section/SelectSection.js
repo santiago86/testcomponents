@@ -75,7 +75,7 @@ function SelectSection() {
                   pointerEvents: "none",
                   marginRight: theme.spacing(2),
                   color: theme.palette.grey["600"],
-                  background: "transparent",
+                  background: theme.palette.transparent.main,
                   zIndex: 100,
                 }}
               />

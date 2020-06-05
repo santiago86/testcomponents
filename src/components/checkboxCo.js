@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Checkbox from "@material-ui/core/Checkbox"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import { makeStyles } from "@material-ui/core/styles"
@@ -9,17 +9,23 @@ import CheckIcon from "@material-ui/icons/Check"
 import palette from "../theme/palette"
 
 const widthSize = 24
-const widthLabelNormal = 100
-const widthLabelMultiLinea = 140
+const widthLabelNormal = 180
+const widthLabelMultiLinea = 141
+const heightLabelNormal = 20
+const heightLabelMultiLinea = 40
 
 const useStyles = makeStyles({
   root: {
+    paddingRight: 8,
     "&:hover": {
       borderColor: palette.primary.main,
-      backgroundColor: palette.white,
+      backgroundColor: palette.transparent.text,
       "&.Mui-checked": {
         borderColor: palette.primary.main,
         backgroundColor: palette.transparent.text,
+      },
+      "& .MuiFormControlLabel-label & .MuiTypography-body1": {
+        color: palette.grey[700],
       },
     },
   },
@@ -33,7 +39,6 @@ const useStyles = makeStyles({
     borderRadius: 4,
     "input:focus ~ &": {
       borderColor: palette.primary.main,
-      backgroundColor: palette.selection,
     },
     "input:active ~ &": {
       backgroundColor: palette.secondary.dark,
@@ -44,45 +49,49 @@ const useStyles = makeStyles({
     "input:disabled ~ &": {
       borderColor: palette.grey[300],
       backgroundColor: palette.grey[100],
-    },
-    "input:checked ~ & input:enabled ": {
-      backgroundColor: palette.primary.main,
-      ":hover": {
-        backgroundColor: palette.transparent.text,
+      "& .MuiSvgIcon-root": {
+        color: palette.grey[300],
       },
     },
   },
   checkedIcon: {
     color: palette.white,
+    borderColor: palette.primary.main,
     backgroundColor: palette.primary.main,
     "& .MuiSvgIcon-root": {
-      display: "block",
+      width: "0.8em",
+      marginBottom: 6,
     },
   },
   label: {
     "& .MuiTypography-body1": {
-      color: palette.grey[600],
+      color: (props) => (props.check ? palette.grey[700] : palette.grey[600]),
       fontSize: "0.875rem",
       lineHeight: "1.25rem",
-      width: (label) => label,
+      width: (props) => props.width,
+      height: (props) => props.height,
+      paddingTop: (props) => (props.width === 141 ? 10 : ""),
     },
   },
 })
 
 // Inspired by blueprintjs
 const CheckboxCo = ({ id, label, ...props }) => {
+  const [check, setChecked] = useState(false)
   const width = label.length <= 20 ? widthLabelNormal : widthLabelMultiLinea
-  const classes = useStyles(width)
+  const height = label.length <= 20 ? heightLabelNormal : heightLabelMultiLinea
+  const classes = useStyles({ width, height, check })
 
   return (
     <FormControlLabel
-      className={[classes.label]}
-      disableRipple
+      className={classes.label}
+      labelPlacement="end"
       control={
         <Checkbox
           id={id}
           className={classes.root}
           disableRipple
+          onChange={() => setChecked(!check)}
           icon={<span className={clsx(classes.icon)} />}
           checkedIcon={
             <span className={clsx(classes.icon, classes.checkedIcon)}>

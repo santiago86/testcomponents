@@ -5,43 +5,23 @@ import TextField from "@material-ui/core/TextField"
 import InputLabel from "@material-ui/core/InputLabel"
 import FormHelperText from "@material-ui/core/FormHelperText"
 
-import theme from "../../theme/index"
+import theme from "../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {
     "& > *": {
       width: "100%",
     },
-    "& .MuiOutlinedInput-root": {
-      marginTop: "8px",
-      marginBottom: "8px",
-    },
-    "& .Mui-disabled": {
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.grey[600],
-    },
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.grey[300],
-    },
-    "& .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.grey[300],
-    },
-    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.primary.main,
-    },
-    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderWidth: "1px",
-    },
-    "& .MuiOutlinedInput-input": {
-      fontSize: "1rem",
-    },
   },
   label: theme.typography.body2,
   helperText: {
     fontSize: "0.75rem",
-    marginTop: "0px",
+    marginTop: 0,
     display: "flex",
     alignItems: "center",
+  },
+  helperTextContainer: {
+    height: 20,
   },
 }))
 
@@ -64,6 +44,9 @@ const InputCo = ({
     setPlaceholder("")
     setError("")
   }
+
+  const isValid = errors !== ""
+
   const handelBlur = () => {
     if (!value) {
       setPlaceholder(placeholder)
@@ -94,14 +77,16 @@ const InputCo = ({
         onFocus={handleFocus}
         onBlur={handelBlur}
         onChange={setValue}
-        error={errors !== ""}
+        error={isValid}
       />
-      {helperText && (
-        <FormHelperText className={classes.helperText} error={errors !== ""}>
-          <span>{errors && component}</span>
-          <span>{(!hasErrors && helperText) || errors}</span>
-        </FormHelperText>
-      )}
+      <div className={classes.helperTextContainer}>
+        {helperText && (
+          <FormHelperText className={classes.helperText} error={isValid}>
+            <span>{errors && component}</span>
+            <span>{(!hasErrors && helperText) || errors}</span>
+          </FormHelperText>
+        )}
+      </div>
     </div>
   )
 }
