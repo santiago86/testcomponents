@@ -1,15 +1,14 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import airPlane from "../assets/images/copa_loader.gif"
-import theme from "../theme/index"
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   loading: {
     position: "fixed",
-    top: theme.spacing(0),
-    right: theme.spacing(0),
-    bottom: theme.spacing(0),
-    left: theme.spacing(0),
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
     backgroundColor: theme.palette.grey[900],
     opacity: 0.96,
   },
@@ -21,12 +20,12 @@ const useStyles = makeStyles({
     left: "50%",
     width: 200,
     height: 200,
-    padding: theme.spacing(0),
+    padding: 0,
     transform: "translate(-50% , -50%)",
-    border: theme.spacing(0),
+    border: 0,
     overflow: "hidden",
   },
-})
+}))
 
 function LoadingCo() {
   const classes = useStyles()
