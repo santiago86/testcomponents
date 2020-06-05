@@ -5,6 +5,7 @@ const containedPrimary = {
   backgroundColor: palette.primary.main,
   boxShadow: "none",
   "&:hover": {
+    color: palette.common.white,
     background: `
       linear-gradient(
         to right,
