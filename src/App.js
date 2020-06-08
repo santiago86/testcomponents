@@ -11,7 +11,6 @@ import TypographyCo from "./components/typographyCo"
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 import CheckboxSection from "./section/CheckboxSection"
-import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
@@ -54,8 +53,6 @@ function App() {
           <CheckboxSection />
           <h2> Select </h2>
           <SelectSection />
-          <h2> Swicht Component </h2>
-          <SwichtSection />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Select </h2>
