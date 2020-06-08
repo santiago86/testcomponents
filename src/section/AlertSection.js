@@ -13,22 +13,38 @@ const useStyles = makeStyles(() => ({
       marginTop: theme.spacing(2),
     },
   },
+  alertAction: {
+    backgroundColor: palette.primary.main,
+    padding: 40,
+  },
 }))
 
 const AlertSection = () => {
   const classes = useStyles()
   const sampleText =
     "¡Lo sentimos! No pudimos encontrar tu reserva con la información proporcionada. Por favor, revisa tus datos y vuelve a intentarlo."
+  const sampleText1 =
+    "Esta reserva expirará en XXhXXm. Para que no se cancele, recuerde completar tu compra."
+
+  const actionBtn = () => console.log("hello")
 
   return (
     <div className={classes.root}>
-      <AlertCo
-        backgroundColor={palette.primary.main}
-        icon={<InfoIcon />}
-        severity="info"
-        variant="filled"
-        width="50%"
-      >
+      <div className={classes.alertAction}>
+        <AlertCo
+          icon={<InfoIcon />}
+          bgColor={palette.white}
+          fontColor={palette.black}
+          alertTitle="Pago Requerido"
+          alerActionText="Pagar reserva"
+          variant="filled"
+          alertAction={actionBtn}
+          closeIcon
+        >
+          {sampleText1}
+        </AlertCo>
+      </div>
+      <AlertCo icon={<InfoIcon />} severity="info" variant="filled" width="50%">
         {sampleText}
       </AlertCo>
       <AlertCo
