@@ -6,7 +6,7 @@ import { boolean, text } from "@storybook/addon-knobs"
 import SwichtCo from "./swichtCo"
 
 export default {
-  title: "Components|UI/Switch",
+  title: "Components|Switch",
   parameters: {
     info: {
       info: { inline: true },
