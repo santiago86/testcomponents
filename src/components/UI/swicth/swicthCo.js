@@ -2,7 +2,7 @@ import React from "react"
 import Switch from "@material-ui/core/Switch"
 import { withStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
-import palette from "../theme/palette"
+import palette from "../../../theme/palette"
 
 const transparentColors = {
   primary: "#0c60a9",
@@ -81,7 +81,7 @@ const styles = (theme) => ({
   },
 })
 
-const SwichtCo = withStyles(styles)(
+const SwicthCo = withStyles(styles)(
   ({ classes, name, checked, handleChange, disabled, label }) => {
     return (
       <Switch
@@ -104,7 +104,7 @@ const SwichtCo = withStyles(styles)(
   }
 )
 
-SwichtCo.propTypes = {
+SwicthCo.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   checked: PropTypes.bool,
@@ -112,11 +112,11 @@ SwichtCo.propTypes = {
   disabled: PropTypes.bool,
 }
 
-SwichtCo.defaultProps = {
+SwicthCo.defaultProps = {
   disabled: false,
   name: "swicht",
   label: "swicht",
   handleChange: () => {},
 }
 
-export default SwichtCo
+export default SwicthCo
