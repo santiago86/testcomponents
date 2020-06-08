@@ -38,7 +38,7 @@ function SelectSection() {
   }
   return (
     <Box m={2}>
-      <TypographyCo mt={3} variant="h1" component="h1" color="primary">
+      <TypographyCo mt={3} variant="subtitle1" component="h1" color="primary">
         Campos de selección (MUI)
       </TypographyCo>
       <Box my={4}>

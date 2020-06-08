@@ -18,6 +18,7 @@ import RadioButton from "./components/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
+import AccordionSection from "./section/AccordionSection"
 
 const text = "Cras mattis consectetur purus sit amet fermentum."
 
@@ -67,6 +68,8 @@ function App() {
           <RadioButton />
           <h2> Modal </h2>
           <ModalSection />
+          <h2> Accordion </h2>
+          <AccordionSection />
           <h2> Alert Message </h2>
           <AlertSection />
         </header>
