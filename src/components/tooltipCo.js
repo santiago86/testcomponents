@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.transparent.tooltip,
     fontWeight: 500,
-    fontSize: "12px",
+    fontSize: 12,
   },
 }))
 

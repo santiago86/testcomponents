@@ -8,18 +8,18 @@ import theme from "../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {
-    margin: "10px",
-    height: "50px",
-    padding: "25px",
+    margin: 10,
+    height: 50,
+    padding: 25,
   },
   dark: {
     background: theme.palette.gradients.gradient3,
   },
   vertical: {
-    height: "100px",
-    width: "20px",
-    padding: "0px",
-    paddingLeft: "10px",
+    height: 100,
+    width: 20,
+    padding: 0,
+    paddingLeft: 10,
   },
 }))
 

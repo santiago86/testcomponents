@@ -44,7 +44,7 @@ const SwichtSection = () => {
       <div
         style={{
           display: "flex",
-          width: "550px",
+          width: 550,
           justifyContent: "space-around",
         }}
       >
