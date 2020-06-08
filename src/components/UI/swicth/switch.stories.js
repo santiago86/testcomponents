@@ -3,7 +3,7 @@ import React from "react"
 import { action } from "@storybook/addon-actions"
 import { boolean, text } from "@storybook/addon-knobs"
 
-import SwichtCo from "./swichtCo"
+import SwichtCo from "./swicthCo"
 
 export default {
   title: "Components|Switch",
@@ -12,7 +12,7 @@ export default {
       info: { inline: true },
       source: false,
       text: `
-        ..... placeholder.....
+        ..... This component has no more styles .....
       `,
     },
   },
