@@ -6,6 +6,7 @@ const black = "#000000"
 export default {
   black,
   white,
+  oldGold: "#CB9938",
   gold: "#8D7249",
   common: {
     black: "#000",
