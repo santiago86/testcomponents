@@ -25,7 +25,10 @@ const suisseLight = {
   fontStyle: "normal",
   fontDisplay: "swap",
   fontWeight: 300,
-  src: `url('${SuisseIntlLightEOT}?#iefix') format('embedded-opentype'), url('${SuisseIntlLightWoff2}') format('woff2'), url('${SuisseIntlLightWoff}') format('woff'), url('${SuisseIntlLightTTF}') format('truetype')`,
+  src: `url('${SuisseIntlLightEOT}?#iefix') format('embedded-opentype'), 
+        url('${SuisseIntlLightWoff2}') format('woff2'), 
+        url('${SuisseIntlLightWoff}') format('woff'), 
+        url('${SuisseIntlLightTTF}') format('truetype')`,
 }
 
 const suisseRegular = {
@@ -33,7 +36,10 @@ const suisseRegular = {
   fontStyle: "normal",
   fontDisplay: "swap",
   fontWeight: 400,
-  src: `url('${SuisseIntlRegularEOT}?#iefix') format('embedded-opentype'), url('${SuisseIntlRegularWoff2}') format('woff2'), url('${SuisseIntlRegularWoff}') format('woff'), url('${SuisseIntlRegularTTF}') format('truetype')`,
+  src: `url('${SuisseIntlRegularEOT}?#iefix') format('embedded-opentype'), 
+        url('${SuisseIntlRegularWoff2}') format('woff2'), 
+        url('${SuisseIntlRegularWoff}') format('woff'), 
+        url('${SuisseIntlRegularTTF}') format('truetype')`,
 }
 
 const suisseMedium = {
@@ -41,7 +47,10 @@ const suisseMedium = {
   fontStyle: "normal",
   fontDisplay: "swap",
   fontWeight: 500,
-  src: `url('${SuisseIntlMediumEOT}?#iefix') format('embedded-opentype'), url('${SuisseIntlMediumWoff2}') format('woff2'), url('${SuisseIntlMediumWoff}') format('woff'), url('${SuisseIntlMediumTTF}') format('truetype')`,
+  src: `url('${SuisseIntlMediumEOT}?#iefix') format('embedded-opentype'), 
+        url('${SuisseIntlMediumWoff2}') format('woff2'), 
+        url('${SuisseIntlMediumWoff}') format('woff'), 
+        url('${SuisseIntlMediumTTF}') format('truetype')`,
 }
 
 const suisseSemibold = {
@@ -49,7 +58,10 @@ const suisseSemibold = {
   fontStyle: "normal",
   fontDisplay: "swap",
   fontWeight: 600,
-  src: `url('${SuisseIntlSemiboldEOT}?#iefix') format('embedded-opentype'), url('${SuisseIntlSemiboldWoff2}') format('woff2'), url('${SuisseIntlSemiboldWoff}') format('woff'), url('${SuisseIntlSemiboldTTF}') format('truetype')`,
+  src: `url('${SuisseIntlSemiboldEOT}?#iefix') format('embedded-opentype'), 
+        url('${SuisseIntlSemiboldWoff2}') format('woff2'), 
+        url('${SuisseIntlSemiboldWoff}') format('woff'), 
+        url('${SuisseIntlSemiboldTTF}') format('truetype')`,
 }
 
 export default {
