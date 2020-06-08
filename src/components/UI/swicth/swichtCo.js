@@ -2,7 +2,7 @@ import React from "react"
 import Switch from "@material-ui/core/Switch"
 import { withStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
-import palette from "../theme/palette"
+import palette from "../../../theme/palette"
 
 const transparentColors = {
   primary: "#0c60a9",
