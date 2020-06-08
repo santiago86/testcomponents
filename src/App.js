@@ -11,7 +11,6 @@ import TypographyCo from "./components/typographyCo"
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 import CheckboxSection from "./section/CheckboxSection"
-import SwichtSection from "./section/SwichtSection"
 
 import SliderSection from "./section/SliderSection"
 import RadioButton from "./components/RadioButton/Form"
@@ -19,6 +18,7 @@ import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
 import PillSection from "./section/PillSection"
+import ButtonLoading from "./section/ButtonLoading"
 
 const text = "Cras mattis consectetur purus sit amet fermentum."
 
@@ -54,8 +54,6 @@ function App() {
           <CheckboxSection />
           <h2> Select </h2>
           <SelectSection />
-          <h2> Swicht Component </h2>
-          <SwichtSection />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Select </h2>
@@ -72,6 +70,8 @@ function App() {
           <AlertSection />
           <h2> Attribute Pill </h2>
           <PillSection />
+          <h2>Loading</h2>
+          <ButtonLoading />
         </header>
       </Container>
     </div>
