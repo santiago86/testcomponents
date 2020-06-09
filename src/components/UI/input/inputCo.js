@@ -34,7 +34,6 @@ const InputCo = ({
   helperText,
   hasErrors,
   component,
-  ariaLabel,
   ...props
 }) => {
   const classes = useStyles()
@@ -62,14 +61,14 @@ const InputCo = ({
   return (
     <div className={classes.root} noValidate autoComplete="off">
       {label && (
-        <InputLabel htmlFor={id} for={id} className={classes.label}>
+        <InputLabel htmlFor={id} className={classes.label}>
           {label}
         </InputLabel>
       )}
       <TextField
         {...props}
+        id={id}
         placeholder={inputPlaceholder}
-        aria-label={ariaLabel}
         label={null}
         helperText={null}
         className={classes.textfield}
