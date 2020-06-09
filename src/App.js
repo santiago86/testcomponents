@@ -17,6 +17,7 @@ import RadioButton from "./components/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
+import PillSection from "./section/PillSection"
 import ButtonLoading from "./section/ButtonLoading"
 
 const text = "Cras mattis consectetur purus sit amet fermentum."
@@ -69,6 +70,10 @@ function App() {
           <AlertSection />
           <h2> Modal </h2>
           <ModalSection />
+          <h2> Alert Message </h2>
+          <AlertSection />
+          <h2> Attribute Pill </h2>
+          <PillSection />
           <h2>Loading</h2>
           <ButtonLoading />
         </header>

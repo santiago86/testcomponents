@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
   },
   lightSolid: {
     backgroundColor: theme.palette.grey[300],
-    height: "1px",
+    height: 1,
   },
   lightDashed: {
     border: "dashed 1px",
