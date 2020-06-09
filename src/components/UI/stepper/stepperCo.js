@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid"
 import Plus from "@material-ui/icons/Add"
 import Minus from "@material-ui/icons/Remove"
 
-import TypographyCo from "../../typographyCo"
+import TypographyCo from "../typography/typographyCo"
 import theme from "../../../theme/index"
 
 const { palette } = theme

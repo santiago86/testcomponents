@@ -1,11 +1,6 @@
 import React, { useState } from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
-
-import SelectSection from "./section/SelectSection"
-import SelectCSection from "./section/SelectCSection"
-import TypographyCo from "./components/typographyCo"
-
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 import CheckboxSection from "./section/CheckboxSection"
@@ -30,28 +25,13 @@ function App() {
           onClose={() => setCheck(!check)}
         />
         <header className="App-header">
-          <TypographyCo component="span" variant="overline">
-            Vuelo de ida
-          </TypographyCo>
-          <TypographyCo variant="h1" component="h1" color="primary">
-            Hacia Buenos Aires
-          </TypographyCo>
-          <TypographyCo variant="body2" component="span" color="primary">
-            Hacia Buenos Aires
-          </TypographyCo>
           <Switch checked={check} onChange={() => setCheck(!check)} />
           <h2>Button </h2>
           <ButtonSection />
           <h2>Checkbox </h2>
           <CheckboxSection />
-          <h2> Select </h2>
-          <SelectSection />
           <h2> Stepper </h2>
           <StepperSection />
-          <h2> Select </h2>
-          <Switch checked={check} onChange={() => setCheck(!check)} />
-          {!check && <SelectSection />}
-          {check && <SelectCSection />}
           <h2> Slider </h2>
           <SliderSection />
           <h2> Modal </h2>

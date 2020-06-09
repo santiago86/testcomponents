@@ -1,6 +1,6 @@
 import React from "react"
 import AccordionCo from "../components/accordionCo"
-import TypographyCo from "../components/typographyCo"
+import TypographyCo from "../components/UI/typography/typographyCo"
 
 const AccodionSection = () => {
   return (

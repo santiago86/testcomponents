@@ -1,5 +1,5 @@
 import React from "react"
-import ToastCo from "../components/ToastCo"
+import ToastCo from "../components/toastCo"
 
 const checkboxSection = () => {
   return (
