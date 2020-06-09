@@ -6,9 +6,9 @@ import SvgIcon from "@material-ui/core/SvgIcon"
 import IconButton from "@material-ui/core/IconButton"
 import Right from "@material-ui/icons/ChevronRight"
 import { withStyles } from "@material-ui/core/styles"
-import ButtonCo from "../buttonCo"
-import theme from "../../theme"
-import { ReactComponent as CloseSVG } from "../../assets/icons/Modal_close_default.svg"
+import ButtonCo from "../../buttonCo"
+import theme from "../../../theme"
+import { ReactComponent as CloseSVG } from "../../../assets/icons/Modal_close_default.svg"
 /**
  * Function to make the characteristics of the Select component
  * @param {string} property Which property will affect the current style
