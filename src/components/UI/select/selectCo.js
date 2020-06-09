@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Select from "@material-ui/core/Select"
-import Box from "@material-ui/core/Box"
 import { withStyles } from "@material-ui/core/styles"
 import OptionCo from "./optionCo"
 import theme from "../../../theme"
 import { ReactComponent as down } from "../../../assets/icons/down.svg"
+import TypographyCo from "../../typographyCo"
 
 /**
  * Function to make the characteristics of the Select component
@@ -102,7 +102,7 @@ function SelectCo(props) {
   const starticon = startAdornment !== undefined
   return (
     <div>
-      {label && <Box variant="body2">{label}</Box>}
+      {label && <TypographyCo variant="body2">{label}</TypographyCo>}
       <StyledSelect
         color={color}
         starticon={starticon.toString()}
