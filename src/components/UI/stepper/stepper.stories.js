@@ -1,6 +1,5 @@
 import React from "react"
 
-import { action } from "@storybook/addon-actions"
 import { boolean, text, number } from "@storybook/addon-knobs"
 
 import StepperCo from "./stepperCo"
@@ -57,6 +56,5 @@ export const Playground = () => (
     minValue={number("Set min value", 0)}
     maxValue={number("Set max value", 5)}
     disabled={boolean("Disabled", false)}
-    onChange={action("value")}
   />
 )
