@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import InputLabel from "@material-ui/core/InputLabel"
 import FormHelperText from "@material-ui/core/FormHelperText"
 
-import theme from "../theme/index"
+import theme from "../../../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -30,7 +30,7 @@ const InputCo = ({
   placeholder,
   label,
   value,
-  setValue,
+  handleChange,
   helperText,
   hasErrors,
   component,
@@ -67,6 +67,7 @@ const InputCo = ({
       )}
       <TextField
         {...props}
+        id={id}
         placeholder={inputPlaceholder}
         label={null}
         helperText={null}
@@ -76,7 +77,7 @@ const InputCo = ({
         FormHelperTextProps={{ classes: classes.helperText }}
         onFocus={handleFocus}
         onBlur={handelBlur}
-        onChange={setValue}
+        onChange={handleChange}
         error={isValid}
       />
       <div className={classes.helperTextContainer}>
@@ -96,10 +97,13 @@ InputCo.propTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
-  setValue: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   helperText: PropTypes.string,
   hasErrors: PropTypes.bool,
   component: PropTypes.element,
+  disabled: PropTypes.bool,
+  InputProps: PropTypes.shape({}),
+  ariaLabel: PropTypes.string.isRequired,
 }
 
 InputCo.defaultProps = {
@@ -108,6 +112,8 @@ InputCo.defaultProps = {
   helperText: "",
   hasErrors: false,
   component: null,
+  disabled: false,
+  InputProps: {},
 }
 
 export default InputCo
