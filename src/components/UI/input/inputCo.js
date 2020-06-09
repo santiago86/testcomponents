@@ -30,10 +30,11 @@ const InputCo = ({
   placeholder,
   label,
   value,
-  setValue,
+  handleChange,
   helperText,
   hasErrors,
   component,
+  ariaLabel,
   ...props
 }) => {
   const classes = useStyles()
@@ -61,13 +62,14 @@ const InputCo = ({
   return (
     <div className={classes.root} noValidate autoComplete="off">
       {label && (
-        <InputLabel htmlFor={id} className={classes.label}>
+        <InputLabel htmlFor={id} for={id} className={classes.label}>
           {label}
         </InputLabel>
       )}
       <TextField
         {...props}
         placeholder={inputPlaceholder}
+        aria-label={ariaLabel}
         label={null}
         helperText={null}
         className={classes.textfield}
@@ -76,7 +78,7 @@ const InputCo = ({
         FormHelperTextProps={{ classes: classes.helperText }}
         onFocus={handleFocus}
         onBlur={handelBlur}
-        onChange={setValue}
+        onChange={handleChange}
         error={isValid}
       />
       <div className={classes.helperTextContainer}>
@@ -96,11 +98,13 @@ InputCo.propTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
-  setValue: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   helperText: PropTypes.string,
   hasErrors: PropTypes.bool,
   component: PropTypes.element,
   disabled: PropTypes.bool,
+  InputProps: PropTypes.shape({}),
+  ariaLabel: PropTypes.string.isRequired,
 }
 
 InputCo.defaultProps = {
@@ -110,6 +114,7 @@ InputCo.defaultProps = {
   hasErrors: false,
   component: null,
   disabled: false,
+  InputProps: {},
 }
 
 export default InputCo

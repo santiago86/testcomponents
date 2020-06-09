@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import Divider from "@material-ui/core/Divider"
 import clsx from "clsx"
-import theme from "../theme/index"
+import theme from "../../../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {

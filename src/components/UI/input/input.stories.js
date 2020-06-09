@@ -17,7 +17,7 @@ export default {
       info: { inline: true },
       source: false,
       text: `
-        ..... This component has no more styles .....
+        Custom Textfild 
       `,
     },
   },
@@ -27,6 +27,7 @@ export const Basic = () => (
   <InputCo
     id="first-input"
     placeholder="Texto de Ejemplo"
+    ariaLabel="Texto de Ejemplo"
     label="Label"
     value=""
   />
@@ -36,6 +37,7 @@ export const HelperText = () => (
   <InputCo
     id="second-input"
     placeholder="Texto de ejemplo"
+    ariaLabel="Texto de Ejemplo"
     label="Label"
     helperText="Este texto de ayuda es para ayudar"
   />
@@ -45,6 +47,7 @@ export const LeftIcon = () => (
   <InputCo
     id="third-input"
     placeholder="Texto de Ejemplo"
+    ariaLabel="Texto de Ejemplo"
     label="Label"
     InputProps={{
       startAdornment: (
@@ -60,6 +63,7 @@ export const RightIcon = () => (
   <InputCo
     id="fourth-input"
     placeholder="Texto de ejemplo"
+    ariaLabel="Texto de Ejemplo"
     label="Label"
     InputProps={{
       endAdornment: (
@@ -75,6 +79,7 @@ export const TwoIcons = () => (
   <InputCo
     id="fourth-input"
     placeholder="Texto de ejemplo"
+    ariaLabel="Texto de Ejemplo"
     label="Label"
     InputProps={{
       startAdornment: (
@@ -92,13 +97,18 @@ export const TwoIcons = () => (
 )
 
 export const WithoutLabel = () => (
-  <InputCo id="third-input" placeholder="Texto de Ejemplo" />
+  <InputCo
+    id="third-input"
+    ariaLabel="Texto de Ejemplo"
+    placeholder="Texto de Ejemplo"
+  />
 )
 
 export const Disabled = () => (
   <InputCo
     id="third-input"
     placeholder="Texto de Ejemplo"
+    ariaLabel="Texto de Ejemplo"
     label="País"
     disabled
   />
@@ -108,6 +118,7 @@ export const ReadOnly = () => (
   <InputCo
     id="fourth-input"
     placeholder="Ingrese el Pais"
+    ariaLabel="Texto de Ejemplo"
     label="País"
     defaultValue="Colombia"
     disabled
@@ -118,6 +129,7 @@ export const PassedValidation = () => (
   <InputCo
     id="second-input"
     placeholder="Ingrese el País"
+    ariaLabel="Texto de Ejemplo"
     label="País"
     defaultValue="Colombia"
     InputProps={{
@@ -134,6 +146,7 @@ export const FailedValidation = () => (
   <InputCo
     id="second-input"
     placeholder="Ingrese el País"
+    ariaLabel="Texto de Ejemplo"
     label="País"
     defaultValue="Gringolandia"
     hasErrors
@@ -161,6 +174,7 @@ export const WithAutocomplete = () => {
         <InputCo
           {...params}
           placeholder="Ingrese el País"
+          ariaLabel="Texto de Ejemplo"
           id="country-input"
           label="País"
           variant="outlined"

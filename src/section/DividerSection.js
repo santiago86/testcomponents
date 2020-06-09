@@ -2,7 +2,7 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import clsx from "clsx"
 
-import DividerCo from "../components/dividerCo"
+import DividerCo from "../components/UI/divider/dividerCo"
 
 import theme from "../theme/index"
 

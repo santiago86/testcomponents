@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 const TextfieldSection = () => {
   const classes = useStyles()
 
-  const [values, setValues] = useState({
+  const [values, handleChanges] = useState({
     one: "",
     two: "",
     three: "",
@@ -94,7 +94,7 @@ const TextfieldSection = () => {
   }
 
   const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value })
+    handleChanges({ ...values, [prop]: event.target.value })
   }
 
   return (
@@ -109,7 +109,8 @@ const TextfieldSection = () => {
             placeholder="Texto de Ejemplo"
             label="Label"
             value={values.one}
-            setValue={handleChange("one")}
+            handleChange={handleChange("one")}
+            ariaLabel="Texto de Ejemplo"
           />
           <Typography className={classes.inputTitle}>
             con texto de ayuda
@@ -119,8 +120,9 @@ const TextfieldSection = () => {
             placeholder="Texto de ejemplo"
             label="Label"
             value={values.two}
-            setValue={handleChange("two")}
+            handleChange={handleChange("two")}
             helperText="Este texto de ayuda es para ayudar"
+            ariaLabel="Texto de Ejemplo"
           />
         </div>
         <div className={classes.column}>
@@ -130,9 +132,10 @@ const TextfieldSection = () => {
           <InputCo
             id="third-input"
             placeholder="Texto de Ejemplo"
+            ariaLabel="Texto de Ejemplo"
             label="Label"
             value={values.three}
-            setValue={handleChange("three")}
+            handleChange={handleChange("three")}
             InputProps={{
               startAdornment: (
                 <InputAdornment disablePointerEvents position="start">
@@ -147,9 +150,10 @@ const TextfieldSection = () => {
           <InputCo
             id="fourth-input"
             placeholder="Texto de ejemplo"
+            ariaLabel="Texto de Ejemplo"
             label="Label"
             value={values.four}
-            setValue={handleChange("four")}
+            handleChange={handleChange("four")}
             InputProps={{
               endAdornment: (
                 <InputAdornment disablePointerEvents position="end">
@@ -166,16 +170,18 @@ const TextfieldSection = () => {
           <InputCo
             id="third-input"
             placeholder="Texto de Ejemplo"
+            ariaLabel="Texto de Ejemplo"
             value={values.five}
-            setValue={handleChange("five")}
+            handleChange={handleChange("five")}
           />
           <Typography className={classes.inputTitle}>con dos iconos</Typography>
           <InputCo
             id="fourth-input"
             placeholder="Texto de ejemplo"
+            ariaLabel="Texto de Ejemplo"
             label="Label"
             value={values.six}
-            setValue={handleChange("six")}
+            handleChange={handleChange("six")}
             InputProps={{
               startAdornment: (
                 <InputAdornment disablePointerEvents position="start">
@@ -197,18 +203,20 @@ const TextfieldSection = () => {
           <InputCo
             id="third-input"
             placeholder="Texto de Ejemplo"
+            ariaLabel="Texto de Ejemplo"
             label="País"
             value={values.seven}
-            setValue={handleChange("seven")}
+            handleChange={handleChange("seven")}
             disabled
           />
           <Typography className={classes.inputTitle}>Solo Lectura</Typography>
           <InputCo
             id="fourth-input"
             placeholder="Ingrese el Pais"
+            ariaLabel="Texto de Ejemplo"
             label="País"
             defaultValue={values.eight}
-            setValue={handleChange("eight")}
+            handleChange={handleChange("eight")}
             disabled
           />
         </div>
@@ -217,9 +225,10 @@ const TextfieldSection = () => {
           <InputCo
             id="second-input"
             placeholder="Ingrese el País"
+            ariaLabel="Ingrese el País"
             label="País"
             value={country.name}
-            setValue={validateCountry}
+            handleChange={validateCountry}
             InputProps={
               country.validCountry && {
                 endAdornment: (
@@ -243,7 +252,8 @@ const TextfieldSection = () => {
               <InputCo
                 {...params}
                 placeholder="Ingrese el País"
-                setValue={handleChange("nine")}
+                ariaLabel="Seleccione el País"
+                handleChange={handleChange("nine")}
                 id="country-input"
                 label="País"
                 variant="outlined"
