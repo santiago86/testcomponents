@@ -7,7 +7,6 @@ import CheckboxSection from "./section/CheckboxSection"
 
 import SliderSection from "./section/SliderSection"
 import AlertFull from "./components/AlertFullCo"
-import ModalSection from "./section/ModalSection"
 import AccordionSection from "./section/AccordionSection"
 import PillSection from "./section/PillSection"
 
@@ -34,8 +33,6 @@ function App() {
           <StepperSection />
           <h2> Slider </h2>
           <SliderSection />
-          <h2> Modal </h2>
-          <ModalSection />
           <h2> Accordion </h2>
           <AccordionSection />
           <h2> Alert Message </h2>

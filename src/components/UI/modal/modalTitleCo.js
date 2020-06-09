@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import DialogTitle from "@material-ui/core/DialogTitle"
-import TypographyCo from "../UI/typography/typographyCo"
+import TypographyCo from "../typography/typographyCo"
 
 function ModalTitleCo(props) {
   const { children } = props

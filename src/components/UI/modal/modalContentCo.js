@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import DialogContent from "@material-ui/core/DialogContent"
 import { makeStyles } from "@material-ui/core/styles"
-import theme from "../../theme"
+import theme from "../../../theme"
 
 /**
  * Styles which define the behavior of the padding for the content.
