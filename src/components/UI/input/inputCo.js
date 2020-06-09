@@ -5,7 +5,7 @@ import TextField from "@material-ui/core/TextField"
 import InputLabel from "@material-ui/core/InputLabel"
 import FormHelperText from "@material-ui/core/FormHelperText"
 
-import theme from "../theme/index"
+import theme from "../../../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -100,6 +100,7 @@ InputCo.propTypes = {
   helperText: PropTypes.string,
   hasErrors: PropTypes.bool,
   component: PropTypes.element,
+  disabled: PropTypes.bool,
 }
 
 InputCo.defaultProps = {
@@ -108,6 +109,7 @@ InputCo.defaultProps = {
   helperText: "",
   hasErrors: false,
   component: null,
+  disabled: false,
 }
 
 export default InputCo

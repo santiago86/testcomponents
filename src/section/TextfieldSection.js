@@ -8,7 +8,7 @@ import InfoIcon from "@material-ui/icons/Info"
 import CheckIcon from "@material-ui/icons/Check"
 import PhoneIcon from "@material-ui/icons/Phone"
 import Autocomplete from "@material-ui/lab/Autocomplete"
-import InputCo from "../components/inputCo"
+import InputCo from "../components/UI/input/inputCo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
