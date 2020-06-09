@@ -1,21 +1,15 @@
 import React, { useState } from "react"
 import Container from "@material-ui/core/Container"
 import Switch from "@material-ui/core/Switch"
-
-import TextfieldSection from "./section/TextfieldSection"
-import DividerSection from "./section/DividerSection"
-
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
 import CheckboxSection from "./section/CheckboxSection"
 
 import SliderSection from "./section/SliderSection"
-import RadioButton from "./components/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
-import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
+import AccordionSection from "./section/AccordionSection"
 import PillSection from "./section/PillSection"
-import ButtonLoading from "./section/ButtonLoading"
 
 const text = "Cras mattis consectetur purus sit amet fermentum."
 
@@ -32,10 +26,6 @@ function App() {
         />
         <header className="App-header">
           <Switch checked={check} onChange={() => setCheck(!check)} />
-          <h2>Input</h2>
-          <TextfieldSection />
-          <h2>Divider</h2>
-          <DividerSection />
           <h2>Button </h2>
           <ButtonSection />
           <h2>Checkbox </h2>
@@ -44,18 +34,12 @@ function App() {
           <StepperSection />
           <h2> Slider </h2>
           <SliderSection />
-          <h2> Radio Button </h2>
-          <RadioButton />
-          <h2> Alert Message </h2>
-          <AlertSection />
           <h2> Modal </h2>
           <ModalSection />
+          <h2> Accordion </h2>
+          <AccordionSection />
           <h2> Alert Message </h2>
-          <AlertSection />
-          <h2> Attribute Pill </h2>
           <PillSection />
-          <h2>Loading</h2>
-          <ButtonLoading />
         </header>
       </Container>
     </div>

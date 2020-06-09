@@ -12,6 +12,8 @@ const grayPoint = "radial-gradient(#CCCCCB,#CCCCCB 20%,transparent 24%)"
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    marginLeft: theme.spacing(2),
+    marginTop: theme.spacing(2),
     width: 180,
     height: 32,
   },
@@ -112,10 +114,26 @@ function RadioButtonCo({ id, label, onChange, value, ...props }) {
 }
 
 RadioButtonCo.propTypes = {
+  /**
+   * The id of the input element.
+   */
   id: PropTypes.string.isRequired,
+  /**
+   * A string to be displayed on the right. It can be empty
+   */
   label: PropTypes.string,
+  /**
+   * Callback fired when the state is changed.
+   */
   onChange: PropTypes.func.isRequired,
+  /**
+   * Current value taken by the select. Usually is a string of a number It is required,
+   * even if it has to be empty
+   */
   value: PropTypes.string,
+  /**
+   * If true, the radio will be disabled.
+   */
   disabled: PropTypes.bool,
 }
 

@@ -11,9 +11,6 @@ const Navigation = () => {
       <ButtonCo variant="outlined" to="/palette" component={Link}>
         Colors Palette
       </ButtonCo>
-      <ButtonCo variant="outlined" to="/breakpoints" component={Link}>
-        Breakpoints
-      </ButtonCo>
       <ButtonCo variant="outlined" to="/passenger" component={Link}>
         Passenger
       </ButtonCo>

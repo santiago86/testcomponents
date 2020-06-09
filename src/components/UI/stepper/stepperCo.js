@@ -8,19 +8,22 @@ import Grid from "@material-ui/core/Grid"
 import Plus from "@material-ui/icons/Add"
 import Minus from "@material-ui/icons/Remove"
 
-import TypographyCo from "./UI/typography/typographyCo"
-import theme from "../theme/index"
+import TypographyCo from "../typography/typographyCo"
+import theme from "../../../theme/index"
 
 const { palette } = theme
 
 const useStyles = makeStyles(() => ({
   root: {
     margin: "1rem",
+    height: "3rem",
   },
   label: {
     fontSize: "0.875rem",
     marginBottom: "1rem",
     color: palette.grey[700],
+    userSelect: "none",
+    lineHeight: 1,
   },
   button: {
     border: "1.5px solid",
