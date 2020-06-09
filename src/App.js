@@ -17,6 +17,7 @@ import RadioButton from "./components/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
+import AccordionSection from "./section/AccordionSection"
 import PillSection from "./section/PillSection"
 import ButtonLoading from "./section/ButtonLoading"
 
@@ -66,6 +67,8 @@ function App() {
           <RadioButton />
           <h2> Modal </h2>
           <ModalSection />
+          <h2> Accordion </h2>
+          <AccordionSection />
           <h2> Alert Message </h2>
           <AlertSection />
           <h2> Attribute Pill </h2>
