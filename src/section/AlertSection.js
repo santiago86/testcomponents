@@ -4,7 +4,7 @@ import InfoIcon from "@material-ui/icons/Info"
 
 import theme from "../theme"
 import palette from "../theme/palette"
-import AlertCo from "../components/alertCo"
+import AlertCo from "../components/UI/Alert/AlertCo"
 
 import ButtonCo from "../components/buttonCo"
 
