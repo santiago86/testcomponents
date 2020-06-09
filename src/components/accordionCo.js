@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { makeStyles } from "@material-ui/core/styles"
 import clsx from "clsx"
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
   },
-  summary: {
+  summary: () => ({
     display: "flex",
     flexDirection: "row",
     padding: "33px 0 31px 0",
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiIconButton-label": {
       marginRight: 16,
     },
-  },
+  }),
   title: {
     cursor: "pointer",
   },
@@ -69,7 +69,11 @@ const AccordionCo = ({
   expandedDetail,
 }) => {
   const classes = useStyles()
-  const [expanded, setExpanded] = React.useState(expandedDetail)
+  const [expanded, setExpanded] = useState(false)
+
+  useEffect(() => {
+    setExpanded(expandedDetail)
+  }, [expandedDetail])
 
   const handleExpandClick = () => {
     setExpanded(!expanded)
@@ -93,7 +97,7 @@ const AccordionCo = ({
           onClick={handleExpandClick}
           disableRipple
         >
-          {labelIcon !== "" ? (
+          {labelIcon ? (
             <Typography variant="overline" className={classes.labelIcon}>
               {labelIcon}
             </Typography>
@@ -117,8 +121,8 @@ const AccordionCo = ({
 
 AccordionCo.propTypes = {
   id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  child: PropTypes.node,
+  title: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+  child: PropTypes.oneOfType([PropTypes.object, PropTypes.node]),
   ariaLabel: PropTypes.string.isRequired,
   labelIcon: PropTypes.string,
   sizeIcon: PropTypes.string,
