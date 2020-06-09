@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles"
 import OptionCo from "./optionCo"
 import theme from "../../../theme"
 import { ReactComponent as down } from "../../../assets/icons/down.svg"
-import TypographyCo from "../../typographyCo"
+import TypographyCo from "../typography/typographyCo"
 
 /**
  * Function to make the characteristics of the Select component

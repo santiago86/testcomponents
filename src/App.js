@@ -4,7 +4,7 @@ import Switch from "@material-ui/core/Switch"
 
 import TextfieldSection from "./section/TextfieldSection"
 import DividerSection from "./section/DividerSection"
-import TypographyCo from "./components/typographyCo"
+import TypographyCo from "./components/UI/typography/typographyCo"
 
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
