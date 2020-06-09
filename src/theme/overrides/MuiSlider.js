@@ -35,12 +35,12 @@ const muiSlider = {
     },
   },
   track: {
-    height: "4px",
+    height: 4,
     borderRadius: 4,
   },
   rail: {
     color: palette.grey["400"],
-    height: "4px",
+    height: 4,
     borderRadius: 4,
   },
 }
