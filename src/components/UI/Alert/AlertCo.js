@@ -8,8 +8,7 @@ import Collapse from "@material-ui/core/Collapse"
 import CloseIcon from "@material-ui/icons/Close"
 import IconButton from "@material-ui/core/IconButton"
 
-import ButtonCo from "./buttonCo"
-import palette from "../theme/palette"
+import palette from "../../../theme/palette"
 
 const useStyles = makeStyles(() => ({
   root: ({ bgColor, fontSize, fontColor, fontWeight, width }) => ({
@@ -30,11 +29,16 @@ const useStyles = makeStyles(() => ({
     fontWeight,
     fontSize,
     width,
+    "& .MuiAlert-message": {
+      paddingTop: 18,
+    },
     "& .MuiAlert-icon": {
       borderLeft: `8px solid ${palette.oldGold}`,
       color: palette.oldGold,
       borderRadius: 4,
       fontSize: 24,
+      paddingLeft: 9,
+      paddingTop: 16,
       "& .MuiSvgIcon-root": {
         marginLeft: 10,
       },
@@ -63,7 +67,6 @@ const AlertCo = ({
   alertTitle,
   closeIcon,
   alertAction,
-  alerActionText,
   ...props
 }) => {
   const [open, setOpen] = useState(true)
@@ -91,17 +94,10 @@ const AlertCo = ({
         action={closeIcon && closeAction}
         {...props}
       >
-        <>
+        <div>
           {alertTitle && <AlertTitle>{alertTitle}</AlertTitle>}
           {children}
-          {alertAction && (
-            <div>
-              <ButtonCo className={classes.buttonContainer} variant="outlined">
-                {alerActionText}
-              </ButtonCo>
-            </div>
-          )}
-        </>
+        </div>
       </Alert>
     </Collapse>
   )
@@ -116,8 +112,7 @@ AlertCo.propTypes = {
   fontWeight: PropTypes.number,
   fontSize: PropTypes.string,
   fontColor: PropTypes.string,
-  alertAction: PropTypes.func,
-  alerActionText: PropTypes.string,
+  alertAction: PropTypes.bool,
   bgColor: PropTypes.string,
 }
 
@@ -126,10 +121,9 @@ AlertCo.defaultProps = {
   alertTitle: "",
   width: "100%",
   fontWeight: 300,
-  fontSize: "1.25rem",
+  fontSize: "1rem",
   fontColor: palette.white,
-  alertAction: undefined,
-  alerActionText: "",
+  alertAction: false,
   bgColor: "",
 }
 

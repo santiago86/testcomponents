@@ -4,7 +4,9 @@ import InfoIcon from "@material-ui/icons/Info"
 
 import theme from "../theme"
 import palette from "../theme/palette"
-import AlertCo from "../components/alertCo"
+import AlertCo from "../components/UI/Alert/AlertCo"
+
+import ButtonCo from "../components/buttonCo"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -41,10 +43,21 @@ const AlertSection = () => {
           alertAction={actionBtn}
           closeIcon
         >
-          {sampleText1}
+          <>
+            <p>{sampleText1}</p>
+            <ButtonCo style={{ margin: "auto" }} variant="outlined">
+              Pagar Reserva
+            </ButtonCo>
+          </>
         </AlertCo>
       </div>
-      <AlertCo icon={<InfoIcon />} severity="info" variant="filled" width="50%">
+      <AlertCo
+        icon={<InfoIcon />}
+        fontSize={22}
+        severity="info"
+        variant="filled"
+        width="50%"
+      >
         {sampleText}
       </AlertCo>
       <AlertCo

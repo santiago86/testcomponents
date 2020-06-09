@@ -6,8 +6,8 @@ export default {
       width: "100%",
     },
     "& .MuiOutlinedInput-root": {
-      marginTop: "8px",
-      marginBottom: "8px",
+      marginTop: 8,
+      marginBottom: 8,
     },
     "& .Mui-disabled": {
       backgroundColor: palette.grey[100],
@@ -26,7 +26,7 @@ export default {
       borderColor: palette.primary.main,
     },
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderWidth: "1px",
+      borderWidth: 1,
     },
     "& .MuiOutlinedInput-input": {
       fontSize: "1rem",

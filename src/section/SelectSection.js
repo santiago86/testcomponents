@@ -2,10 +2,9 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import Box from "@material-ui/core/Box"
 import LanguageIcon from "@material-ui/icons/Language"
-import TypographyCo from "../components/typographyCo"
-import MenuItemCo from "../components/menuItemCo"
-import SelectDividerCo from "../components/selectDividerCo"
-import SelectCo from "../components/selectCo"
+import TypographyCo from "../components/UI/typography/typographyCo"
+import OptionCo from "../components/UI/select/optionCo"
+import SelectCo from "../components/UI/select/selectCo"
 import states from "../assets/states"
 import theme from "../theme"
 
@@ -14,12 +13,11 @@ const selectSubtitle = {
   marginBottom: theme.spacing(2),
 }
 const MappedStates = () => {
-  return states.map((state) => [
-    <MenuItemCo key={state} value={state}>
+  return states.map((state) => (
+    <OptionCo key={state} value={state}>
       {state}
-    </MenuItemCo>,
-    <SelectDividerCo />,
-  ])
+    </OptionCo>
+  ))
 }
 
 function SelectSection() {
@@ -111,11 +109,9 @@ function SelectSection() {
             value={state.value4}
             onChange={(e) => handleChange(e, "value4")}
           >
-            <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="B">PAN - PA08994100</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="C">COL - 3592790723</MenuItemCo>
+            <OptionCo value="A">VEN - 0212877948</OptionCo>
+            <OptionCo value="B">PAN - PA08994100</OptionCo>
+            <OptionCo value="C">COL - 3592790723</OptionCo>
           </SelectCo>
         </Grid>
 
@@ -164,11 +160,9 @@ function SelectSection() {
             placeholder="Selecciona..."
             onChange={(e) => handleChange(e, "value7")}
           >
-            <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="B">PAN - PA08994100</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="C">COL - 3592790723</MenuItemCo>
+            <OptionCo value="A">VEN - 0212877948</OptionCo>
+            <OptionCo value="B">PAN - PA08994100</OptionCo>
+            <OptionCo value="C">COL - 3592790723</OptionCo>
           </SelectCo>
         </Grid>
 
@@ -199,11 +193,9 @@ function SelectSection() {
             value={state.valueEmpty}
             disabled
           >
-            <MenuItemCo value="A">VEN - 0212877948</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="B">PAN - PA08994100</MenuItemCo>
-            <SelectDividerCo />
-            <MenuItemCo value="C">COL - 3592790723</MenuItemCo>
+            <OptionCo value="A">VEN - 0212877948</OptionCo>
+            <OptionCo value="B">PAN - PA08994100</OptionCo>
+            <OptionCo value="C">COL - 3592790723</OptionCo>
           </SelectCo>
         </Grid>
       </Grid>
