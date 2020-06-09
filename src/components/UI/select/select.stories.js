@@ -234,6 +234,7 @@ export const ErrorSelect = () => {
     <SelectCo
       placeholder="Selecciona..."
       error={boolean("Set disabled", true)}
+      style={style}
       value=""
     >
       {smallArray}
