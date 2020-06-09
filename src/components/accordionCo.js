@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
   },
-  summary: () => ({
+  summary: {
     display: "flex",
     flexDirection: "row",
     padding: "33px 0 31px 0",
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiIconButton-label": {
       marginRight: 16,
     },
-  }),
+  },
   title: {
     cursor: "pointer",
   },
