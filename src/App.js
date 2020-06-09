@@ -13,7 +13,7 @@ import ButtonSection from "./section/ButtonSection"
 import CheckboxSection from "./section/CheckboxSection"
 
 import SliderSection from "./section/SliderSection"
-import RadioButton from "./components/RadioButton/Form"
+import RadioButton from "./components/UI/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"

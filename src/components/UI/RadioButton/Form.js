@@ -1,6 +1,6 @@
 import React from "react"
 import RadioGroup from "@material-ui/core/RadioGroup"
-import RadioButtonCo from "../radioButtonCO"
+import RadioButtonCo from "./radioButtonCo"
 
 const RADIO_BUTTONS = [
   {

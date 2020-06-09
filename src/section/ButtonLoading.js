@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import ButtonCo from "../components/buttonCo"
-import LoadingCo from "../components/loadingCo"
+import LoadingCo from "../components/UI/Loading/loadingCo"
 
 function ButtonLoading() {
   const [loading, setLoading] = useState(false)
