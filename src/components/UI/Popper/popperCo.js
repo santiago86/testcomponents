@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Popper from "@material-ui/core/Popper"
 import Paper from "@material-ui/core/Paper"
 import PropTypes from "prop-types"
-import SWOOSH from "../assets/images/swoosh.svg"
+import SWOOSH from "../../../assets/images/swoosh.svg"
 
 const useStyles = makeStyles((theme) => ({
   typography: {
@@ -173,21 +173,44 @@ const PopperCo = ({ anchorEl, arrow, children, flip, ...props }) => {
         <span style={{ zIndex: 1, position: "relative" }}>{children}</span>
         {shine && <div className={classes.shine} />}
       </Paper>
-      {arrow ? <span className={classes.arrow} ref={arrowRef} /> : null}
+      {arrow ? <span className={classes.arrow} ref={arrowRef} alt="" /> : null}
     </Popper>
   )
 }
 
 PopperCo.propTypes = {
+  /**
+   * It's used to set the position of the popper. The return value will passed as the reference object of the Popper instance.
+   */
   anchorEl: PropTypes.number,
+  /**
+   * Show or hide the arrow
+   */
   arrow: PropTypes.bool,
+  /**
+   * Popper render function or node.
+   */
   children: PropTypes.node,
+  /**
+   * Popper placement.
+   * */
+  placement: PropTypes.string,
+  /**
+   * `Flip` (flip the popper’s placement when it starts to overlap its reference element)
+   * */
   flip: PropTypes.bool,
+  /**
+   * has two the type values of a string the first is 'white' than set the popper the white color, the second parameter is 'primary' that is applied a blue background
+   */
   color: PropTypes.string,
+  /**
+   * show or hide an image for the blue background
+   */
   shine: PropTypes.bool,
 }
 
 PopperCo.defaultProps = {
+  placement: "bottom",
   anchorEl: 400,
   arrow: true,
   children: null,
