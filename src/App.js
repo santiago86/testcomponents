@@ -12,7 +12,6 @@ import CheckboxSection from "./section/CheckboxSection"
 
 import SliderSection from "./section/SliderSection"
 import AlertFull from "./components/AlertFullCo"
-import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
 import AccordionSection from "./section/AccordionSection"
 import PillSection from "./section/PillSection"
@@ -60,8 +59,6 @@ function App() {
           <h2> Accordion </h2>
           <AccordionSection />
           <h2> Alert Message </h2>
-          <AlertSection />
-          <h2> Attribute Pill </h2>
           <PillSection />
         </header>
       </Container>

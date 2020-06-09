@@ -8,7 +8,7 @@ import Collapse from "@material-ui/core/Collapse"
 import CloseIcon from "@material-ui/icons/Close"
 import IconButton from "@material-ui/core/IconButton"
 
-import palette from "../theme/palette"
+import palette from "../../../theme/palette"
 
 const useStyles = makeStyles(() => ({
   root: ({ bgColor, fontSize, fontColor, fontWeight, width }) => ({
