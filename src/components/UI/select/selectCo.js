@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import Select from "@material-ui/core/Select"
 import Box from "@material-ui/core/Box"
 import { withStyles } from "@material-ui/core/styles"
-import MenuItemCo from "./menuItemCo"
-import theme from "../theme"
-import { ReactComponent as down } from "../assets/icons/down.svg"
+import OptionCo from "./optionCo"
+import theme from "../../../theme"
+import { ReactComponent as down } from "../../../assets/icons/down.svg"
 
 /**
  * Function to make the characteristics of the Select component
@@ -71,9 +71,9 @@ const StyledSelect = withStyles(styles)(({ classes, color, ...other }) => {
  * @param {string} text Text to be shown in the placeholder.
  */
 const setPlaceholder = (text) => (
-  <MenuItemCo style={{ display: "none" }} value="" disabled>
+  <OptionCo style={{ display: "none" }} value="" placeholder disabled>
     {text}
-  </MenuItemCo>
+  </OptionCo>
 )
 
 function SelectCo(props) {
@@ -100,7 +100,6 @@ function SelectCo(props) {
   }
   const currentProps = { ...defaultProps, ...props }
   const starticon = startAdornment !== undefined
-
   return (
     <div>
       {label && <Box variant="body2">{label}</Box>}
@@ -121,7 +120,7 @@ function SelectCo(props) {
 
 SelectCo.propTypes = {
   /**
-   * The children are the `options` for the respective select, must be type `menuItemCo`
+   * The children are the `options` for the respective select, must be type `optionCo`
    */
   children: PropTypes.node,
 

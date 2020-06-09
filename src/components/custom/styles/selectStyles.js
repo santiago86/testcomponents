@@ -83,7 +83,7 @@ const generalStyle = {
     zIndex: "1",
     maxHeight: "200px",
     overflowY: "auto",
-    padding: [8, 0],
+    padding: "8px 0",
     ...theme.typography.body1,
   },
 
@@ -94,7 +94,7 @@ const generalStyle = {
     textAlign: "left",
     border: theme.palette.transparent.main,
     width: "100%",
-    padding: [12, 16],
+    padding: "12px 16px",
     outline: "none",
     ...theme.typography.body1,
     color: theme.palette.text.primary,
@@ -123,6 +123,9 @@ const generalStyle = {
     marginRight: theme.spacing(2),
     marginTop: "0",
     marginBottom: "0",
+    "&:last-child": {
+      display: "none",
+    },
   },
 }
 

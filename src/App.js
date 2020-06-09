@@ -24,6 +24,7 @@ const text = "Cras mattis consectetur purus sit amet fermentum."
 
 function App() {
   const [check, setCheck] = useState(false)
+  const [selectCheck, setSelectCheck] = useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
@@ -52,22 +53,23 @@ function App() {
           <ButtonSection />
           <h2>Checkbox </h2>
           <CheckboxSection />
-          <h2> Select </h2>
-          <SelectSection />
           <h2> Swicht Component </h2>
           <SwichtSection />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Select </h2>
-          <Switch checked={check} onChange={() => setCheck(!check)} />
-          {!check && <SelectSection />}
-          {check && <SelectCSection />}
+          <Switch
+            checked={selectCheck}
+            onChange={() => setSelectCheck(!selectCheck)}
+          />
+          {!selectCheck && <SelectSection />}
+          {selectCheck && <SelectCSection />}
+          <h2> Modal </h2>
+          <ModalSection />
           <h2> Slider </h2>
           <SliderSection />
           <h2> Radio Button </h2>
           <RadioButton />
-          <h2> Modal </h2>
-          <ModalSection />
           <h2> Alert Message </h2>
           <AlertSection />
           <h2>Loading</h2>

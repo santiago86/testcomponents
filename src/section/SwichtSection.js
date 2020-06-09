@@ -1,6 +1,6 @@
 import React from "react"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
-import SwichtCo from "../components/swichtCo"
+import SwichtCo from "../components/UI/swicth/swichtCo"
 
 const SwichtSection = () => {
   const customBorder = {
