@@ -4,7 +4,6 @@ import Switch from "@material-ui/core/Switch"
 
 import TextfieldSection from "./section/TextfieldSection"
 import DividerSection from "./section/DividerSection"
-import TypographyCo from "./components/UI/typography/typographyCo"
 
 import StepperSection from "./section/StepperSection"
 import ButtonSection from "./section/ButtonSection"
@@ -32,15 +31,6 @@ function App() {
           onClose={() => setCheck(!check)}
         />
         <header className="App-header">
-          <TypographyCo component="span" variant="overline">
-            Vuelo de ida
-          </TypographyCo>
-          <TypographyCo variant="h1" component="h1" color="primary">
-            Hacia Buenos Aires
-          </TypographyCo>
-          <TypographyCo variant="body2" component="span" color="primary">
-            Hacia Buenos Aires
-          </TypographyCo>
           <Switch checked={check} onChange={() => setCheck(!check)} />
           <h2>Input</h2>
           <TextfieldSection />
