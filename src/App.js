@@ -4,8 +4,6 @@ import Switch from "@material-ui/core/Switch"
 
 import TextfieldSection from "./section/TextfieldSection"
 import DividerSection from "./section/DividerSection"
-import SelectSection from "./section/SelectSection"
-import SelectCSection from "./section/SelectCSection"
 import TypographyCo from "./components/typographyCo"
 
 import StepperSection from "./section/StepperSection"
@@ -24,7 +22,6 @@ const text = "Cras mattis consectetur purus sit amet fermentum."
 
 function App() {
   const [check, setCheck] = useState(false)
-  const [selectCheck, setSelectCheck] = useState(false)
   return (
     <div className="App">
       <Container max-width="lg">
@@ -55,13 +52,6 @@ function App() {
           <CheckboxSection />
           <h2> Stepper </h2>
           <StepperSection />
-          <h2> Select </h2>
-          <Switch
-            checked={selectCheck}
-            onChange={() => setSelectCheck(!selectCheck)}
-          />
-          {!selectCheck && <SelectSection />}
-          {selectCheck && <SelectCSection />}
           <h2> Slider </h2>
           <SliderSection />
           <h2> Radio Button </h2>
