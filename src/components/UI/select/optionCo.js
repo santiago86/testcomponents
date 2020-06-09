@@ -30,7 +30,13 @@ function SelectDividerCo() {
 const OptionCo = React.forwardRef((props, ref) => {
   const { children, placeholder } = props
   return [
-    <MenuItem ref={ref} {...props} placeholder="" key="item">
+    <MenuItem
+      ref={ref}
+      {...props}
+      placeholder=""
+      key="item"
+      aria-label={children}
+    >
       {children}
     </MenuItem>,
     !placeholder && <SelectDividerCo key="divider" />,

@@ -52,8 +52,6 @@ function App() {
           <ButtonSection />
           <h2>Checkbox </h2>
           <CheckboxSection />
-          <h2> Select </h2>
-          <SelectSection />
           <h2> Stepper </h2>
           <StepperSection />
           <h2> Select </h2>
@@ -63,14 +61,14 @@ function App() {
           />
           {!selectCheck && <SelectSection />}
           {selectCheck && <SelectCSection />}
-          <h2> Modal </h2>
-          <ModalSection />
           <h2> Slider </h2>
           <SliderSection />
           <h2> Radio Button </h2>
           <RadioButton />
           <h2> Alert Message </h2>
           <AlertSection />
+          <h2> Modal </h2>
+          <ModalSection />
           <h2>Loading</h2>
           <ButtonLoading />
         </header>

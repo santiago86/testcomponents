@@ -25,10 +25,12 @@ const styles = {
   select: {
     /** If starticon set, display change the padding to adjust */
     marginLeft: styledBy("starticon", {
-      true: -theme.spacing(6.2),
+      true: -theme.spacing(7),
+      false: 0,
     }),
     paddingLeft: styledBy("starticon", {
       true: theme.spacing(6.2),
+      false: theme.spacing(1.75),
     }),
   },
 }
@@ -40,14 +42,12 @@ styles.rootSet = theme.typography.body1.color
  */
 const defaultProps = {
   fullWidth: true,
-  autoWidth: true,
   variant: "outlined",
   displayEmpty: true,
   MenuProps: {
     PaperProps: {
       style: {
         maxHeight: theme.spacing(27),
-        minWidth: theme.spacing(30),
       },
     },
     getContentAnchorEl: null,
