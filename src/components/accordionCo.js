@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     "& .MuiIconButton-label": {
       marginRight: 16,
     },
+    "& .MuiSvgIcon-root": {
+      marginTop: "-7px",
+    },
   },
   title: {
     cursor: "pointer",
