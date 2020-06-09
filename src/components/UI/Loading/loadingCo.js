@@ -1,6 +1,6 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
-import airPlane from "../assets/images/copa_loader.gif"
+import airPlane from "../../../assets/images/copa_loader.gif"
 
 const useStyles = makeStyles((theme) => ({
   loading: {

@@ -13,13 +13,11 @@ import ButtonSection from "./section/ButtonSection"
 import CheckboxSection from "./section/CheckboxSection"
 
 import SliderSection from "./section/SliderSection"
-import RadioButton from "./components/RadioButton/Form"
 import AlertFull from "./components/AlertFullCo"
 import AlertSection from "./section/AlertSection"
 import ModalSection from "./section/ModalSection"
 import AccordionSection from "./section/AccordionSection"
 import PillSection from "./section/PillSection"
-import ButtonLoading from "./section/ButtonLoading"
 
 const text = "Cras mattis consectetur purus sit amet fermentum."
 
@@ -63,8 +61,6 @@ function App() {
           {check && <SelectCSection />}
           <h2> Slider </h2>
           <SliderSection />
-          <h2> Radio Button </h2>
-          <RadioButton />
           <h2> Modal </h2>
           <ModalSection />
           <h2> Accordion </h2>
@@ -73,8 +69,6 @@ function App() {
           <AlertSection />
           <h2> Attribute Pill </h2>
           <PillSection />
-          <h2>Loading</h2>
-          <ButtonLoading />
         </header>
       </Container>
     </div>
