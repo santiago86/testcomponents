@@ -17,7 +17,7 @@ const icon = (
     }}
   />
 )
-const style = { width: "50%", left: 16 }
+const style = { width: "50%", marginLeft: 16, marginTop: 16 }
 
 export default {
   title: "Components|Select",
@@ -83,14 +83,16 @@ export const Basic = () => {
     setValue(event.target.value)
   }
   return (
-    <SelectCo
-      style={style}
-      placeholder="Selecciona..."
-      value={value}
-      onChange={handleChange}
-    >
-      {smallArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo
+        placeholder="Selecciona..."
+        label="Label"
+        value={value}
+        onChange={handleChange}
+      >
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -103,14 +105,15 @@ export const Long = () => {
     setValue(event.target.value)
   }
   return (
-    <SelectCo
-      style={style}
-      placeholder="Selecciona..."
-      value={value}
-      onChange={handleChange}
-    >
-      {longArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo
+        placeholder="Selecciona..."
+        value={value}
+        onChange={handleChange}
+      >
+        {longArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -123,15 +126,16 @@ export const ChangeShortAndLong = () => {
     setValue(event.target.value)
   }
   return (
-    <SelectCo
-      style={style}
-      placeholder="Selecciona..."
-      value={value}
-      onChange={handleChange}
-    >
-      {boolean("Set long", true) && longArray}
-      {!boolean("Set long", true) && smallArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo
+        placeholder="Selecciona..."
+        value={value}
+        onChange={handleChange}
+      >
+        {boolean("Set long", true) && longArray}
+        {!boolean("Set long", true) && smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -145,15 +149,38 @@ export const Icon = () => {
   }
   const startIcon = boolean("set Icon", false) ? icon : undefined
   return (
-    <SelectCo
-      style={style}
-      placeholder="Selecciona..."
-      value={value}
-      onChange={handleChange}
-      startAdornment={startIcon}
-    >
-      {smallArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo
+        placeholder="Selecciona..."
+        value={value}
+        onChange={handleChange}
+        startAdornment={startIcon}
+      >
+        {smallArray}
+      </SelectCo>
+    </div>
+  )
+}
+
+/**
+ * Change the label of the select
+ */
+export const Label = () => {
+  const [value, setValue] = React.useState("")
+  const handleChange = (event) => {
+    setValue(event.target.value)
+  }
+  return (
+    <div style={style}>
+      <SelectCo
+        placeholder="Selecciona..."
+        label={text("Set label", "Label")}
+        value={value}
+        onChange={handleChange}
+      >
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -166,14 +193,15 @@ export const Placeholder = () => {
     setValue(event.target.value)
   }
   return (
-    <SelectCo
-      style={style}
-      placeholder={text("Set placeholder", "Selecciona...")}
-      value={value}
-      onChange={handleChange}
-    >
-      {smallArray}
-    </SelectCo>
+    <div>
+      <SelectCo
+        placeholder={text("Set placeholder", "Selecciona...")}
+        value={value}
+        onChange={handleChange}
+      >
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -186,9 +214,11 @@ export const NoPlaceholder = () => {
     setValue(event.target.value)
   }
   return (
-    <SelectCo style={style} value={value} onChange={handleChange}>
-      {smallArray}
-    </SelectCo>
+    <div>
+      <SelectCo value={value} onChange={handleChange}>
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -201,14 +231,15 @@ export const AlreadySelected = () => {
     setValue(event.target.value)
   }
   return (
-    <SelectCo
-      style={style}
-      placeholder="Selecciona..."
-      value={value}
-      onChange={handleChange}
-    >
-      {smallArray}
-    </SelectCo>
+    <div>
+      <SelectCo
+        placeholder="Selecciona..."
+        value={value}
+        onChange={handleChange}
+      >
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -216,14 +247,15 @@ export const AlreadySelected = () => {
  * Disabled Select
  */
 export const Disabled = () => (
-  <SelectCo
-    style={style}
-    placeholder="Selecciona..."
-    disabled={boolean("Set disabled", true)}
-    value=""
-  >
-    {smallArray}
-  </SelectCo>
+  <div>
+    <SelectCo
+      placeholder="Selecciona..."
+      disabled={boolean("Set disabled", true)}
+      value=""
+    >
+      {smallArray}
+    </SelectCo>
+  </div>
 )
 
 /**
@@ -231,14 +263,15 @@ export const Disabled = () => (
  */
 export const ErrorSelect = () => {
   return (
-    <SelectCo
-      placeholder="Selecciona..."
-      error={boolean("Set disabled", true)}
-      style={style}
-      value=""
-    >
-      {smallArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo
+        placeholder="Selecciona..."
+        error={boolean("Set disabled", true)}
+        value=""
+      >
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -247,13 +280,11 @@ export const ErrorSelect = () => {
  */
 export const ChangeValue = () => {
   return (
-    <SelectCo
-      style={style}
-      placeholder="Selecciona..."
-      value={text("Set Value", "Value1")}
-    >
-      {smallArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo placeholder="Selecciona..." value={text("Set Value", "Value1")}>
+        {smallArray}
+      </SelectCo>
+    </div>
   )
 }
 
@@ -267,17 +298,19 @@ export const Playground = () => {
   }
   const startIcon = boolean("set Icon", false) ? icon : undefined
   return (
-    <SelectCo
-      style={style}
-      placeholder={text("Set placeholder", "Selecciona...")}
-      value={value}
-      disabled={boolean("Set disabled", false)}
-      error={boolean("Set error", false)}
-      onChange={handleChange}
-      startAdornment={startIcon}
-    >
-      {boolean("Set long", true) && longArray}
-      {!boolean("Set long", true) && smallArray}
-    </SelectCo>
+    <div style={style}>
+      <SelectCo
+        placeholder={text("Set placeholder", "Selecciona...")}
+        value={value}
+        disabled={boolean("Set disabled", false)}
+        error={boolean("Set error", false)}
+        label={text("Set label", "Label")}
+        onChange={handleChange}
+        startAdornment={startIcon}
+      >
+        {boolean("Set long", true) && longArray}
+        {!boolean("Set long", true) && smallArray}
+      </SelectCo>
+    </div>
   )
 }
