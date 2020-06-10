@@ -1,6 +1,6 @@
 import React from "react"
 
-import { action } from "@storybook/addon-actions"
+// import { action } from "@storybook/addon-actions"
 import { boolean, text } from "@storybook/addon-knobs"
 
 import RadioGroupMa from "@material-ui/core/RadioGroup"
@@ -41,21 +41,21 @@ export const Basic = () => <RadioButtonCo />
 
 export const Checked = () => (
   <RadioButtonCo
-    handleChange={action("clicked")}
+    // handleChange={action("clicked")}
     checked={boolean("Set checked", true)}
   />
 )
 
 export const Disabled = () => (
   <RadioButtonCo
-    handleChange={action("clicked")}
+    // handleChange={action("clicked")}
     disabled={boolean("Set disabled", true)}
   />
 )
 
 export const DisabledChecked = () => (
   <RadioButtonCo
-    handleChange={action("clicked")}
+    // handleChange={action("clicked")}
     disabled={boolean("Set disabled", true)}
     checked={boolean("Set checked", true)}
   />
@@ -63,14 +63,14 @@ export const DisabledChecked = () => (
 
 export const Label = () => (
   <RadioButtonCo
-    handleChange={action("clicked")}
+    // handleChange={action("clicked")}
     label={text("Set label", "Label")}
   />
 )
 
 export const LabelMultiLine = () => (
   <RadioButtonCo
-    handleChange={action("clicked")}
+    // handleChange={action("clicked")}
     label={text("Set label", "Quiero suscribirme a los correos de Copa")}
   />
 )
