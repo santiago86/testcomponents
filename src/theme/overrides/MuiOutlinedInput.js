@@ -3,10 +3,10 @@ import palette from "../palette"
 export default {
   root: {
     position: "relative",
-    marginTop: "8px",
-    marginBottom: "8px",
+    marginTop: 8,
+    marginBottom: 8,
     outline: "none",
-    outlineColor: "transparent",
+    outlineColor: palette.transparent.main,
     "& $notchedOutline": {
       borderColor: palette.grey["300"],
     },

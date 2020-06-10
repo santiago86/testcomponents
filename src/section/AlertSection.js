@@ -4,7 +4,9 @@ import InfoIcon from "@material-ui/icons/Info"
 
 import theme from "../theme"
 import palette from "../theme/palette"
-import AlertCo from "../components/alertCo"
+import AlertCo from "../components/UI/Alert/AlertCo"
+
+import ButtonCo from "../components/buttonCo"
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -13,18 +15,45 @@ const useStyles = makeStyles(() => ({
       marginTop: theme.spacing(2),
     },
   },
+  alertAction: {
+    backgroundColor: palette.primary.main,
+    padding: 40,
+  },
 }))
 
 const AlertSection = () => {
   const classes = useStyles()
   const sampleText =
     "¡Lo sentimos! No pudimos encontrar tu reserva con la información proporcionada. Por favor, revisa tus datos y vuelve a intentarlo."
+  const sampleText1 =
+    "Esta reserva expirará en XXhXXm. Para que no se cancele, recuerde completar tu compra."
+
+  const actionBtn = () => console.log("hello")
 
   return (
     <div className={classes.root}>
+      <div className={classes.alertAction}>
+        <AlertCo
+          icon={<InfoIcon />}
+          bgColor={palette.white}
+          fontColor={palette.black}
+          alertTitle="Pago Requerido"
+          alerActionText="Pagar reserva"
+          variant="filled"
+          alertAction={actionBtn}
+          closeIcon
+        >
+          <>
+            <p>{sampleText1}</p>
+            <ButtonCo style={{ margin: "auto" }} variant="outlined">
+              Pagar Reserva
+            </ButtonCo>
+          </>
+        </AlertCo>
+      </div>
       <AlertCo
-        backgroundColor={palette.primary.main}
         icon={<InfoIcon />}
+        fontSize={22}
         severity="info"
         variant="filled"
         width="50%"

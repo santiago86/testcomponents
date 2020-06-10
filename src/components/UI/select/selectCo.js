@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Select from "@material-ui/core/Select"
-import Box from "@material-ui/core/Box"
 import { withStyles } from "@material-ui/core/styles"
-import MenuItemCo from "./menuItemCo"
-import theme from "../theme"
-import { ReactComponent as down } from "../assets/icons/down.svg"
+import OptionCo from "./optionCo"
+import theme from "../../../theme"
+import { ReactComponent as down } from "../../../assets/icons/down.svg"
+import TypographyCo from "../typography/typographyCo"
 
 /**
  * Function to make the characteristics of the Select component
@@ -25,10 +25,12 @@ const styles = {
   select: {
     /** If starticon set, display change the padding to adjust */
     marginLeft: styledBy("starticon", {
-      true: -theme.spacing(6.2),
+      true: -theme.spacing(7),
+      false: 0,
     }),
     paddingLeft: styledBy("starticon", {
       true: theme.spacing(6.2),
+      false: theme.spacing(1.75),
     }),
   },
 }
@@ -40,14 +42,12 @@ styles.rootSet = theme.typography.body1.color
  */
 const defaultProps = {
   fullWidth: true,
-  autoWidth: true,
   variant: "outlined",
   displayEmpty: true,
   MenuProps: {
     PaperProps: {
       style: {
         maxHeight: theme.spacing(27),
-        minWidth: theme.spacing(30),
       },
     },
     getContentAnchorEl: null,
@@ -71,9 +71,9 @@ const StyledSelect = withStyles(styles)(({ classes, color, ...other }) => {
  * @param {string} text Text to be shown in the placeholder.
  */
 const setPlaceholder = (text) => (
-  <MenuItemCo style={{ display: "none" }} value="" disabled>
+  <OptionCo style={{ display: "none" }} value="" placeholder disabled>
     {text}
-  </MenuItemCo>
+  </OptionCo>
 )
 
 function SelectCo(props) {
@@ -100,10 +100,9 @@ function SelectCo(props) {
   }
   const currentProps = { ...defaultProps, ...props }
   const starticon = startAdornment !== undefined
-
   return (
     <div>
-      {label && <Box variant="body2">{label}</Box>}
+      {label && <TypographyCo variant="body2">{label}</TypographyCo>}
       <StyledSelect
         color={color}
         starticon={starticon.toString()}
@@ -121,7 +120,7 @@ function SelectCo(props) {
 
 SelectCo.propTypes = {
   /**
-   * The children are the `options` for the respective select, must be type `menuItemCo`
+   * The children are the `options` for the respective select, must be type `optionCo`
    */
   children: PropTypes.node,
 

@@ -5,43 +5,23 @@ import TextField from "@material-ui/core/TextField"
 import InputLabel from "@material-ui/core/InputLabel"
 import FormHelperText from "@material-ui/core/FormHelperText"
 
-import theme from "../../theme/index"
+import theme from "../../../theme/index"
 
 const useStyles = makeStyles(() => ({
   root: {
     "& > *": {
       width: "100%",
     },
-    "& .MuiOutlinedInput-root": {
-      marginTop: "8px",
-      marginBottom: "8px",
-    },
-    "& .Mui-disabled": {
-      backgroundColor: theme.palette.grey[100],
-      color: theme.palette.grey[600],
-    },
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.grey[300],
-    },
-    "& .MuiOutlinedInput-root.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.grey[300],
-    },
-    "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-      borderColor: theme.palette.primary.main,
-    },
-    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-      borderWidth: "1px",
-    },
-    "& .MuiOutlinedInput-input": {
-      fontSize: "1rem",
-    },
   },
   label: theme.typography.body2,
   helperText: {
     fontSize: "0.75rem",
-    marginTop: "0px",
+    marginTop: 0,
     display: "flex",
     alignItems: "center",
+  },
+  helperTextContainer: {
+    height: 20,
   },
 }))
 
@@ -50,7 +30,7 @@ const InputCo = ({
   placeholder,
   label,
   value,
-  setValue,
+  handleChange,
   helperText,
   hasErrors,
   component,
@@ -64,6 +44,9 @@ const InputCo = ({
     setPlaceholder("")
     setError("")
   }
+
+  const isValid = errors !== ""
+
   const handelBlur = () => {
     if (!value) {
       setPlaceholder(placeholder)
@@ -84,6 +67,7 @@ const InputCo = ({
       )}
       <TextField
         {...props}
+        id={id}
         placeholder={inputPlaceholder}
         label={null}
         helperText={null}
@@ -93,15 +77,17 @@ const InputCo = ({
         FormHelperTextProps={{ classes: classes.helperText }}
         onFocus={handleFocus}
         onBlur={handelBlur}
-        onChange={setValue}
-        error={errors !== ""}
+        onChange={handleChange}
+        error={isValid}
       />
-      {helperText && (
-        <FormHelperText className={classes.helperText} error={errors !== ""}>
-          <span>{errors && component}</span>
-          <span>{(!hasErrors && helperText) || errors}</span>
-        </FormHelperText>
-      )}
+      <div className={classes.helperTextContainer}>
+        {helperText && (
+          <FormHelperText className={classes.helperText} error={isValid}>
+            <span>{errors && component}</span>
+            <span>{(!hasErrors && helperText) || errors}</span>
+          </FormHelperText>
+        )}
+      </div>
     </div>
   )
 }
@@ -111,10 +97,13 @@ InputCo.propTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
-  setValue: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
   helperText: PropTypes.string,
   hasErrors: PropTypes.bool,
   component: PropTypes.element,
+  disabled: PropTypes.bool,
+  InputProps: PropTypes.shape({}),
+  ariaLabel: PropTypes.string.isRequired,
 }
 
 InputCo.defaultProps = {
@@ -123,6 +112,8 @@ InputCo.defaultProps = {
   helperText: "",
   hasErrors: false,
   component: null,
+  disabled: false,
+  InputProps: {},
 }
 
 export default InputCo
