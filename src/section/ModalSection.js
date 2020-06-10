@@ -1,10 +1,10 @@
 import React from "react"
 import Grid from "@material-ui/core/Grid"
 import ButtonCo from "../components/buttonCo"
-import ModalCo from "../components/modal/modalCo"
-import ModalContentCo from "../components/modal/modalContentCo"
-import ModalTitleCo from "../components/modal/modalTitleCo"
-import ModalColumsCo from "../components/modal/modalColumsCo"
+import ModalCo from "../components/UI/modal/modalCo"
+import ModalContentCo from "../components/UI/modal/modalContentCo"
+import ModalTitleCo from "../components/UI/modal/modalTitleCo"
+import ModalColumsCo from "../components/UI/modal/modalColumsCo"
 
 const pileButtons = (stack = true) => {
   const bts = []

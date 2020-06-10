@@ -108,6 +108,10 @@ SwicthCo.propTypes = {
   name: PropTypes.string,
   label: PropTypes.string,
   checked: PropTypes.bool,
+  /**
+   * Basic Handle Change
+   * Return an object when is clicked
+   */
   handleChange: PropTypes.func,
   disabled: PropTypes.bool,
 }

@@ -2,7 +2,7 @@ import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import { Grid, Divider } from "@material-ui/core"
 import theme from "../theme"
-import TypographyCo from "../components/typographyCo"
+import TypographyCo from "../components/UI/typography/typographyCo"
 
 const useStyles = makeStyles({
   banner: {
