@@ -4,7 +4,7 @@ import InputLabel from "@material-ui/core/InputLabel"
 import { makeStyles } from "@material-ui/core/styles"
 import PropTypes from "prop-types"
 
-import TooltipCO from "./tooltipCo"
+import TooltipCO from "../tooltip/tooltipCo"
 
 const useStyles = makeStyles((theme) => ({
   root: (props) => ({
