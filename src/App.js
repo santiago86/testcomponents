@@ -1,62 +1,41 @@
-import React, { useState } from "react"
-import Container from "@material-ui/core/Container"
-import Switch from "@material-ui/core/Switch"
+import React from "react"
+import { useSelector } from "react-redux"
+import { Switch } from "react-router-dom"
+import PropTypes from "prop-types"
+import { IntlProvider } from "react-intl"
 
-import Form from "./components/TextField/Form"
-import SelectSection from "./section/SelectSection"
-import SelectCSection from "./section/SelectCSection"
-import TypographyCo from "./components/typographyCo"
+import localeData from "./translations"
 
-import StepperSection from "./section/StepperSection"
-import ButtonSection from "./section/ButtonSection"
-import CheckboxSection from "./section/CheckboxSection"
-import SwichtSection from "./section/SwichtSection"
+import { Main as MainLayout } from "./components/layouts"
+import UserRoute from "./components/routes/UserRoute"
+import ResultPage from "./components/pages/resultPage/resultPage"
 
-import SliderSection from "./section/SliderSection"
-import RadioButton from "./components/RadioButton/Form"
-import AlertSection from "./section/AlertSection"
+function App({ location }) {
+  const lang = useSelector((state) => state.general.lang)
 
-function App() {
-  const [check, setCheck] = useState(false)
+  const messages = localeData[lang] || localeData.en
+
   return (
-    <div className="App">
-      <Container max-width="lg">
-        <header className="App-header">
-          <TypographyCo component="span" variant="overline">
-            Vuelo de ida
-          </TypographyCo>
-          <TypographyCo variant="h1" component="h1" color="primary">
-            Hacia Buenos Aires
-          </TypographyCo>
-          <TypographyCo variant="body2" component="span" color="primary">
-            Hacia Buenos Aires
-          </TypographyCo>
-          <h2>Input</h2>
-          <Form />
-          <h2>Button </h2>
-          <ButtonSection />
-          <h2>Checkbox </h2>
-          <CheckboxSection />
-          <h2> Select </h2>
-          <SelectSection />
-          <h2> Swicht Component </h2>
-          <SwichtSection />
-          <h2> Stepper </h2>
-          <StepperSection />
-          <h2> Select </h2>
-          <Switch checked={check} onChange={() => setCheck(!check)} />
-          {!check && <SelectSection />}
-          {check && <SelectCSection />}
-          <h2> Slider </h2>
-          <SliderSection />
-          <h2> Radio Button </h2>
-          <RadioButton />
-          <h2> Alert Message </h2>
-          <AlertSection />
-        </header>
-      </Container>
-    </div>
+    <IntlProvider locale={lang} messages={messages}>
+      <IntlProvider locale={lang} messages={messages}>
+        <Switch>
+          <UserRoute
+            location={location}
+            path="/"
+            exact
+            layout={MainLayout}
+            component={ResultPage}
+          />
+        </Switch>
+      </IntlProvider>
+    </IntlProvider>
   )
+}
+
+App.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export default App

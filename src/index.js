@@ -2,26 +2,34 @@ import React from "react"
 import ReactDOM from "react-dom"
 import { ThemeProvider } from "@material-ui/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
-import Navigation from "./components/navigation"
+import { BrowserRouter as Router, Route } from "react-router-dom"
+
+import { Provider } from "react-redux"
+
+import App from "./App"
 import * as serviceWorker from "./serviceWorker"
 import theme from "./theme"
 
-import { ROUTES_CONFIG } from "./constants/routes"
+import store from "./store"
+import history from "./utils/history"
+
+// utils
+import setBaseUrl from "./utils/setBaseUrl"
+
+if (process.env.REACT_APP_API_URL) {
+  setBaseUrl(process.env.REACT_APP_API_URL)
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <Navigation />
-        <Switch>
-          {ROUTES_CONFIG.map((props, index) => (
-            <Route key={props.path || index} {...props} />
-          ))}
-        </Switch>
-      </Router>
-    </ThemeProvider>
+    <Router history={history}>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Route component={App} />
+        </ThemeProvider>
+      </Provider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 )

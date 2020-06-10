@@ -1,0 +1,3 @@
+export const FETCH_DATA_SAGA = "FETCH_DATA_SAGA"
+
+export const SET_LANGUAGE_SAGA = "SET_LANGUAGE_SAGA"
